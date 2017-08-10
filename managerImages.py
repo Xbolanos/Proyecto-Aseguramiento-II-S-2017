@@ -14,6 +14,7 @@ def addImage(path):
 print (cv2.__version__)
 addImage('2.jpg')
 addImage('3.jpg')
+<<<<<<< Updated upstream
 
 def analysis():
     return np.array(images).transpose()
@@ -24,4 +25,15 @@ print(A)
 #plt.imshow(img, cmap = 'gray', interpolation = 'bicubic')
 #plt.xticks([]), plt.yticks([])  # to hide tick values on X and Y axis
 #plt.show()
+=======
 
+def analysis():
+    return np.array(images).transpose()
+
+A = analysis()
+print(A)
+>>>>>>> Stashed changes
+
+#plt.imshow(img, cmap = 'gray', interpolation = 'bicubic')
+#plt.xticks([]), plt.yticks([])  # to hide tick values on X and Y axis
+#plt.show()
