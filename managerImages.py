@@ -7,9 +7,24 @@ from matplotlib import pyplot as plt
 #como necesitamos las muestras en las columnas y no en las filas como esta
 images = []
 A = []
+
 def addImage(path):
     return cv2.imread(path,0)
-   
+
+def calculateCovarianceMatrix(samples):
+    """
+    @summary: This function calculates de covariance matrix of a given matrix of samples of the same image.
+    
+    Parameters
+    ----------
+    @param samples: the matrix with all the samples of a given image.
+    
+    Returns
+    ----------
+    @return: the covariance matrix for the samples matrix of the image.
+    """
+    
+    return np.cov(samples)
      
 #sacamos el vector de la imagen
 def matrix2vector(matrix):        
@@ -27,11 +42,22 @@ def analysis():
 #esto eventualmente cambiara para cuando tengamos lo web 
 def process():
     print (cv2.__version__)
-    add2images(matrix2vector(addImage('2.jpg')))
-    add2images(matrix2vector(addImage('3.jpg')))
+    add2images(matrix2vector(addImage('Muestras/s1/1.pgm')))
+    add2images(matrix2vector(addImage('Muestras/s1/2.pgm')))
+    add2images(matrix2vector(addImage('Muestras/s1/3.pgm')))
+    add2images(matrix2vector(addImage('Muestras/s1/4.pgm')))
+    add2images(matrix2vector(addImage('Muestras/s1/5.pgm')))
+    add2images(matrix2vector(addImage('Muestras/s1/6.pgm')))
+    add2images(matrix2vector(addImage('Muestras/s1/7.pgm')))
+    add2images(matrix2vector(addImage('Muestras/s1/8.pgm')))
+    add2images(matrix2vector(addImage('Muestras/s1/9.pgm')))
+    add2images(matrix2vector(addImage('Muestras/s1/10.pgm')))
     A = analysis() #aqui se crea la matriz de muestras
     print(A)
-    
+    print("Matriz de covarianza:\n")
+    calculateCovarianceMatrix(A)
+
+print(np.cov(np.array([1, 2, 3])))
 process()
 
 
