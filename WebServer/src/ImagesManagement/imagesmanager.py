@@ -1,6 +1,11 @@
-import numpy as np 
+'''
+Created on Aug 12, 2017
+
+@author: erickhdez
+'''
+
 import cv2
-from matplotlib import pyplot as plt
+import numpy as np 
 
 
 # las imagenes estan ya en vector pero falta trasponerlas 
@@ -58,10 +63,7 @@ def process():
     A = analysis() #aqui se crea la matriz de muestras
     print(A)
     print("Matriz de covarianza:\n")
-    calculateCovarianceMatrix(A)
-
-print(np.cov(np.array([1, 2, 3])))
-process()
+    print(calculateCovarianceMatrix(A))
 
 
 #---------------------------------------------------------------------
