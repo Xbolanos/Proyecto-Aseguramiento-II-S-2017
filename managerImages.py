@@ -13,11 +13,14 @@ def addImage(path):
 
 def calculateCovarianceMatrix(samples):
     """
-    @summary: This function calculates de covariance matrix of a given matrix of samples of the same image.
+    @summary: This function calculates the covariance matrix of a given matrix containing
+    the samples of the same image; where every column represents a sample and every row
+    represents the different values for the same pixel. 
     
     Parameters
     ----------
-    @param samples: the matrix with all the samples of a given image.
+    @param samples: the matrix with all the samples of a given image. Which should have
+    every sample as a column.
     
     Returns
     ----------
@@ -59,11 +62,6 @@ def process():
 
 print(np.cov(np.array([1, 2, 3])))
 process()
-
-
-
-
-
 
 
 #---------------------------------------------------------------------
