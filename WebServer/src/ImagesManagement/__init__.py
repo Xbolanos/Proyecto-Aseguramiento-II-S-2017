@@ -1,3 +1,3 @@
-from ImagesManagement import imagesmanager as im
+#from ImagesManagement import imagesmanager as im
 
-im.process()
+#im.process()

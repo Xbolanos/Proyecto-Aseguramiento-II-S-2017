@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'ImagesManagement',
 ]
 
 MIDDLEWARE = [
@@ -50,11 +51,13 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'WebServer.urls'
-
+TEMPLATE_PATH = os.path.join(BASE_DIR, 'Pages')
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            TEMPLATE_PATH,
+            ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
