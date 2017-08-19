@@ -15,10 +15,8 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
-import ImagesManagement
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^', include('ImagesManagement.urls')),
-     url(r'^pez/', admin.site.urls)
 ]
