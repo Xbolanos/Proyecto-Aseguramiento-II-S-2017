@@ -7,7 +7,7 @@ window.onload = function() {
         
         Parameters
         ----------
-        @param self: part of OOP syntax 
+        @param 
         fileInput: gets the input with id:fileInput in the html file.
         fileDisplayArea: gets the div with id:fileDisplayArea
         file: gets the chosen image by the user from the input fileInput.
