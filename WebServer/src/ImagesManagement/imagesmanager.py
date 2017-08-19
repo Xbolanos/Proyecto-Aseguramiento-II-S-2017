@@ -6,12 +6,16 @@ Created on Aug 12, 2017
 
 import cv2
 import numpy as np 
+from _cffi_backend import string
+np.set_printoptions(threshold=np.nan)
+
 
 
 # las imagenes estan ya en vector pero falta trasponerlas 
 #como necesitamos las muestras en las columnas y no en las filas como esta
 images = []
 A = []
+G = 0
 
 def addImage(path):
     """
@@ -60,7 +64,11 @@ def matrix2vector(matrix):
     ----------
     @return: the same matrix in an array format
     """
-    return np.asarray(matrix).reshape(-1)
+    global G
+    aimg = np.asarray(matrix).reshape(-1)
+    np.savetxt(str(G), aimg)
+    G = G + 1
+    return aimg
 
 
 def add2images(vector):
@@ -132,6 +140,6 @@ def process():
 #plt.xticks([]), plt.yticks([])  # to hide tick values on X and Y axis
 #plt.show()
 
-
+process()
 
 
