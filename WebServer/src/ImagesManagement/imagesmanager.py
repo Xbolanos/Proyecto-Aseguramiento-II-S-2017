@@ -91,7 +91,7 @@ class Imagesmanager(object):
         self.images.append(vector)
     
     #le da vuelta a image, que ya volveria cada muestra en columna (: 
-    def transpose(self):
+    def transpose(self, images):
         """
         @summary: This function transforms the matrix of images, puts each row as a column
         because each sample is as a row, but for the matrix of covariance 
@@ -99,6 +99,7 @@ class Imagesmanager(object):
         Parameters
         ----------
         @param self: part of OOP syntax  
+        images: an array with the images transformed in a vector 
          
         
         Returns
@@ -106,7 +107,7 @@ class Imagesmanager(object):
         @return: the matrix of images transposed 
         """
     
-        return np.array(self.images).transpose()
+        return np.array(images).transpose()
     
     #esto eventualmente cambiara para cuando tengamos lo web 
     def process(self):
