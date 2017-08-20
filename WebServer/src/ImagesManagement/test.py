@@ -8,6 +8,7 @@ import numpy as np
 from imagesmanager import ImagesManager
 from numpy import loadtxt
 
+
 class Test(unittest.TestCase):
     # las direcciones
     path_list = ["Muestras/s1/1.pgm","Muestras/s1/2.pgm", "Muestras/s1/3.pgm", "Muestras/s1/4.pgm", "Muestras/s1/5.pgm", "Muestras/s1/6.pgm","Muestras/s1/7.pgm","Muestras/s1/8.pgm","Muestras/s1/9.pgm","Muestras/s1/10.pgm"]
@@ -107,7 +108,7 @@ class Test(unittest.TestCase):
         ----------
         @return: void
         """"""
-        imagesm = Imagesmanager()
+        imagesm = ImagesManager()
         
         self.G = 0 
       
@@ -117,5 +118,4 @@ class Test(unittest.TestCase):
         self.assertEqual(result.all(), self.expectedcov.all(), "No son la misma matriz")
         print("Listo test cov")
      
-"""    
-        
+"""        
