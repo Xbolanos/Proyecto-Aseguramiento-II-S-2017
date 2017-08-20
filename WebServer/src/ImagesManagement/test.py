@@ -19,6 +19,7 @@ class Test(unittest.TestCase):
     samples = [np.loadtxt("30"),np.loadtxt("31"),np.loadtxt("32"),np.loadtxt("33"),np.loadtxt("34"),np.loadtxt("35"),np.loadtxt("36"),np.loadtxt("37"),np.loadtxt("38"),np.loadtxt("39")]
     # muestras transpuestas
     samplesTranposed = [np.loadtxt("20"),np.loadtxt("21"),np.loadtxt("22"),np.loadtxt("23"),np.loadtxt("24"),np.loadtxt("25"),np.loadtxt("26"),np.loadtxt("27"),np.loadtxt("28"),np.loadtxt("29")]
+    expectedCovarianceMatrix=[]
     G = 0 
     
     def test_addImages(self):
@@ -90,7 +91,29 @@ class Test(unittest.TestCase):
             self.assertEqual(result.all(), self.samplesTranposed[self.G].all(), "No calza")
             
             print(self.G+20)
-            self.G = self.G + 1  
+            self.G = self.G + 1
+              
+    def calculateCovarianceMatrix(self):
+        """
+        @summary: This function is an unit test for calculateCovarianceMatrix of the class Imagesmanager
+        
+        Parameters
+        ----------
+        @param self: part of OOP syntax
+        
+        Returns
+        ----------
+        @return: void
+        """
+        self.G = 0 
+        imagesm = Imagesmanager()
+        for sampleTransposted in self.samplesTranposed:    
+            result = imagesm.calculateCovarianceMatrix(sampleTransposted)
+            result = result.astype('float')
             
+            self.assertEqual(result.all(), self.expectedCovarianceMatrix[self.G].all(), "No calza")
+            
+            print(self.G)
+            self.G = self.G + 1
             
         
