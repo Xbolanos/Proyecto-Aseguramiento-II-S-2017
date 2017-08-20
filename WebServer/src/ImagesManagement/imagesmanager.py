@@ -9,9 +9,7 @@ import numpy as np
 
 
 
-class Imagesmanager(object):
-
-    
+class ImagesManager:
     # las imagenes estan ya en vector pero falta trasponerlas 
     #como necesitamos las muestras en las columnas y no en las filas como esta
     images = []
