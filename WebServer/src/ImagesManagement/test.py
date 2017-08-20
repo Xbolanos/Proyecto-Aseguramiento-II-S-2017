@@ -1,11 +1,11 @@
 '''
 Created on 19 ago. 2017
 
-@author: bermu
+@author:  erickhdez, bermudezarii, xbolanos, nicolmorice
 '''
 import unittest
 import numpy as np
-from imagesmanager import Imagesmanager
+from imagesmanager import ImagesManager
 from numpy import loadtxt
 
 class Test(unittest.TestCase):
@@ -36,9 +36,9 @@ class Test(unittest.TestCase):
         @return: void
         """
         self.G = 0 
-        imagesm = Imagesmanager()
+        imagesm = ImagesManager()
         for path in self.path_list:    
-            result = Imagesmanager.addImage(imagesm, path)
+            result = ImagesManager.addImage(imagesm, path)
             result = result.astype('float')
             
             self.assertEqual(result.all(), self.expected[self.G].all(), "No devuelve la misma matriz de la respectiva imagen")
@@ -58,7 +58,7 @@ class Test(unittest.TestCase):
         ----------
         @return: void
         """
-        imagesm = Imagesmanager()
+        imagesm = ImagesManager()
         self.G = 0 
         for mat in self.expected:    
             result = imagesm.matrix2vector(mat)
@@ -82,7 +82,7 @@ class Test(unittest.TestCase):
         ----------
         @return: void
         """
-        imagesm = Imagesmanager()
+        imagesm = ImagesManager()
         self.G = 0 
         for muestra in self.samples:  
               

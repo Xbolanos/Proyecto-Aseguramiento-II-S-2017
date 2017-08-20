@@ -1,3 +1,9 @@
+'''
+Created on Aug 12, 2017
+
+@author: erickhdez, bermudezarii, xbolanos, nicolmorice
+'''
+
 from django.shortcuts import render
 from django.core.files.storage import FileSystemStorage
 import ImagesManagement.imagesmanager as im
