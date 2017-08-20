@@ -18,6 +18,27 @@ window.onload = function() {
         @return: Displays the image selected by the user in the page
         */
 
+
+window.onload = function() {        
+		/*
+        @summary: This function will run once the entire page (including images or frames),
+        not just the DOM(Document Object Model), is ready. 
+        
+        Parameters
+        ----------
+        @param 
+        fileInput: gets the input with id:fileInput in the html file.
+        fileDisplayArea: gets the div with id:fileDisplayArea
+        file: gets the chosen image by the user from the input fileInput.
+        imageType: define the type of the content we are waiting
+        reader: Returns a newly constructed FileReade.
+        img: creates a new HTMLImageElement instance.
+        
+        Returns
+        ----------
+        @return: Displays the image selected by the user in the page
+        */
+
 		var fileInput = document.getElementById('fileInput');
 		var fileDisplayArea = document.getElementById('fileDisplayArea');
 	
