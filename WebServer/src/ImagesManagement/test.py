@@ -41,7 +41,7 @@ class Test(unittest.TestCase):
             result = Imagesmanager.addImage(imagesm, path)
             result = result.astype('float')
             
-            self.assertEqual(result.all(), self.expected[self.G].all(), "No calza")
+            self.assertEqual(result.all(), self.expected[self.G].all(), "No devuelve la misma matriz de la respectiva imagen")
             
             print(self.G)
             self.G = self.G + 1  
@@ -64,7 +64,7 @@ class Test(unittest.TestCase):
             result = imagesm.matrix2vector(mat)
             result = result.astype('float')
             
-            self.assertEqual(result.all(), self.expectedt2[self.G].all(), "No calza")
+            self.assertEqual(result.all(), self.expectedt2[self.G].all(), "El vector no coincide con el resultado esperado")
             
             print(self.G)
             self.G = self.G + 1  
@@ -89,7 +89,7 @@ class Test(unittest.TestCase):
             result = imagesm.transpose(muestra)
             result = result.astype('float')
             
-            self.assertEqual(result.all(), self.samplesTranposed[self.G].all(), "No calza")
+            self.assertEqual(result.all(), self.samplesTranposed[self.G].all(), "La matriz dada no coincide con el resultado esperado")
             
             print(self.G)
             self.G = self.G + 1
@@ -114,7 +114,7 @@ class Test(unittest.TestCase):
            
         result = imagesm.calculateCovarianceMatrix(np.loadtxt("Pruebas/muestra s1-10"))
         
-        self.assertEqual(result.all(), self.expectedcov.all(), "No son la misma matriz despues de ser transpuestos")
+        self.assertEqual(result.all(), self.expectedcov.all(), "No son la misma matriz")
         print("Listo test cov")
      
 """    
