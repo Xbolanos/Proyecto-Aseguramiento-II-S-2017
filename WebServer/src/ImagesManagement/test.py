@@ -106,7 +106,7 @@ class Test(unittest.TestCase):
         Returns
         ----------
         @return: void
-        """
+        """"""
         imagesm = Imagesmanager()
         
         self.G = 0 
@@ -117,5 +117,5 @@ class Test(unittest.TestCase):
         self.assertEqual(result.all(), self.expectedcov.all(), "No son la misma matriz despues de ser transpuestos")
         print("Listo test cov")
      
-""""""     
+"""    
         
