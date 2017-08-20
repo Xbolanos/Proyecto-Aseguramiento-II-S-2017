@@ -19,6 +19,7 @@ class Test(unittest.TestCase):
     samples = [np.loadtxt("Pruebas/MuestrasSinTransponer/s1"),np.loadtxt("Pruebas/MuestrasSinTransponer/s2"),np.loadtxt("Pruebas/MuestrasSinTransponer/s3"),np.loadtxt("Pruebas/MuestrasSinTransponer/s4"),np.loadtxt("Pruebas/MuestrasSinTransponer/s5"),np.loadtxt("Pruebas/MuestrasSinTransponer/s6"),np.loadtxt("Pruebas/MuestrasSinTransponer/s7"),np.loadtxt("Pruebas/MuestrasSinTransponer/s8"),np.loadtxt("Pruebas/MuestrasSinTransponer/s9"),np.loadtxt("Pruebas/MuestrasSinTransponer/s10")]
     # muestras transpuestas
     samplesTranposed = [np.loadtxt("Pruebas/MuestrtasTranspuestas/s1"),np.loadtxt("Pruebas/MuestrtasTranspuestas/s2"),np.loadtxt("Pruebas/MuestrtasTranspuestas/s3"),np.loadtxt("Pruebas/MuestrtasTranspuestas/s4"),np.loadtxt("Pruebas/MuestrtasTranspuestas/s5"),np.loadtxt("Pruebas/MuestrtasTranspuestas/s6"),np.loadtxt("Pruebas/MuestrtasTranspuestas/s7"),np.loadtxt("Pruebas/MuestrtasTranspuestas/s8"),np.loadtxt("Pruebas/MuestrtasTranspuestas/s9"),np.loadtxt("Pruebas/MuestrtasTranspuestas/s10")]
+    #el siguiente archivo esta comentado porque debe estar seguro de tener el archivo cov s1-10
     #expectedcov = np.loadtxt("Pruebas/cov s1-10")
     G = 0 
     
@@ -65,7 +66,7 @@ class Test(unittest.TestCase):
             
             self.assertEqual(result.all(), self.expectedt2[self.G].all(), "No calza")
             
-            print(self.G+10)
+            print(self.G)
             self.G = self.G + 1  
         
         
@@ -90,12 +91,12 @@ class Test(unittest.TestCase):
             
             self.assertEqual(result.all(), self.samplesTranposed[self.G].all(), "No calza")
             
-            print(self.G+20)
+            print(self.G)
             self.G = self.G + 1
-              
-"""   
+#el siguiente unittest esta comentado porque debe estar seguro de tener el archivo cov s1-10           
+"""
     def test_cov(self):
-        
+        """"""
         @summary: This function is an unit test for calculating covariance matrix of the class Imagesmanager
         
         Parameters
@@ -105,7 +106,7 @@ class Test(unittest.TestCase):
         Returns
         ----------
         @return: void
-        
+        """
         imagesm = Imagesmanager()
         
         self.G = 0 
@@ -115,6 +116,6 @@ class Test(unittest.TestCase):
         
         self.assertEqual(result.all(), self.expectedcov.all(), "No son la misma matriz despues de ser transpuestos")
         print("Listo test cov")
-"""       
-            
+     
+""""""     
         
