@@ -8,7 +8,7 @@ from django.conf.urls import url
 from ImagesManagement import views
 
 """
-This variable represents the routes from the view the frontend can access.
+This variable represents the routes the frontend can access from the view .
 """
 
 urlpatterns = [
