@@ -32,8 +32,10 @@ class Test(unittest.TestCase):
     samplesTranposed = [np.loadtxt("Pruebas/MuestrtasTranspuestas/s1"),np.loadtxt("Pruebas/MuestrtasTranspuestas/s2"),np.loadtxt("Pruebas/MuestrtasTranspuestas/s3"),np.loadtxt("Pruebas/MuestrtasTranspuestas/s4"),np.loadtxt("Pruebas/MuestrtasTranspuestas/s5"),np.loadtxt("Pruebas/MuestrtasTranspuestas/s6"),np.loadtxt("Pruebas/MuestrtasTranspuestas/s7"),np.loadtxt("Pruebas/MuestrtasTranspuestas/s8"),np.loadtxt("Pruebas/MuestrtasTranspuestas/s9"),np.loadtxt("Pruebas/MuestrtasTranspuestas/s10")]
     """
     el siguiente archivo esta comentado porque debe estar seguro de tener el archivo cov s1-10
+    https://1drv.ms/u/s!AivfRA4YYnYCgcsfFKOWWW6QvarZ6Q link para descargar la prueba """
+    #DEBE DESCARGAR LA PRUEBA SINO NO CORRE 
     expectedcov = np.loadtxt("Pruebas/cov s1-10")
-    """
+    
     G = 0 
     
     def test_addImages(self):
@@ -108,10 +110,11 @@ class Test(unittest.TestCase):
             
             print(self.G)
             self.G = self.G + 1
-#el siguiente unittest esta comentado porque debe estar seguro de tener el archivo cov s1-10           
-"""
+            
+#DEBE tener el archivo cov s1-10 DESCARGAR DE https://1drv.ms/u/s!AivfRA4YYnYCgcsfFKOWWW6QvarZ6Q   
+
     def test_cov(self):
-        """"""
+        """
         @summary: This function is an unit test for calculating covariance matrix of the class Imagesmanager
         
         Parameters
@@ -121,7 +124,7 @@ class Test(unittest.TestCase):
         Returns
         ----------
         @return: void
-        """"""
+        """
         imagesm = ImagesManager()
         
         self.G = 0 
@@ -132,4 +135,4 @@ class Test(unittest.TestCase):
         self.assertEqual(result.all(), self.expectedcov.all(), "No son la misma matriz")
         print("Listo test cov")
      
-"""        
+   
