@@ -83,6 +83,8 @@ class ImagesManager:
 
         self.images.append(vector)
 
+    
+
     # le da vuelta a image, que ya volveria cada muestra en columna (:
     def transpose(self, images):
         """
@@ -100,9 +102,66 @@ class ImagesManager:
         ----------
         @return: the matrix of images transposed
         """
-
+        print (np.array(images).transpose())
         return np.array(images).transpose()
 
+
+    def averageFace(self, images):
+        """
+        @summary: This function calculates the mean from the columns of the matrix images
+        which is the average face
+
+        Parameters
+        ----------
+        @param self: part of OOP syntax
+        images: an array (matrix) with the images, each sample 
+        is a column
+
+        Returns
+        ----------
+        @return: the mean of the columns 
+        """
+        a = np.array(images)
+        b = np.mean(a, axis=1)[np.newaxis]
+        return b.T
+        
+    def matrixOfDifferences(self, images, avface):
+        """
+        @summary: This function calculates the matrix
+        of Differences, which is the each column of 
+        the images matrix minus the average face 
+
+        Parameters
+        ----------
+        @param self: part of OOP syntax
+        images: an array (matrix) with the images, each sample 
+        is a column
+        avface: the mean between al the samples of the matrix
+        images
+
+        Returns
+        ----------
+        @return: the matrix of differences 
+        """
+        return images - avface
+    
+    def calculateNewCovMatrix(self, mDif):
+        """
+        @summary: This function calculates the covariance
+        matrix multiplying the matrix of Differences with 
+        its transposed 
+
+        Parameters
+        ----------
+        @param self: part of OOP syntax
+        mDif: matrix of Differences 
+        
+        Returns
+        ----------
+        @return: the covariance matrix
+        """   
+        return  mDif.transpose()  * mDif 
+        
     # esto eventualmente cambiara para cuando tengamos lo web
     def process(self):
         """
@@ -128,12 +187,15 @@ class ImagesManager:
         self.add2images(self.matrix2vector(self.addImage('Muestras/s1/7.pgm')))
         self.add2images(self.matrix2vector(self.addImage('Muestras/s1/8.pgm')))
         self.add2images(self.matrix2vector(self.addImage('Muestras/s1/9.pgm')))
-        A = self.transpose()  # aqui se crea la matriz de muestras
+        A = self.transpose(self.images)  # aqui se crea la matriz de muestras
         print(A)
         print("Matriz de covarianza:\n")
-        print(self.calculateCovarianceMatrix(A))
+        #print(self.calculateCovarianceMatrix(A))
+        return A
 
     # ---------------------------------------------------------------------
     # plt.imshow(img, cmap = 'gray', interpolation = 'bicubic')
     # plt.xticks([]), plt.yticks([])  # to hide tick values on X and Y axis
     # plt.show()
+
+
