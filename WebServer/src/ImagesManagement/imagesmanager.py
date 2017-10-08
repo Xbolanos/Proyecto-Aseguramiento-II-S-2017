@@ -165,7 +165,8 @@ class ImagesManager:
         D = np.matrix(mDif)
         return  DT  * D
     
-    
+
+        
     def calculateCovMatrixEw(self, mDif):
         """
         @summary: This function calculates the covariance
@@ -220,6 +221,25 @@ class ImagesManager:
         processedMatrix = np.matrix(matrix)
         return np.linalg.eig(processedMatrix)[1]
     
+    
+    def calculateW(self, mDif):
+        """
+        @summary: This function calculates W that is the 
+        N-k eigenvectors
+        Parameters
+        ----------
+        @param self: part of OOP syntax
+        mDif: matrix of Differences 
+        
+        Returns
+        ----------
+        @return: W = the N-k eigenvalues of the efficent matrix 
+        of covariance
+        """ 
+        Ev = self.calculateCovMatrixEv(mDif)
+        eigen = self.eigenVectorsofMatrix(Ev)
+        return np.matrix(mDif) *  eigen
+   
     # esto eventualmente cambiara para cuando tengamos lo web
     def process(self):
         """
