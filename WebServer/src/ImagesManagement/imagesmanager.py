@@ -239,6 +239,25 @@ class ImagesManager:
         Ev = self.calculateCovMatrixEv(mDif)
         eigen = self.eigenVectorsofMatrix(Ev)
         return np.matrix(mDif) *  eigen
+    
+    def projectImages(self, mDif, W):
+        """
+        @summary: This function calculates W that is the 
+        N-k eigenvectors
+        Parameters
+        ----------
+        @param self: part of OOP syntax
+        mDif: matrix of Differences 
+        
+        Returns
+        ----------
+        @return: W = the N-k eigenvalues of the efficent matrix 
+        of covariance
+        """ 
+        mDifprojected = np.transpose(np.matrix(W)) * np.matrix(mDif) 
+        return mDifprojected
+        
+        
    
     # esto eventualmente cambiara para cuando tengamos lo web
     def process(self):

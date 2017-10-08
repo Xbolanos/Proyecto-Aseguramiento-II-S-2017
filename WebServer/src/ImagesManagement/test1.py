@@ -6,7 +6,7 @@ from numpy import newaxis
 
 imagesm = ImagesManager()
 #resulta q esa es la cara promedio
-A = np.array([[1,2], [4,10], [3,5]])
+A = np.array([[1,2,5], [4,10,5], [3,5,5]])
 #print("a looks like")
 #print(A)
 B = imagesm.averageFace(A)
@@ -56,7 +56,7 @@ print(np.matrix(autovectores))
 print(np.matrix(D) * autovectores)
 
 print("quak")
-print(np.transpose(autovalores))
+
 print(np.matrix(autovalores) * np.matrix(autovectores))
 
 print("W")
@@ -64,4 +64,8 @@ W = np.matrix(C) * autovectores
 print(W) 
 print("NANI")
 Wi = imagesm.calculateW(C)
+
 print(Wi)
+pro = imagesm.projectImages(C, Wi)
+print("wao y ya")
+print(pro)
