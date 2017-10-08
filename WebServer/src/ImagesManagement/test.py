@@ -13,26 +13,87 @@ class Test(unittest.TestCase):
     """
     las direcciones
     """
-    path_list = ["Muestras/s1/1.pgm","Muestras/s1/2.pgm", "Muestras/s1/3.pgm", "Muestras/s1/4.pgm", "Muestras/s1/5.pgm", "Muestras/s1/6.pgm","Muestras/s1/7.pgm","Muestras/s1/8.pgm","Muestras/s1/9.pgm","Muestras/s1/10.pgm"]
+    path_list = [
+        "Muestras/s1/1.pgm",
+        "Muestras/s1/2.pgm", 
+        "Muestras/s1/3.pgm",
+        "Muestras/s1/4.pgm",
+        "Muestras/s1/5.pgm",
+        "Muestras/s1/6.pgm",
+        "Muestras/s1/7.pgm",
+        "Muestras/s1/8.pgm",
+        "Muestras/s1/9.pgm",
+        "Muestras/s1/10.pgm"
+    ]
+    
     """
     las matrices de las imagenes, cada una corresponde a una imagen, del sujeto s1 
     """
-    expected = [np.loadtxt("Pruebas/s1 matrizImg/1"),np.loadtxt("Pruebas/s1 matrizImg/2"),np.loadtxt("Pruebas/s1 matrizImg/3"),np.loadtxt("Pruebas/s1 matrizImg/4"),np.loadtxt("Pruebas/s1 matrizImg/5"),np.loadtxt("Pruebas/s1 matrizImg/6"),np.loadtxt("Pruebas/s1 matrizImg/7"),np.loadtxt("Pruebas/s1 matrizImg/8"),np.loadtxt("Pruebas/s1 matrizImg/9"),np.loadtxt("Pruebas/s1 matrizImg/10")]
+    expected = [
+        np.loadtxt("Pruebas/s1 matrizImg/1"),
+        np.loadtxt("Pruebas/s1 matrizImg/2"),
+        np.loadtxt("Pruebas/s1 matrizImg/3"),
+        np.loadtxt("Pruebas/s1 matrizImg/4"),
+        np.loadtxt("Pruebas/s1 matrizImg/5"),
+        np.loadtxt("Pruebas/s1 matrizImg/6"),
+        np.loadtxt("Pruebas/s1 matrizImg/7"),
+        np.loadtxt("Pruebas/s1 matrizImg/8"),
+        np.loadtxt("Pruebas/s1 matrizImg/9"),
+        np.loadtxt("Pruebas/s1 matrizImg/10")
+    ]
+    
     """
     matrices transformadas en vectores de cada imagen del sujeto 1 
     """
-    expectedt2 = [np.loadtxt("Pruebas/s1 mxv/v1"),np.loadtxt("Pruebas/s1 mxv/v2"),np.loadtxt("Pruebas/s1 mxv/v3"),np.loadtxt("Pruebas/s1 mxv/v4"),np.loadtxt("Pruebas/s1 mxv/v5"),np.loadtxt("Pruebas/s1 mxv/v6"),np.loadtxt("Pruebas/s1 mxv/v7"),np.loadtxt("Pruebas/s1 mxv/v8"),np.loadtxt("Pruebas/s1 mxv/v9"),np.loadtxt("Pruebas/s1 mxv/v10")]
+    expectedt2 = [
+        np.loadtxt("Pruebas/s1 mxv/v1"),
+        np.loadtxt("Pruebas/s1 mxv/v2"),
+        np.loadtxt("Pruebas/s1 mxv/v3"),
+        np.loadtxt("Pruebas/s1 mxv/v4"),
+        np.loadtxt("Pruebas/s1 mxv/v5"),
+        np.loadtxt("Pruebas/s1 mxv/v6"),
+        np.loadtxt("Pruebas/s1 mxv/v7"),
+        np.loadtxt("Pruebas/s1 mxv/v8"),
+        np.loadtxt("Pruebas/s1 mxv/v9"),
+        np.loadtxt("Pruebas/s1 mxv/v10")
+    ]
+    
     """
     muestras sin ser transpuestas, es cada sujeto, s1, s2, s3 
     """
-    samples = [np.loadtxt("Pruebas/MuestrasSinTransponer/s1"),np.loadtxt("Pruebas/MuestrasSinTransponer/s2"),np.loadtxt("Pruebas/MuestrasSinTransponer/s3"),np.loadtxt("Pruebas/MuestrasSinTransponer/s4"),np.loadtxt("Pruebas/MuestrasSinTransponer/s5"),np.loadtxt("Pruebas/MuestrasSinTransponer/s6"),np.loadtxt("Pruebas/MuestrasSinTransponer/s7"),np.loadtxt("Pruebas/MuestrasSinTransponer/s8"),np.loadtxt("Pruebas/MuestrasSinTransponer/s9"),np.loadtxt("Pruebas/MuestrasSinTransponer/s10")]
+    samples = [
+        np.loadtxt("Pruebas/MuestrasSinTransponer/s1"),
+        np.loadtxt("Pruebas/MuestrasSinTransponer/s2"),
+        np.loadtxt("Pruebas/MuestrasSinTransponer/s3"),
+        np.loadtxt("Pruebas/MuestrasSinTransponer/s4"),
+        np.loadtxt("Pruebas/MuestrasSinTransponer/s5"),
+        np.loadtxt("Pruebas/MuestrasSinTransponer/s6"),
+        np.loadtxt("Pruebas/MuestrasSinTransponer/s7"),
+        np.loadtxt("Pruebas/MuestrasSinTransponer/s8"),
+        np.loadtxt("Pruebas/MuestrasSinTransponer/s9"),
+        np.loadtxt("Pruebas/MuestrasSinTransponer/s10")
+    ]
+    
     """
     muestras transpuestas
     """
-    samplesTranposed = [np.loadtxt("Pruebas/MuestrtasTranspuestas/s1"),np.loadtxt("Pruebas/MuestrtasTranspuestas/s2"),np.loadtxt("Pruebas/MuestrtasTranspuestas/s3"),np.loadtxt("Pruebas/MuestrtasTranspuestas/s4"),np.loadtxt("Pruebas/MuestrtasTranspuestas/s5"),np.loadtxt("Pruebas/MuestrtasTranspuestas/s6"),np.loadtxt("Pruebas/MuestrtasTranspuestas/s7"),np.loadtxt("Pruebas/MuestrtasTranspuestas/s8"),np.loadtxt("Pruebas/MuestrtasTranspuestas/s9"),np.loadtxt("Pruebas/MuestrtasTranspuestas/s10")]
+    samplesTranposed = [
+        np.loadtxt("Pruebas/MuestrtasTranspuestas/s1"),
+        np.loadtxt("Pruebas/MuestrtasTranspuestas/s2"),
+        np.loadtxt("Pruebas/MuestrtasTranspuestas/s3"),
+        np.loadtxt("Pruebas/MuestrtasTranspuestas/s4"),
+        np.loadtxt("Pruebas/MuestrtasTranspuestas/s5"),
+        np.loadtxt("Pruebas/MuestrtasTranspuestas/s6"),
+        np.loadtxt("Pruebas/MuestrtasTranspuestas/s7"),
+        np.loadtxt("Pruebas/MuestrtasTranspuestas/s8"),
+        np.loadtxt("Pruebas/MuestrtasTranspuestas/s9"),
+        np.loadtxt("Pruebas/MuestrtasTranspuestas/s10")
+    ]
+    
     """
     el siguiente archivo esta comentado porque debe estar seguro de tener el archivo cov s1-10
-    https://1drv.ms/u/s!AivfRA4YYnYCgcsfFKOWWW6QvarZ6Q link para descargar la prueba """
+    https://1drv.ms/u/s!AivfRA4YYnYCgcsfFKOWWW6QvarZ6Q link para descargar la prueba 
+    """
     #DEBE DESCARGAR LA PRUEBA SINO NO CORRE 
     expectedcov = np.loadtxt("Pruebas/cov s1-10")
     
@@ -50,8 +111,7 @@ class Test(unittest.TestCase):
         ----------
         @return: void
         """
-        """
-        """
+        
         self.G = 0 
         imagesm = ImagesManager()
         for path in self.path_list:    
@@ -134,5 +194,7 @@ class Test(unittest.TestCase):
         
         self.assertEqual(result.all(), self.expectedcov.all(), "No son la misma matriz")
         print("Listo test cov")
+     
+     
      
    
