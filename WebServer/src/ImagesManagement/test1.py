@@ -6,17 +6,27 @@ from numpy import newaxis
 
 imagesm = ImagesManager()
 #resulta q esa es la cara promedio
-A = np.array([[1,2], [4,10]])
+A = np.array([[1,2], [4,10], [3,5]])
 print("a looks like")
 print(A)
 B = imagesm.averageFace(A)
 print("bueno la media es: ")
 print(B)
 print("la D es:")
-C = imagesm.matrixOfDifferences(A, B)[np.newaxis]
-print (C)
-
+C = imagesm.matrixOfDifferences(A, B) 
+print (C.transpose())
+D= imagesm.calculateCovMatrixEv(C)
+E = imagesm.calculateCovMatrixEw(C)
 print("la nueva cov")
-print(imagesm.calculateNewCovMatrix(C))
+
+print(D)
+print("cov no eficiente")
+print(E)
+print("eigen")
+autovalores, autovectores = np.linalg.eig(np.matrix(D))
+print(autovalores)
+print("wat")
+print(imagesm.eigenValuesofMatrix(D))
+
 
 

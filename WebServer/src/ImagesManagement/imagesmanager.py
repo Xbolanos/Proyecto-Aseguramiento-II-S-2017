@@ -145,11 +145,12 @@ class ImagesManager:
         """
         return images - avface
     
-    def calculateNewCovMatrix(self, mDif):
+    def calculateCovMatrixEv(self, mDif):
         """
         @summary: This function calculates the covariance
         matrix multiplying the matrix of Differences with 
-        its transposed 
+        its transposed, this is the efficient covariance 
+        matrix
 
         Parameters
         ----------
@@ -160,8 +161,65 @@ class ImagesManager:
         ----------
         @return: the covariance matrix
         """   
-        return  mDif.transpose()  * mDif 
+        DT = np.matrix(mDif.transpose())
+        D = np.matrix(mDif)
+        return  DT  * D
+    
+    
+    def calculateCovMatrixEw(self, mDif):
+        """
+        @summary: This function calculates the covariance
+        matrix multiplying the matrix of Differences with 
+        its transposed, the big covariance matrix
+
+        Parameters
+        ----------
+        @param self: part of OOP syntax
+        mDif: matrix of Differences 
         
+        Returns
+        ----------
+        @return: the covariance matrix
+        """   
+        DT = np.matrix(mDif.transpose())
+        D = np.matrix(mDif)
+        return  D * DT    
+    
+    
+    def eigenValuesofMatrix(self, matrix):
+        """
+        @summary: This function calculates with the help of 
+        the library NUMPY, the eigen values from a matrix
+
+        Parameters
+        ----------
+        @param self: part of OOP syntax
+        matrix: matrix which needs the eigen values 
+        
+        Returns
+        ----------
+        @return: an array of eigen values 
+        """  
+        processedMatrix = np.matrix(matrix)
+        return np.linalg.eig(processedMatrix)[0]
+    
+    def eigenVectorsofMatrix(self, matrix):
+        """
+        @summary: This function calculates with the help of 
+        the library NUMPY, the eigen vectors from a matrix
+
+        Parameters
+        ----------
+        @param self: part of OOP syntax
+        matrix: matrix which needs the eigen vectors
+        
+        Returns
+        ----------
+        @return: an array of eigen vectors
+        """  
+        processedMatrix = np.matrix(matrix)
+        return np.linalg.eig(processedMatrix)[1]
+    
     # esto eventualmente cambiara para cuando tengamos lo web
     def process(self):
         """
