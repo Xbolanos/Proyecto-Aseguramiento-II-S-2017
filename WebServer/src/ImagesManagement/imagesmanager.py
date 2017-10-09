@@ -126,7 +126,7 @@ class ImagesManager:
         b = np.mean(a, axis=1)[np.newaxis]
         return b.T
         
-    def matrixOfDifferences(self, images, avface):
+    def matrixOfDifferences(self, imagesN, avface):
         """
         @summary: This function calculates the matrix
         of Differences, which is the each column of 
@@ -144,7 +144,8 @@ class ImagesManager:
         ----------
         @return: the matrix of differences 
         """
-        return images - avface
+        return imagesN - avface
+ 
     
     def calculateCovMatrixEv(self, mDif):
         """
@@ -162,7 +163,7 @@ class ImagesManager:
         ----------
         @return: the covariance matrix
         """   
-        DT = np.matrix(mDif.transpose())
+        DT = np.matrix(np.transpose(mDif))
         D = np.matrix(mDif)
         return  DT  * D
     
@@ -239,7 +240,24 @@ class ImagesManager:
         """ 
         Ev = self.calculateCovMatrixEv(mDif)
         eigen = self.eigenVectorsofMatrix(Ev)
-        return np.matrix(mDif) *  eigen
+        eigenValues = self.eigenValuesofMatrix(Ev) 
+        print("calculate W - eigen")
+        print(eigen)
+        print("mdif")
+        print("dimensiones de mdif")
+        print(mDif.shape[0])
+        print(mDif.shape[1])
+        print("dimensiones de eigen")
+        print(eigen.shape[0])
+        print(eigen.shape[1])
+        print("eigen values")
+        print(eigenValues)
+        print(mDif)
+        W = np.matrix(mDif) * eigen
+        print("shape of W ")
+        print(W.shape[0])
+        print(W.shape[1])
+        return  W
     
     def projectImages(self, mDif, W):
         """
@@ -255,7 +273,18 @@ class ImagesManager:
         @return: W = the N-k eigenvalues of the efficent matrix 
         of covariance
         """ 
-        mDifprojected = np.transpose(np.matrix(W)) * np.matrix(mDif) 
+        Wt = np.transpose(np.matrix(W))
+        print("Wt")
+        print(Wt.shape[0])
+        print(Wt.shape[1])
+        print("mDif de Wt")
+        print(mDif.shape[0])
+        print(mDif.shape[1])
+        
+        mDifprojected =  Wt * np.matrix(mDif)
+        print("shape of mdifprojected")
+        print(mDifprojected.shape[0])
+        print(mDifprojected.shape[1])
         return mDifprojected        
    
     def classifyNearestCentroid(self, newImage, 
@@ -266,14 +295,52 @@ class ImagesManager:
         i = 0 
         while (i < cols):
             analyse = np.array(projectedImages[:, [i, i+9]])
-            face = self.averageFace(analyse)
-            distance = np.subtract(face, newImage) 
-            distancePos = np.absolute(distance) 
-            results.append(np.sum(distancePos))
-            print("quak") 
-            print(results)
+            face = np.transpose(self.averageFace(analyse))
+            newI = np.transpose(newImage)
+            
+            
+            distanceNorm = np.linalg.norm(face-newI)
+            results.append(distanceNorm)
+            
+            print("distance norm")
+            print(distanceNorm)
             i = i + 10
-        return results.index(min(results))
+        return results.index(min(results)) + 1 
+    
+    
+    def trying(self, newImage, 
+                                W, projectedImages): 
+        cols = projectedImages.shape[1]
+        people = cols / 10
+        tag = 0
+        minDistance = 0
+        i = 0 
+        while (i < cols):
+            analyse = np.array(projectedImages[:, [i, i+9]])
+            face = self.averageFace(analyse)
+            print("cara")
+            print(face)
+            print("new image")
+            print(newImage)
+            
+            
+            
+            distancia = self.euclideanDistance(face, newImage)
+            if (i == 0):
+                minDistance = distancia 
+            else: 
+                if(distancia < minDistance):
+                    minDistance = distancia
+                    tag = i            
+            i = i + 10
+        return tag+1
+    
+    def euclideanDistance(self, face, newImage):
+        distance = 0
+        for i in range(0,face.shape[1]):
+            distance  += (face[i][0]-newImage[i][0])**2
+        return np.sqrt(distance)
+
                
     # esto eventualmente cambiara para cuando tengamos lo web
     def process(self):
