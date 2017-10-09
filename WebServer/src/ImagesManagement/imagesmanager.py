@@ -5,6 +5,7 @@ Created on Aug 12, 2017
 
 import cv2
 import numpy as np
+from cv2 import reprojectImageTo3D
 
 
 class ImagesManager:
@@ -255,10 +256,25 @@ class ImagesManager:
         of covariance
         """ 
         mDifprojected = np.transpose(np.matrix(W)) * np.matrix(mDif) 
-        return mDifprojected
-        
-        
+        return mDifprojected        
    
+    def classifyNearestCentroid(self, newImage, 
+                                W, projectedImages): 
+        cols = projectedImages.shape[1]
+        people = cols / 10
+        results = []
+        i = 0 
+        while (i < cols):
+            analyse = np.array(projectedImages[:, [i, i+9]])
+            face = self.averageFace(analyse)
+            distance = np.subtract(face, newImage) 
+            distancePos = np.absolute(distance) 
+            results.append(np.sum(distancePos))
+            print("quak") 
+            print(results)
+            i = i + 10
+        return results.index(min(results))
+               
     # esto eventualmente cambiara para cuando tengamos lo web
     def process(self):
         """
