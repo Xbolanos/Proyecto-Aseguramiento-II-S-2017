@@ -1,7 +1,7 @@
 import unittest
 import numpy as np
-from imagesmanager import ImagesManager
-from ImagesManagement import imagesmanager
+from controller.images_manager import ImagesManager
+from controller import images_manager
 from numpy import newaxis
 
 imagesm = ImagesManager()

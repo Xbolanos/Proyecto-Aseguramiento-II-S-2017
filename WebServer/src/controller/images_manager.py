@@ -14,7 +14,7 @@ class ImagesManager:
     A = []
     G = 0
 
-    def addImage(self, path):
+    def read_image(self, path):
         """
         @summary: This function reads the image
 
@@ -84,7 +84,7 @@ class ImagesManager:
 
         self.images.append(vector)
 
-    
+
 
     # le da vuelta a image, que ya volveria cada muestra en columna (:
     def transpose(self, images):
@@ -103,7 +103,6 @@ class ImagesManager:
         ----------
         @return: the matrix of images transposed
         """
-        print (np.array(images).transpose())
         return np.array(images).transpose()
 
 
@@ -120,12 +119,12 @@ class ImagesManager:
 
         Returns
         ----------
-        @return: the mean of the columns 
+        @return: the mean of the columns in a single column  
         """
         a = np.array(images)
         b = np.mean(a, axis=1)[np.newaxis]
         return b.T
-        
+
     def matrixOfDifferences(self, imagesN, avface):
         """
         @summary: This function calculates the matrix
@@ -135,9 +134,9 @@ class ImagesManager:
         Parameters
         ----------
         @param self: part of OOP syntax
-        images: an array (matrix) with the images, each sample 
+        imagesN: an array (matrix) with the images, each sample 
         is a column
-        avface: the mean between al the samples of the matrix
+        avface: the mean between all the samples of the matrix
         images
 
         Returns
@@ -161,7 +160,7 @@ class ImagesManager:
         
         Returns
         ----------
-        @return: the covariance matrix
+        @return: the efficent covariance matrix
         """   
         DT = np.matrix(np.transpose(mDif))
         D = np.matrix(mDif)
@@ -182,7 +181,7 @@ class ImagesManager:
         
         Returns
         ----------
-        @return: the covariance matrix
+        @return: the no efficent covariance matrix
         """   
         DT = np.matrix(mDif.transpose())
         D = np.matrix(mDif)
@@ -241,141 +240,73 @@ class ImagesManager:
         Ev = self.calculateCovMatrixEv(mDif)
         eigen = self.eigenVectorsofMatrix(Ev)
         eigenValues = self.eigenValuesofMatrix(Ev) 
-        print("calculate W - eigen")
-        print(eigen)
-        print("mdif")
-        print("dimensiones de mdif")
-        print(mDif.shape[0])
-        print(mDif.shape[1])
-        print("dimensiones de eigen")
-        print(eigen.shape[0])
-        print(eigen.shape[1])
-        print("eigen values")
-        print(eigenValues)
-        print(mDif)
         W = np.matrix(mDif) * eigen
-        print("shape of W ")
-        print(W.shape[0])
-        print(W.shape[1])
-        return  W
+        return W
     
     def projectImages(self, mDif, W):
         """
-        @summary: This function calculates W that is the 
-        N-k eigenvectors
+        @summary: This function transforms the columns 
+        into a projected space
         Parameters
         ----------
         @param self: part of OOP syntax
-        mDif: matrix of Differences 
+        mDif: matrix of Differences
+        W: the matrix of difference multiplied eigen values 
         
         Returns
         ----------
-        @return: W = the N-k eigenvalues of the efficent matrix 
-        of covariance
+        @return: a matrix of the matrix of difference projected 
         """ 
         Wt = np.transpose(np.matrix(W))
-        print("Wt")
-        print(Wt.shape[0])
-        print(Wt.shape[1])
-        print("mDif de Wt")
-        print(mDif.shape[0])
-        print(mDif.shape[1])
-        
         mDifprojected =  Wt * np.matrix(mDif)
-        print("shape of mdifprojected")
-        print(mDifprojected.shape[0])
-        print(mDifprojected.shape[1])
-        return mDifprojected        
+        return mDifprojected
    
     def classifyNearestCentroid(self, newImage, 
                                 W, projectedImages): 
+        """
+        @summary: This function search the face of the new image 
+        Parameters
+        ----------
+        @param self: part of OOP syntax
+        newImage: the image that you need the face of, it has 
+        come processed 
+        W: the matrix of difference multiplied eigen values
+        projectedImages: the images of training already projected
+        into the space.
+
+        Returns
+        ----------
+        @return: the value that correspond to the person detected
+        in the image.
+        """
         cols = projectedImages.shape[1]
-        people = cols / 10
         results = []
-        i = 0 
+        i = 0
         while (i < cols):
             analyse = np.array(projectedImages[:, [i, i+9]])
             face = np.transpose(self.averageFace(analyse))
             newI = np.transpose(newImage)
-            
-            
             distanceNorm = np.linalg.norm(face-newI)
             results.append(distanceNorm)
-            
-            print("distance norm")
-            print(distanceNorm)
             i = i + 10
-        return results.index(min(results)) + 1 
-    
-    
-    def trying(self, newImage, 
-                                W, projectedImages): 
-        cols = projectedImages.shape[1]
-        people = cols / 10
-        tag = 0
-        minDistance = 0
-        i = 0 
-        while (i < cols):
-            analyse = np.array(projectedImages[:, [i, i+9]])
-            face = self.averageFace(analyse)
-            print("cara")
-            print(face)
-            print("new image")
-            print(newImage)
-            
-            
-            
-            distancia = self.euclideanDistance(face, newImage)
-            if (i == 0):
-                minDistance = distancia 
-            else: 
-                if(distancia < minDistance):
-                    minDistance = distancia
-                    tag = i            
-            i = i + 10
-        return tag+1
-    
-    def euclideanDistance(self, face, newImage):
-        distance = 0
-        for i in range(0,face.shape[1]):
-            distance  += (face[i][0]-newImage[i][0])**2
-        return np.sqrt(distance)
+        return results.index(min(results)) + 1
 
-               
-    # esto eventualmente cambiara para cuando tengamos lo web
-    def process(self):
+    def load_images(self, images_paths):
         """
-        @summary: This function is like a main, puts together all the functions
-        that have to be called
+        @summary: loads all the images from the given parameter list and add
+        them to the images list.
 
         Parameters
         ----------
-        @param self: part of OOP syntax
-
-        Returns
-        ----------
-        @return: void
+        @param images_paths: a list containing all the paths of the images to
+        be loaded.
         """
-
-        print (cv2.__version__)
-        self.add2images(self.matrix2vector(self.addImage('Muestras/s1/1.pgm')))
-        self.add2images(self.matrix2vector(self.addImage('Muestras/s1/2.pgm')))
-        self.add2images(self.matrix2vector(self.addImage('Muestras/s1/3.pgm')))
-        self.add2images(self.matrix2vector(self.addImage('Muestras/s1/4.pgm')))
-        self.add2images(self.matrix2vector(self.addImage('Muestras/s1/5.pgm')))
-        self.add2images(self.matrix2vector(self.addImage('Muestras/s1/6.pgm')))
-        self.add2images(self.matrix2vector(self.addImage('Muestras/s1/7.pgm')))
-        self.add2images(self.matrix2vector(self.addImage('Muestras/s1/8.pgm')))
-        self.add2images(self.matrix2vector(self.addImage('Muestras/s1/9.pgm')))
-        A = self.transpose(self.images)  # aqui se crea la matriz de muestras
-        print(A)
-        print("Matriz de covarianza:\n")
-        #print(self.calculateCovarianceMatrix(A))
-        return A
+        for path in images_paths:
+            greys_image = self.read_mage(path)
+            column_vector = self.matrix2vector(greys_image)
+            self.add2images(column_vector)
 
     # ---------------------------------------------------------------------
     # plt.imshow(img, cmap = 'gray', interpolation = 'bicubic')
     # plt.xticks([]), plt.yticks([])  # to hide tick values on X and Y axis
     # plt.show()
-
-
