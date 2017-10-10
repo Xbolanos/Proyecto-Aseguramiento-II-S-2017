@@ -5,7 +5,7 @@ Created on 19 ago. 2017
 '''
 import unittest
 import numpy as np
-from imagesmanager import ImagesManager
+from controller.images_manager import ImagesManager
 from numpy import loadtxt
 
 
