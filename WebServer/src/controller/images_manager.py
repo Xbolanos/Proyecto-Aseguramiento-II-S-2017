@@ -84,8 +84,6 @@ class ImagesManager:
 
         self.images.append(vector)
 
-
-
     # le da vuelta a image, que ya volveria cada muestra en columna (:
     def transpose(self, images):
         """
@@ -105,21 +103,21 @@ class ImagesManager:
         """
         return np.array(images).transpose()
 
-
     def averageFace(self, images):
         """
-        @summary: This function calculates the mean from the columns of the matrix images
+        @summary: This function calculates the mean from the
+        columns of the matrix images
         which is the average face
 
         Parameters
         ----------
         @param self: part of OOP syntax
-        images: an array (matrix) with the images, each sample 
+        images: an array (matrix) with the images, each sample
         is a column
 
         Returns
         ----------
-        @return: the mean of the columns in a single column  
+        @return: the mean of the columns in a single column
         """
         a = np.array(images)
         b = np.mean(a, axis=1)[np.newaxis]
@@ -128,121 +126,116 @@ class ImagesManager:
     def matrixOfDifferences(self, imagesN, avface):
         """
         @summary: This function calculates the matrix
-        of Differences, which is the each column of 
-        the images matrix minus the average face 
+        of Differences, which is the each column of
+        the images matrix minus the average face
 
         Parameters
         ----------
         @param self: part of OOP syntax
-        imagesN: an array (matrix) with the images, each sample 
+        imagesN: an array (matrix) with the images, each sample
         is a column
         avface: the mean between all the samples of the matrix
         images
 
         Returns
         ----------
-        @return: the matrix of differences 
+        @return: the matrix of difference
         """
         return imagesN - avface
- 
-    
+
     def calculateCovMatrixEv(self, mDif):
         """
         @summary: This function calculates the covariance
-        matrix multiplying the matrix of Differences with 
-        its transposed, this is the efficient covariance 
+        matrix multiplying the matrix of Differences with
+        its transposed, this is the efficient covariance
         matrix
 
         Parameters
         ----------
         @param self: part of OOP syntax
-        mDif: matrix of Differences 
-        
+        mDif: matrix of Differences
+
         Returns
         ----------
         @return: the efficent covariance matrix
-        """   
+        """
         DT = np.matrix(np.transpose(mDif))
         D = np.matrix(mDif)
-        return  DT  * D
-    
+        return DT*D
 
-        
     def calculateCovMatrixEw(self, mDif):
         """
         @summary: This function calculates the covariance
-        matrix multiplying the matrix of Differences with 
+        matrix multiplying the matrix of Differences with
         its transposed, the big covariance matrix
 
         Parameters
         ----------
         @param self: part of OOP syntax
-        mDif: matrix of Differences 
-        
+        mDif: matrix of Differences
+
         Returns
         ----------
         @return: the no efficent covariance matrix
-        """   
+        """
         DT = np.matrix(mDif.transpose())
         D = np.matrix(mDif)
-        return  D * DT    
-    
-    
+        return D*DT
+
     def eigenValuesofMatrix(self, matrix):
         """
-        @summary: This function calculates with the help of 
+        @summary: This function calculates with the help of
         the library NUMPY, the eigen values from a matrix
 
         Parameters
         ----------
         @param self: part of OOP syntax
-        matrix: matrix which needs the eigen values 
-        
+        matrix: matrix which needs the eigen values
+
         Returns
         ----------
-        @return: an array of eigen values 
-        """  
+        @return: an array of eigen values
+        """
         processedMatrix = np.matrix(matrix)
         return np.linalg.eig(processedMatrix)[0]
-    
+
     def eigenVectorsofMatrix(self, matrix):
         """
-        @summary: This function calculates with the help of 
+        @summary: This function calculates with the help of
         the library NUMPY, the eigen vectors from a matrix
 
         Parameters
         ----------
         @param self: part of OOP syntax
         matrix: matrix which needs the eigen vectors
-        
+
         Returns
         ----------
         @return: an array of eigen vectors
-        """  
+        """
         processedMatrix = np.matrix(matrix)
         return np.linalg.eig(processedMatrix)[1]
-    
-    
+
     def calculateW(self, mDif):
         """
-        @summary: This function calculates W that is the 
+        @summary: This function calculates W that is the
         N-k eigenvectors
         Parameters
         ----------
         @param self: part of OOP syntax
-        mDif: matrix of Differences 
-        
+        mDif: matrix of Differences
+
         Returns
         ----------
-        @return: W = the N-k eigenvalues of the efficent matrix 
+        @return: W = the N-k eigenvalues of the efficent matrix
         of covariance
-        """ 
+        """
         Ev = self.calculateCovMatrixEv(mDif)
         eigen = self.eigenVectorsofMatrix(Ev)
-        eigenValues = self.eigenValuesofMatrix(Ev) 
         W = np.matrix(mDif) * eigen
+        np.savetxt('W.out', W, delimiter=',')
         return W
-    
+
     def projectImages(self, mDif, W):
         """
         @summary: This function transforms the columns 
