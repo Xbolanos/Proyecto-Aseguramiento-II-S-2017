@@ -13,12 +13,15 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url, include
-from django.contrib import admin
+from django.conf.urls import url
+from controller import ui
+
+
 """
-This variable calls the routes from ImagesManagement
+This variable calls the correct route from view module
 """
 urlpatterns = [
-  
-    url(r'^', include('ImagesManagement.urls')),
+    url(r'^$', ui.show_index_page),
+    url(r'^index$', ui.show_index_page),
+    url(r'^learn$', ui.learn)
 ]
