@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Biometrics</title>
+<!--
+Template 2088 Big City
+http://www.tooplate.com/view/2088-big-city
+-->
+    <!-- load stylesheets -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400">  
+    <!-- Google web font "Open Sans" -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">                                      
+    <!-- Bootstrap style -->
+    <link rel="stylesheet" href="css/hero-slider-style.css">                              
+    <!-- Hero slider style (https://codyhouse.co/gem/hero-slider/) -->
+    <link rel="stylesheet" href="css/magnific-popup.css">                                 
+    <!-- Magnific popup style (http://dimsemenov.com/plugins/magnific-popup/) -->
+    <link rel="stylesheet" href="css/tooplate-style.css">                                   
+    <!-- Tooplate style -->
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+          <![endif]-->
+</head>
+
+    <body>
+
+        <div class="cd-bg-video-wrapper" data-video="video/bangkok-city">
+            <!-- video element will be loaded using jQuery -->
+        </div> <!-- .cd-bg-video-wrapper -->
+        
+        <!-- Content -->
+        <div class="cd-hero">
+
+            <!-- Navigation -->        
+            <div class="cd-slider-nav">
+                <div class="container">
+                    <nav class="navbar">
+                        <div class="tm-navbar-bg">                            
+                            <a class="navbar-brand text-uppercase" href="#">Biometrics</a>
+                            <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#tmNavbar">
+                                &#9776;
+                            </button>
+                            <div class="collapse navbar-toggleable-md text-xs-center text-uppercase tm-navbar" id="tmNavbar">
+                                <ul class="nav navbar-nav">
+                                    <li class="nav-item active selected">
+                                        <a class="nav-link" href="#0" data-no="1">Inicio <span class="sr-only">(current)</span></a>
+                                    </li>
+                              
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#0" data-no="2">ReconoceME</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#0" data-no="3">Acerca</a>
+                                    </li>
+                                </ul>
+                            </div>                        
+                        </div>
+                    </nav>
+                </div>                
+            </div> 
+
+            <ul class="cd-hero-slider">  <!-- autoplay -->
+
+                <!-- Page 1 Home -->
+                <li class="selected">
+                    <div class="cd-full-width">
+                        <div class="container js-tm-page-content tm-page-1 tm-section-margin-t-small" data-page-no="1">
+                            <div class="row">                            
+                                <div class="col-xs-12">
+                                    <div class="tm-home-container-outer">
+                                        <div class="tm-home-container">
+                                            <div class="tm-home-title-container">
+                                                <h2 class="tm-text-title text-xs-center tm-home-title">¡Bienvenido a Biometrics!</h2>    
+                                            </div>
+                                            <div class="tm-home-description-container tm-bg-dark-blue">
+                                                <div class="text-xs-left tm-textbox">                                            
+                                                    <p class="tm-text tm-home-description">Biometrics es una empresa encargada y experta en el desarrollo de software biométrico. Donde nuestra misión es proporcionar un software bajo los mejores estándares de calidad (IEEE e ISO) y ajustarlos a las necesidades especificas de nuestros clientes.</p>
+                                                </div>
+                                            </div>    
+                                        </div>
+                                        <div class="tm-home-container-bg"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- .cd-full-width -->
+                </li>
+                
+              
+               
+                <!-- Page 3 Gallery -->
+                <li>
+                    <div class="cd-full-width">                        
+                        <div class="container js-tm-page-content tm-section-margin-t" data-page-no="2">
+                              <div class="row">
+                                <div class="col-xs-12">
+                                    <div class="tm-flex">
+                                        <div class="col-lg-6 tm-white-header-container-outer tm-margin-b tm-2-col-left">
+                                            <div class="tm-bg-white tm-white-header-container">
+                                                <h2 class="tm-text-title tm-text-title-small">Entrenamiento Facial</h2>
+                                            </div>
+                                            <div class="tm-bg-dark-blue text-xs-left tm-textbox tm-textbox-padding tm-white-header-body tm-white-border tm-2-col-equal-height">
+                                                <p class="tm-text" onclick="openPicker()" >Ingrese a esta sección si lo que busca es registrar nuevos sujetos en el sistema para su posterior reconocimiento.</p>                                            
+                                            </div>    
+                                        </div>
+                                        <div class="col-lg-6 tm-white-header-container-outer tm-margin-b tm-2-col-right">
+                                            <div class="tm-bg-white tm-white-header-container">
+                                                <h2 class="tm-text-title tm-text-title-small">Reconocimiento Facial</h2>
+                                            </div>
+                                            <div  id= "dropzone"  class="tm-bg-dark-blue text-xs-left tm-textbox tm-textbox-padding tm-white-header-body tm-white-border tm-2-col-equal-height">
+                                                <p class="tm-text">¿Posee sujetos registrados en el sistema? ¡Arraste su folder aquí para comenzar el reconocimiento de algunos sujetos!</p> 
+													<p class="tm-text">   También puede seleccionar la carpeta:</p>												
+												   <input type="file" webkitdirectory class="tm-text">
+                                            </div>    
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row tm-margin-b">
+                                <div class="col-xs-12">
+                                    <div class="tm-img-gallery-container">
+
+                                        <div class="tm-img-gallery gallery-first">
+                                        <!-- Gallery Two pop up connected with JS code below -->
+
+                                            <div class="tm-gallery-title-container">
+                                                <div class="tm-bg-dark-blue tm-white-border tm-textbox-padding tm-margin-b">                                    
+                                                    <h2 class="tm-text-title tm-gallery-title tm-margin-b-0"><span class="tm-white">First Gallery</span></h2>                                        
+                                                </div>
+                                                <div class="tm-bg-white-half"></div>
+                                            </div>
+
+                                            <div class="grid-item">
+                                                <a href="img/tm-img-01.jpg">                                                
+                                                    <img src="img/tm-img-01-tn.jpg" alt="Image" class="img-fluid tm-img">                                              
+                                                </a>
+                                            </div>
+                                            <div class="grid-item">
+                                                <a href="img/tm-img-02.jpg">                                                
+                                                    <img src="img/tm-img-02-tn.jpg" alt="Image" class="img-fluid tm-img">                                                
+                                                </a>
+                                            </div>
+                                            <div class="grid-item">
+                                                <a href="img/tm-img-03.jpg">                                                
+                                                    <img src="img/tm-img-03-tn.jpg" alt="Image" class="img-fluid tm-img">                                                
+                                                </a>
+                                            </div>
+                                            <div class="grid-item">
+                                                <a href="img/tm-img-04.jpg">                                                
+                                                    <img src="img/tm-img-04-tn.jpg" alt="Image" class="img-fluid tm-img">                                                
+                                                </a>
+                                            </div>
+                                            <div class="grid-item">
+                                                <a href="img/tm-img-05.jpg">                                                
+                                                    <img src="img/tm-img-05-tn.jpg" alt="Image" class="img-fluid tm-img">                                                
+                                                </a>
+                                            </div>
+                                            <div class="grid-item">
+                                                <a href="img/tm-img-06.jpg">                                                
+                                                    <img src="img/tm-img-06-tn.jpg" alt="Image" class="img-fluid tm-img">                                                
+                                                </a>
+                                            </div>                                                                           
+                                        </div>                                         
+                                    </div> <!-- .tm-img-gallery-container -->  
+
+                                </div>
+                            </div> <!-- row -->
+                            <div class="row">                                
+                                <div class="col-xs-12">
+                                    <div class="tm-img-gallery-container">
+
+                                        <div class="tm-img-gallery gallery-second">
+                                        <!-- Gallery Two pop up connected with JS code below -->
+
+                                            <div class="tm-gallery-title-container">
+                                                <div class="tm-bg-dark-blue tm-white-border tm-textbox-padding tm-margin-b">                                    
+                                                    <h2 class="tm-text-title tm-gallery-title tm-margin-b-0"><span class="tm-white">Second Gallery</span></h2>                                        
+                                                </div>
+                                                <div class="tm-bg-white-half"></div>
+                                            </div>
+
+                                            <div class="grid-item grid-item-big">
+                                                <a href="img/tm-img-07.jpg">                                                
+                                                    <img src="img/tm-img-07-tn.jpg" alt="Image" class="img-fluid tm-img-no-border">                                              
+                                                </a>
+                                            </div>
+                                            <div class="grid-item grid-item-big">
+                                                <a href="img/tm-img-08.jpg">                                                
+                                                    <img src="img/tm-img-08-tn.jpg" alt="Image" class="img-fluid tm-img-no-border">                                                
+                                                </a>
+                                            </div>
+                                            <div class="grid-item grid-item-square">
+                                                <a href="img/tm-img-09.jpg">                                                
+                                                    <img src="img/tm-img-09-tn.jpg" alt="Image" class="img-fluid tm-img-no-border">                                                
+                                                </a>
+                                            </div>
+                                            <div class="grid-item grid-item-square">
+                                                <a href="img/tm-img-10.jpg">                                                
+                                                    <img src="img/tm-img-10-tn.jpg" alt="Image" class="img-fluid tm-img-no-border">                                                
+                                                </a>
+                                            </div>
+                                            <div class="grid-item grid-item-square">
+                                                <a href="img/tm-img-11.jpg">                                                
+                                                    <img src="img/tm-img-11-tn.jpg" alt="Image" class="img-fluid tm-img-no-border">                                                
+                                                </a>
+                                            </div>
+                                            <div class="grid-item grid-item-square">
+                                                <a href="img/tm-img-12.jpg">                                                
+                                                    <img src="img/tm-img-12-tn.jpg" alt="Image" class="img-fluid tm-img-no-border">                                                
+                                                </a>
+                                            </div>                                                                            
+                                        </div>                                         
+                                    </div> <!-- .tm-img-gallery-container -->                                     
+                                </div>  <!-- col-xs-12 -->                          
+                            </div> <!-- row --> 
+                        </div> <!-- .container -->
+                                                    
+                    </div> <!-- .cd-full-width -->
+                    
+                </li>
+                
+                <!-- Page 4 Contact -->
+                <li>
+                    <div class="cd-full-width">
+                        <div class="container js-tm-page-content tm-section-margin-t-small" data-page-no="3">                            
+                            <div class="tm-contact-page">
+                                <div class="row tm-margin-b">
+                                    <div class="col-xs-12">
+                                        <div class="tm-bg-white tm-textbox-padding">
+                                            <h2 class="tm-text-title tm-margin-b-0">Acerca de Nosotros</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <div class="tm-flex tm-contact-container tm-bg-dark-blue">                                
+                                            <div class="text-xs-center tm-textbox tm-2-col-textbox-2 tm-textbox-padding tm-textbox-padding-contact">
+                                                <p class="tm-text">Nosotros somos una empresa especializada en lo que es el desarrollo de equipos biométricos. </p>                                                                                                                                                 
+                                                <p class="tm-text">Ubicados en San Rafael de Escazú<br>Calle Higuerones.<br>100 mts Sur del Salón las Gallas.<br></p>
+                                                <p class="tm-text">Tel: +506 2222-2222</p>
+                                            </div>
+
+                                       
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                        
+                    </div> <!-- .cd-full-width -->
+                </li>
+            </ul> <!-- .cd-hero-slider -->
+            
+            <footer class="tm-footer">            
+                <p class="tm-copyright-text pull-xs-right">Copyright &copy; <span class="tm-current-year">2017</span> Biometric            
+                | Design: <a rel="nofollow" class="tm-footer-link" target="_parent">bermudezarii, epikhdez, xbolanos, nicolmorice </a></p>
+            </footer>                    
+        </div> <!-- .cd-hero -->        
+
+        <!-- Preloader, https://ihatetomatoes.net/create-custom-preloading-screen/ -->
+        <div id="loader-wrapper">            
+            <div id="loader"></div>
+            <div class="loader-section section-left"></div>
+            <div class="loader-section section-right"></div>
+        </div>
+        
+        <!-- load JS files -->
+        <script src="js/jquery-1.11.3.min.js"></script>         <!-- jQuery (https://jquery.com/download/) -->
+        <script src="js/tether.min.js"></script>                <!-- http://tether.io/ -->
+        <script src="js/isInViewport.min.js"></script>          <!-- isInViewport js (https://github.com/zeusdeux/isInViewport) -->
+        <script src="js/bootstrap.min.js"></script>             <!-- Bootstrap js (v4-alpha.getbootstrap.com/) -->
+        <script src="js/hero-slider-main.js"></script>          <!-- Hero slider (https://codyhouse.co/gem/hero-slider/) -->
+        <script src="js/jquery.magnific-popup.min.js"></script> <!-- Magnific popup (http://dimsemenov.com/plugins/magnific-popup/) -->
+		<script src="https://static.filestackapi.com/v3/filestack.js"></script>
+        <script src="js/filestack.js"></script> <!-- funciones del filestack -->
+		
+        <script>
+            function adjustHeightOfPage(pageNo) {
+                var offset = 80;
+                var pageContentHeight = $(".cd-hero-slider li:nth-of-type(" + pageNo + ") .js-tm-page-content").height();
+                if($(window).width() >= 992) { offset = 120; }
+                else if($(window).width() < 480) { offset = 40; }
+               
+                // Get the page height
+                var totalPageHeight = 335 + $('.cd-slider-nav').height()
+                                        + pageContentHeight + offset
+                                        + $('.tm-footer').height();
+                // Adjust layout based on page height and window height
+                if(totalPageHeight > $(window).height()) 
+                {
+                    $('.cd-hero-slider').addClass('small-screen');
+                    $('.cd-hero-slider li:nth-of-type(' + pageNo + ')').css("min-height", totalPageHeight + "px");
+                }
+                else 
+                {
+                    $('.cd-hero-slider').removeClass('small-screen');
+                    $('.cd-hero-slider li:nth-of-type(' + pageNo + ')').css("min-height", "100%");
+                }
+            }
+            function uploadVideo() {
+                var videoWrapper = $('.cd-bg-video-wrapper');
+                if( videoWrapper.is(':visible') ) {
+                    // if visible - we are not on a mobile device 
+                    var videoUrl = videoWrapper.data('video'),
+                        
+                    video = $('<video autoplay loop><source src="'+videoUrl+'.mp4" type="video/mp4" /></video>');
+                    video.appendTo(videoWrapper);
+                    // play video if first slide
+                    if(videoWrapper.parent('.cd-bg-video.selected').length > 0) video.get(0).play();                 
+                }
+            }
+            // Everything is loaded including images.            
+            $(window).load(function(){
+                adjustHeightOfPage(1); // Adjust page height
+                // Background Video
+                if($( window ).width() > 800) {
+                    uploadVideo();
+                }
+                /* Gallery One pop up
+                -----------------------------------------*/
+                $('.gallery-first').magnificPopup({
+                    delegate: 'a', // child items selector, by clicking on it popup will open
+                    type: 'image',
+                    gallery:{enabled:true}                
+                });
+                /* Gallery Two pop up
+                -----------------------------------------*/
+                $('.gallery-second').magnificPopup({
+                    delegate: 'a', // child items selector, by clicking on it popup will open
+                    type: 'image',
+                    gallery:{enabled:true}                
+                });
+				
+                /* Collapse menu after click 
+                -----------------------------------------*/
+                $('#tmNavbar a').click(function(){
+                    $('#tmNavbar').collapse('hide');
+                    adjustHeightOfPage($(this).data("no")); // Adjust page height       
+                });
+                /* Browser resized 
+                -----------------------------------------*/
+                $( window ).resize(function() {
+                    var currentPageNo = $(".cd-hero-slider li.selected .js-tm-page-content").data("page-no");
+                    
+                    // wait 3 seconds
+                    setTimeout(function() {
+                        adjustHeightOfPage( currentPageNo );
+                    }, 3000);
+                    if($( window ).width() > 800) {
+                       uploadVideo();
+                    }
+                    
+                });
+                // Play video only when visible
+                // https://stackoverflow.com/questions/21163756/html5-and-javascript-to-play-videos-only-when-visible
+                $('video').each(function(){
+                    if ($(this).is(":in-viewport")) {
+                        $(this)[0].play();
+                    } else {
+                        $(this)[0].pause();
+                    }
+                })
+        
+                // Remove preloader (https://ihatetomatoes.net/create-custom-preloading-screen/)
+                $('body').addClass('loaded');
+                $('.tm-current-year').text(new Date().getFullYear());
+                           
+            });
+        </script>            
+
+</body>
+</html>
