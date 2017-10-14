@@ -418,22 +418,8 @@ path_list = [
         "Muestras/s41/10.pgm", 
     ]
 
-
 #imagesm.training(100, path_list)
-"""
-Wt = np.loadtxt('W.out', delimiter=',')
-print(Wt)
-if ((W==Wt).all()):
-    print("JU JU lo logramos")
-"""
-pukis = path_list[126]
+print("fdone")
+path = path_list[0]
+imagesm.recognize(path)
 
-imagesm.recognize(pukis)
-
-"""
-c = np.array([[4,9,2]])
-a = np.array([[5,1,3], [1,2,3]])
-idx = np.argsort(-c[0])
-print("idx")
-b=a[:,idx]
-"""
