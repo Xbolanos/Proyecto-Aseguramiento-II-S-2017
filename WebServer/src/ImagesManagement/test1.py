@@ -2,7 +2,7 @@ import unittest
 import numpy as np
 from controller.images_manager import ImagesManager
 from controller import images_manager
-from numpy import newaxis
+from numpy import newaxis, average
 
 imagesm = ImagesManager()
 path_list = [
@@ -419,40 +419,21 @@ path_list = [
     ]
 
 
+#imagesm.training(100, path_list)
+"""
+Wt = np.loadtxt('W.out', delimiter=',')
+print(Wt)
+if ((W==Wt).all()):
+    print("JU JU lo logramos")
+"""
+pukis = path_list[126]
 
-#resulta q esa es la cara promedio
-for path in path_list:    
-            imagesm.add2images(imagesm.matrix2vector(imagesm.addImage(path)))
-normalized =  imagesm.transpose(imagesm.images)
+imagesm.recognize(pukis)
 
-#print(imagesm.images)
-
-AverageFace = imagesm.averageFace(normalized)
-
-lista = np.array(imagesm.images)
-
-mDif = imagesm.matrixOfDifferences(normalized, AverageFace)
-
-
-Ev = imagesm.calculateCovMatrixEv(mDif)
-
-i = imagesm.eigenVectorsofMatrix(Ev)
-
-W = imagesm.calculateW(mDif)
-
-allProjected = imagesm.projectImages(mDif, W)
-print("print all projected")
-print(allProjected)
-print("okay all projected")
-timage =  imagesm.transpose(imagesm.matrix2vector(imagesm.addImage(path_list[8])))[np.newaxis]
-print("timage")
-print(timage)
-image = imagesm.matrixOfDifferences(timage.T, AverageFace) 
-print("the image in 1 col ")
-print(image)
-print("okay -3")
-processed = imagesm.projectImages(image, W)
-print("okay")
-result = imagesm.classifyNearestCentroid(processed, W, allProjected)
-print("pls result ")
-print(result)
+"""
+c = np.array([[4,9,2]])
+a = np.array([[5,1,3], [1,2,3]])
+idx = np.argsort(-c[0])
+print("idx")
+b=a[:,idx]
+"""

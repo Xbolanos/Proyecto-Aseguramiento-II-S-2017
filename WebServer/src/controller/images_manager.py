@@ -5,6 +5,7 @@ Created on Aug 12, 2017
 
 import cv2
 import numpy as np
+from scipy.linalg import eigh
 from cv2 import reprojectImageTo3D
 
 
@@ -141,7 +142,9 @@ class ImagesManager:
         ----------
         @return: the matrix of difference
         """
-        return imagesN - avface
+        i = np.matrix(imagesN)
+        a = np.matrix(avface)
+        return i - a
 
     def calculateCovMatrixEv(self, mDif):
         """
@@ -181,6 +184,11 @@ class ImagesManager:
         DT = np.matrix(mDif.transpose())
         D = np.matrix(mDif)
         return D*DT
+    
+    def orderEigens(self, eigenValues, eigenVectors):
+        idx = np.argsort(-eigenValues[0])
+        return eigenVectors[:,idx]
+
 
     def eigenValuesofMatrix(self, matrix):
         """
@@ -199,7 +207,7 @@ class ImagesManager:
         processedMatrix = np.matrix(matrix)
         return np.linalg.eig(processedMatrix)[0]
 
-    def eigenVectorsofMatrix(self, matrix):
+    def eigenVectorsofMatrix(self, matrix, n):
         """
         @summary: This function calculates with the help of
         the library NUMPY, the eigen vectors from a matrix
@@ -208,15 +216,18 @@ class ImagesManager:
         ----------
         @param self: part of OOP syntax
         matrix: matrix which needs the eigen vectors
+        n: how many eigen vectors do you want to work with
 
         Returns
         ----------
         @return: an array of eigen vectors
         """
         processedMatrix = np.matrix(matrix)
-        return np.linalg.eig(processedMatrix)[1]
+        matrixVectors = np.linalg.eig(processedMatrix)[1]
+        matrixReduced = np.array(matrixVectors)[:, 0:n]
+        return matrixReduced
 
-    def calculateW(self, mDif):
+    def calculateW(self, mDif, n):
         """
         @summary: This function calculates W that is the
         N-k eigenvectors
@@ -224,6 +235,7 @@ class ImagesManager:
         ----------
         @param self: part of OOP syntax
         mDif: matrix of Differences
+        n: how many eigen vectors do you want to work with
 
         Returns
         ----------
@@ -231,9 +243,8 @@ class ImagesManager:
         of covariance
         """
         Ev = self.calculateCovMatrixEv(mDif)
-        eigen = self.eigenVectorsofMatrix(Ev)
+        eigen = self.eigenVectorsofMatrix(Ev, n)
         W = np.matrix(mDif) * eigen
-        np.savetxt('W.out', W, delimiter=',')
         return W
 
     def projectImages(self, mDif, W):
@@ -295,9 +306,36 @@ class ImagesManager:
         be loaded.
         """
         for path in images_paths:
-            greys_image = self.read_mage(path)
+            greys_image = self.read_image(path)
             column_vector = self.matrix2vector(greys_image)
             self.add2images(column_vector)
+
+
+
+    def training(self, n_eigen_vectors, path):
+        self.load_images(path)
+        normalized =  self.transpose(self.images)
+        AverageFace = self.averageFace(normalized)
+        np.savetxt('AverageFace.out', AverageFace, delimiter=',')
+        mDif = self.matrixOfDifferences(normalized, AverageFace)
+        Ev = self.calculateCovMatrixEv(mDif)
+        W = self.calculateW(mDif, n_eigen_vectors)
+        np.savetxt('W.out', W, delimiter=',')
+        allProjected = self.projectImages(mDif, W)
+        np.savetxt('projectedFaces.out', allProjected, delimiter=',')
+        Wt = np.matrix(np.loadtxt('projectedFaces.out', delimiter=','))
+        
+    
+    def recognize(self, path):
+        avface = np.loadtxt('AverageFace.out', delimiter=',')[np.newaxis]
+        W = np.loadtxt('W.out', delimiter=',')
+        allProjected = np.loadtxt('projectedFaces.out', delimiter=',')
+        timage = self.transpose(self.matrix2vector(self.read_image(path)))[np.newaxis]
+        image = self.matrixOfDifferences(timage.T, avface.T) 
+        processed = self.projectImages(image, W)
+        result = self.classifyNearestCentroid(processed, W, allProjected)
+        print("pls result ")
+        print(result)
 
     # ---------------------------------------------------------------------
     # plt.imshow(img, cmap = 'gray', interpolation = 'bicubic')
