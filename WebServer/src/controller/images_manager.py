@@ -272,14 +272,15 @@ class ImagesManager:
         """
         cols = projected_images.shape[1]
         results = []
+        n = int(np.loadtxt('n_training.out'))
         i = 0
         while (i < cols):
-            analyse = np.array(projected_images[:, [i, i+9]])
+            analyse = np.array(projected_images[:, [i, i+(n-1)]])
             face = np.transpose(self.average_face(analyse))
             new_i = np.transpose(new_image)
             distance_norm = np.linalg.norm(face-new_i)
             results.append(distance_norm)
-            i = i + 10
+            i = i + n
         return results.index(min(results)) + 1
 
     def load_images(self, images_paths):
@@ -297,7 +298,7 @@ class ImagesManager:
             column_vector = self.matrix_2_vector(greys_image)
             self.add_2_images(column_vector)
 
-    def training(self, n_eigen_vectors, path):
+    def training(self, n_eigen_vectors, path, n_training):
         self.load_images(path)
         normalized = self.transpose(self.images)
         av_face = self.average_face(normalized)
@@ -312,6 +313,8 @@ class ImagesManager:
         all_projected = self.project_images(m_dif, w)
         np.savetxt('projectedFaces.out', all_projected, delimiter=',')
         print("a")
+        n_train = np.matrix(n_training)
+        np.savetxt('n_training.out', n_train)
 
     def recognize(self, path):
         av_face = np.loadtxt('AverageFace.out', delimiter=',')[np.newaxis]

@@ -418,8 +418,9 @@ path_list = [
         "Muestras/s41/10.pgm", 
     ]
 
-#imagesm.training(100, path_list)
+#imagesm.training(300, path_list, 10)
 print("fdone")
-path = path_list[408]
+path = path_list[5]
 imagesm.recognize(path)
+
 
