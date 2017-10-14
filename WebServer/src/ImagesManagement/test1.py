@@ -420,6 +420,6 @@ path_list = [
 
 #imagesm.training(100, path_list)
 print("fdone")
-path = path_list[0]
+path = path_list[408]
 imagesm.recognize(path)
 

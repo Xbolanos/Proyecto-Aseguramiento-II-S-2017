@@ -319,7 +319,7 @@ class ImagesManager:
         all_projected = np.loadtxt('projectedFaces.out', delimiter=',')
         e_image = self.matrix_2_vector(self.read_image(path))[np.newaxis]
         t_image = self.transpose(e_image)
-        image = self.matrix_of_differences(t_image.T, av_face.T)
+        image = self.matrix_of_differences(t_image, av_face.T)
         processed = self.project_images(image, w)
         result = self.classify_nearest_centroid(processed, all_projected)
         print("pls result ")
