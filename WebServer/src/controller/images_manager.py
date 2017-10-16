@@ -327,6 +327,8 @@ class ImagesManager:
         result = self.classify_nearest_centroid(processed, all_projected)
         print("pls result ")
         print(result)
+        return (result)
+        
 
     # ---------------------------------------------------------------------
     # plt.imshow(img, cmap = 'gray', interpolation = 'bicubic')
