@@ -5,7 +5,6 @@ Created on Aug 12, 2017
 
 import cv2
 import numpy as np
-from cv2 import reprojectImageTo3D
 
 
 class ImagesManager:
@@ -30,7 +29,7 @@ class ImagesManager:
 
         return cv2.imread(path, 0)
 
-    def calculateCovarianceMatrix(self, samples):
+    def calculate_covariance_matrix(self, samples):
         """
         @summary: This function calculates the covariance matrix of a given
         matrix containing the samples of the same image; where every column
@@ -50,7 +49,7 @@ class ImagesManager:
 
         return np.cov(samples)
 
-    def matrix2vector(self, matrix):
+    def matrix_2_vector(self, matrix):
         """
         @summary: This function transforms a matrix that comes from an image to
         a vector; every row goes consecutive in the vector, in the same order.
@@ -67,7 +66,7 @@ class ImagesManager:
 
         return np.asarray(matrix).reshape(-1)
 
-    def add2images(self, vector):
+    def add_2_images(self, vector):
         """
         @summary: This function adds the vector that receives to a "general"
         array that will contain all the samples.
@@ -103,7 +102,7 @@ class ImagesManager:
         """
         return np.array(images).transpose()
 
-    def averageFace(self, images):
+    def average_face(self, images):
         """
         @summary: This function calculates the mean from the
         columns of the matrix images
@@ -123,7 +122,7 @@ class ImagesManager:
         b = np.mean(a, axis=1)[np.newaxis]
         return b.T
 
-    def matrixOfDifferences(self, imagesN, avface):
+    def matrix_of_differences(self, images_n, av_face):
         """
         @summary: This function calculates the matrix
         of Differences, which is the each column of
@@ -132,18 +131,18 @@ class ImagesManager:
         Parameters
         ----------
         @param self: part of OOP syntax
-        imagesN: an array (matrix) with the images, each sample
+        images_n: an array (matrix) with the images, each sample
         is a column
-        avface: the mean between all the samples of the matrix
+        av_face: the mean between all the samples of the matrix
         images
 
         Returns
         ----------
         @return: the matrix of difference
         """
-        return imagesN - avface
+        return images_n - av_face
 
-    def calculateCovMatrixEv(self, mDif):
+    def calculate_cov_matrix_ev(self, m_dif):
         """
         @summary: This function calculates the covariance
         matrix multiplying the matrix of Differences with
@@ -153,17 +152,17 @@ class ImagesManager:
         Parameters
         ----------
         @param self: part of OOP syntax
-        mDif: matrix of Differences
+        m_dif: matrix of Differences
 
         Returns
         ----------
         @return: the efficent covariance matrix
         """
-        DT = np.matrix(np.transpose(mDif))
-        D = np.matrix(mDif)
+        DT = np.matrix(np.transpose(m_dif))
+        D = np.matrix(m_dif)
         return DT*D
 
-    def calculateCovMatrixEw(self, mDif):
+    def calculate_cov_matrix_ew(self, m_dif):
         """
         @summary: This function calculates the covariance
         matrix multiplying the matrix of Differences with
@@ -172,17 +171,17 @@ class ImagesManager:
         Parameters
         ----------
         @param self: part of OOP syntax
-        mDif: matrix of Differences
+        m_dif: matrix of Differences
 
         Returns
         ----------
         @return: the no efficent covariance matrix
         """
-        DT = np.matrix(mDif.transpose())
-        D = np.matrix(mDif)
+        DT = np.matrix(m_dif.transpose())
+        D = np.matrix(m_dif)
         return D*DT
 
-    def eigenValuesofMatrix(self, matrix):
+    def eigen_values_of_matrix(self, matrix):
         """
         @summary: This function calculates with the help of
         the library NUMPY, the eigen values from a matrix
@@ -196,10 +195,9 @@ class ImagesManager:
         ----------
         @return: an array of eigen values
         """
-        processedMatrix = np.matrix(matrix)
-        return np.linalg.eig(processedMatrix)[0]
+        return np.linalg.eig(matrix)[0]
 
-    def eigenVectorsofMatrix(self, matrix):
+    def eigen_vectors_of_matrix(self, matrix, n):
         """
         @summary: This function calculates with the help of
         the library NUMPY, the eigen vectors from a matrix
@@ -208,63 +206,63 @@ class ImagesManager:
         ----------
         @param self: part of OOP syntax
         matrix: matrix which needs the eigen vectors
+        n: how many eigen vectors do you want to work with
 
         Returns
         ----------
         @return: an array of eigen vectors
         """
-        processedMatrix = np.matrix(matrix)
-        return np.linalg.eig(processedMatrix)[1]
+        matrix_vectors = np.linalg.eig(matrix)[1]
+        matrix_reduced = np.array(matrix_vectors)[:, 0:n]
+        return matrix_reduced
 
-    def calculateW(self, mDif):
+    def calculate_w(self, m_dif, n):
         """
         @summary: This function calculates W that is the
         N-k eigenvectors
         Parameters
         ----------
         @param self: part of OOP syntax
-        mDif: matrix of Differences
+        m_dif: matrix of Differences
+        n: how many eigen vectors do you want to work with
 
         Returns
         ----------
         @return: W = the N-k eigenvalues of the efficent matrix
         of covariance
         """
-        Ev = self.calculateCovMatrixEv(mDif)
-        eigen = self.eigenVectorsofMatrix(Ev)
-        W = np.matrix(mDif) * eigen
-        np.savetxt('W.out', W, delimiter=',')
-        return W
+        ev = self.calculate_cov_matrix_ev(m_dif)
+        eigen = self.eigen_vectors_of_matrix(ev, n)
+        w = np.matrix(m_dif) * eigen
+        return w
 
-    def projectImages(self, mDif, W):
+    def project_images(self, m_dif, w):
         """
-        @summary: This function transforms the columns 
+        @summary: This function transforms the columns
         into a projected space
         Parameters
         ----------
         @param self: part of OOP syntax
-        mDif: matrix of Differences
-        W: the matrix of difference multiplied eigen values 
-        
+        m_dif: matrix of Differences
+        w: the matrix of difference multiplied eigen values
+
         Returns
         ----------
-        @return: a matrix of the matrix of difference projected 
-        """ 
-        Wt = np.transpose(np.matrix(W))
-        mDifprojected =  Wt * np.matrix(mDif)
-        return mDifprojected
-   
-    def classifyNearestCentroid(self, newImage, 
-                                W, projectedImages): 
+        @return: a matrix of the matrix of difference projected
         """
-        @summary: This function search the face of the new image 
+        wt = np.transpose(np.matrix(w))
+        m_dif_projected = wt * np.matrix(m_dif)
+        return m_dif_projected
+
+    def classify_nearest_centroid(self, new_image, projected_images):
+        """
+        @summary: This function search the face of the new image
         Parameters
         ----------
         @param self: part of OOP syntax
-        newImage: the image that you need the face of, it has 
-        come processed 
-        W: the matrix of difference multiplied eigen values
-        projectedImages: the images of training already projected
+        new_image: the image that you need the face of, it has
+        come processed
+        projected_images: the images of training already projected
         into the space.
 
         Returns
@@ -272,16 +270,17 @@ class ImagesManager:
         @return: the value that correspond to the person detected
         in the image.
         """
-        cols = projectedImages.shape[1]
+        cols = projected_images.shape[1]
         results = []
+        n = int(np.loadtxt('n_training.out'))
         i = 0
         while (i < cols):
-            analyse = np.array(projectedImages[:, [i, i+9]])
-            face = np.transpose(self.averageFace(analyse))
-            newI = np.transpose(newImage)
-            distanceNorm = np.linalg.norm(face-newI)
-            results.append(distanceNorm)
-            i = i + 10
+            analyse = np.array(projected_images[:, [i, i+(n-1)]])
+            face = np.transpose(self.average_face(analyse))
+            new_i = np.transpose(new_image)
+            distance_norm = np.linalg.norm(face-new_i)
+            results.append(distance_norm)
+            i = i + n
         return results.index(min(results)) + 1
 
     def load_images(self, images_paths):
@@ -295,9 +294,39 @@ class ImagesManager:
         be loaded.
         """
         for path in images_paths:
-            greys_image = self.read_mage(path)
-            column_vector = self.matrix2vector(greys_image)
-            self.add2images(column_vector)
+            greys_image = self.read_image(path)
+            column_vector = self.matrix_2_vector(greys_image)
+            self.add_2_images(column_vector)
+
+    def training(self, n_eigen_vectors, path, n_training):
+        self.load_images(path)
+        normalized = self.transpose(self.images)
+        av_face = self.average_face(normalized)
+        print("a")
+        np.savetxt('AverageFace.out', av_face, delimiter=',')
+        print("a")
+        m_dif = self.matrix_of_differences(normalized, av_face)
+        print("a")
+        w = self.calculate_w(m_dif, n_eigen_vectors)
+        print("a")
+        np.savetxt('W.out', w, delimiter=',')
+        all_projected = self.project_images(m_dif, w)
+        np.savetxt('projectedFaces.out', all_projected, delimiter=',')
+        print("a")
+        n_train = np.matrix(n_training)
+        np.savetxt('n_training.out', n_train)
+
+    def recognize(self, path):
+        av_face = np.loadtxt('AverageFace.out', delimiter=',')[np.newaxis]
+        w = np.loadtxt('W.out', delimiter=',')
+        all_projected = np.loadtxt('projectedFaces.out', delimiter=',')
+        e_image = self.matrix_2_vector(self.read_image(path))[np.newaxis]
+        t_image = self.transpose(e_image)
+        image = self.matrix_of_differences(t_image, av_face.T)
+        processed = self.project_images(image, w)
+        result = self.classify_nearest_centroid(processed, all_projected)
+        print("pls result ")
+        print(result)
 
     # ---------------------------------------------------------------------
     # plt.imshow(img, cmap = 'gray', interpolation = 'bicubic')
