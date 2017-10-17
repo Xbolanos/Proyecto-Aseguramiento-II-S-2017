@@ -299,6 +299,17 @@ class ImagesManager:
             self.add_2_images(column_vector)
 
     def training(self, n_eigen_vectors, path, n_training):
+        """
+        @summary: This function trains the system with faces
+        calling different functions
+        Parameters
+        ----------
+        @param n_eigen_vectors: how many eigen vectors
+        would you like to work with
+        path: a list that contains the paths of the
+        images
+        n_training: number of faces/images per subject
+        """
         self.load_images(path)
         normalized = self.transpose(self.images)
         av_face = self.average_face(normalized)
@@ -317,6 +328,16 @@ class ImagesManager:
         np.savetxt('n_training.out', n_train)
 
     def recognize(self, path):
+        """
+        @summary: This function search the face of the new image
+        Parameters
+        ----------
+        @param path: address of the image 
+        Returns
+        ----------
+        @return: the value that correspond to the person detected
+        in the image.
+        """
         av_face = np.loadtxt('AverageFace.out', delimiter=',')[np.newaxis]
         w = np.loadtxt('W.out', delimiter=',')
         all_projected = np.loadtxt('projectedFaces.out', delimiter=',')
@@ -328,7 +349,6 @@ class ImagesManager:
         print("pls result ")
         print(result)
         return (result)
-        
 
     # ---------------------------------------------------------------------
     # plt.imshow(img, cmap = 'gray', interpolation = 'bicubic')
