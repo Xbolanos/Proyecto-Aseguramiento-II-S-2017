@@ -50,7 +50,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'WebServer.urls'
-TEMPLATE_PATH = os.path.join(BASE_DIR, 'view')
+TEMPLATE_PATH = os.path.join(BASE_DIR, 'Pages')
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',

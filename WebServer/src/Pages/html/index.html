@@ -10,16 +10,18 @@
 Template 2088 Big City
 http://www.tooplate.com/view/2088-big-city
 -->
+    {% load static %}
     <!-- load stylesheets -->
+    <link rel="stylesheet" href="{% static "css/index.css" %}">  
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400">  
     <!-- Google web font "Open Sans" -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">                                      
+    <link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}">                                      
     <!-- Bootstrap style -->
-    <link rel="stylesheet" href="css/hero-slider-style.css">                              
+    <link rel="stylesheet" href="{% static "css/hero-slider-style.css" %}">                              
     <!-- Hero slider style (https://codyhouse.co/gem/hero-slider/) -->
-    <link rel="stylesheet" href="css/magnific-popup.css">                                 
+    <link rel="stylesheet" href="{% static "css/magnific-popup.css" %}">                                 
     <!-- Magnific popup style (http://dimsemenov.com/plugins/magnific-popup/) -->
-    <link rel="stylesheet" href="css/tooplate-style.css">                                   
+    <link rel="stylesheet" href="{% static "css/tooplate-style.css" %}">                                   
     <!-- Tooplate style -->
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -32,7 +34,7 @@ http://www.tooplate.com/view/2088-big-city
 
     <body>
 
-        <div class="cd-bg-video-wrapper" data-video="video/bangkok-city">
+        <div class="cd-bg-video-wrapper" data-video="{% static "video/bangkok-city" %}">
             <!-- video element will be loaded using jQuery -->
         </div> <!-- .cd-bg-video-wrapper -->
         
@@ -55,10 +57,10 @@ http://www.tooplate.com/view/2088-big-city
                                     </li>
                               
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#0" data-no="2">ReconoceME</a>
+                                        <a class="nav-link" href="#0" data-no="2" onclick="adjustHeightOfPage(2)">ReconoceME</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#0" data-no="3">Acerca</a>
+                                        <a class="nav-link" href="#0" data-no="3" onclick="adjustHeightOfPage(3)">Acerca</a>
                                     </li>
                                 </ul>
                             </div>                        
@@ -96,11 +98,11 @@ http://www.tooplate.com/view/2088-big-city
                 
               
                
-                <!-- Page 3 Gallery -->
+                <!-- Page 2 Gallery -->
                 <li>
                     <div class="cd-full-width">                        
                         <div class="container js-tm-page-content tm-section-margin-t" data-page-no="2">
-                              <div class="row">
+                            <div class="row">
                                 <div class="col-xs-12">
                                     <div class="tm-flex">
                                         <div class="col-lg-6 tm-white-header-container-outer tm-margin-b tm-2-col-left">
@@ -108,119 +110,22 @@ http://www.tooplate.com/view/2088-big-city
                                                 <h2 class="tm-text-title tm-text-title-small">Entrenamiento Facial</h2>
                                             </div>
                                             <div class="tm-bg-dark-blue text-xs-left tm-textbox tm-textbox-padding tm-white-header-body tm-white-border tm-2-col-equal-height">
-                                                <p class="tm-text" onclick="openPicker()" >Ingrese a esta sección si lo que busca es registrar nuevos sujetos en el sistema para su posterior reconocimiento.</p>                                            
+                                                <p class="tm-text">Ingrese a esta sección si lo que busca es registrar nuevos sujetos en el sistema para su posterior reconocimiento.</p>                                            
+                                                <button class="load-images-button" onclick="openPickerForTraining()">Registrar</button>
                                             </div>    
                                         </div>
                                         <div class="col-lg-6 tm-white-header-container-outer tm-margin-b tm-2-col-right">
                                             <div class="tm-bg-white tm-white-header-container">
                                                 <h2 class="tm-text-title tm-text-title-small">Reconocimiento Facial</h2>
                                             </div>
-                                            <div  id= "dropzone"  class="tm-bg-dark-blue text-xs-left tm-textbox tm-textbox-padding tm-white-header-body tm-white-border tm-2-col-equal-height">
+                                            <div class="tm-bg-dark-blue text-xs-left tm-textbox tm-textbox-padding tm-white-header-body tm-white-border tm-2-col-equal-height">
                                                 <p class="tm-text">¿Posee sujetos registrados en el sistema? ¡Arraste su folder aquí para comenzar el reconocimiento de algunos sujetos!</p> 
-													<p class="tm-text">   También puede seleccionar la carpeta:</p>												
-												   <input type="file" webkitdirectory class="tm-text">
+											    <button class="load-images-button" onclick="openPickerForRecognition()">Reconocer</button>
                                             </div>    
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="row tm-margin-b">
-                                <div class="col-xs-12">
-                                    <div class="tm-img-gallery-container">
-
-                                        <div class="tm-img-gallery gallery-first">
-                                        <!-- Gallery Two pop up connected with JS code below -->
-
-                                            <div class="tm-gallery-title-container">
-                                                <div class="tm-bg-dark-blue tm-white-border tm-textbox-padding tm-margin-b">                                    
-                                                    <h2 class="tm-text-title tm-gallery-title tm-margin-b-0"><span class="tm-white">First Gallery</span></h2>                                        
-                                                </div>
-                                                <div class="tm-bg-white-half"></div>
-                                            </div>
-
-                                            <div class="grid-item">
-                                                <a href="img/tm-img-01.jpg">                                                
-                                                    <img src="img/tm-img-01-tn.jpg" alt="Image" class="img-fluid tm-img">                                              
-                                                </a>
-                                            </div>
-                                            <div class="grid-item">
-                                                <a href="img/tm-img-02.jpg">                                                
-                                                    <img src="img/tm-img-02-tn.jpg" alt="Image" class="img-fluid tm-img">                                                
-                                                </a>
-                                            </div>
-                                            <div class="grid-item">
-                                                <a href="img/tm-img-03.jpg">                                                
-                                                    <img src="img/tm-img-03-tn.jpg" alt="Image" class="img-fluid tm-img">                                                
-                                                </a>
-                                            </div>
-                                            <div class="grid-item">
-                                                <a href="img/tm-img-04.jpg">                                                
-                                                    <img src="img/tm-img-04-tn.jpg" alt="Image" class="img-fluid tm-img">                                                
-                                                </a>
-                                            </div>
-                                            <div class="grid-item">
-                                                <a href="img/tm-img-05.jpg">                                                
-                                                    <img src="img/tm-img-05-tn.jpg" alt="Image" class="img-fluid tm-img">                                                
-                                                </a>
-                                            </div>
-                                            <div class="grid-item">
-                                                <a href="img/tm-img-06.jpg">                                                
-                                                    <img src="img/tm-img-06-tn.jpg" alt="Image" class="img-fluid tm-img">                                                
-                                                </a>
-                                            </div>                                                                           
-                                        </div>                                         
-                                    </div> <!-- .tm-img-gallery-container -->  
-
-                                </div>
-                            </div> <!-- row -->
-                            <div class="row">                                
-                                <div class="col-xs-12">
-                                    <div class="tm-img-gallery-container">
-
-                                        <div class="tm-img-gallery gallery-second">
-                                        <!-- Gallery Two pop up connected with JS code below -->
-
-                                            <div class="tm-gallery-title-container">
-                                                <div class="tm-bg-dark-blue tm-white-border tm-textbox-padding tm-margin-b">                                    
-                                                    <h2 class="tm-text-title tm-gallery-title tm-margin-b-0"><span class="tm-white">Second Gallery</span></h2>                                        
-                                                </div>
-                                                <div class="tm-bg-white-half"></div>
-                                            </div>
-
-                                            <div class="grid-item grid-item-big">
-                                                <a href="img/tm-img-07.jpg">                                                
-                                                    <img src="img/tm-img-07-tn.jpg" alt="Image" class="img-fluid tm-img-no-border">                                              
-                                                </a>
-                                            </div>
-                                            <div class="grid-item grid-item-big">
-                                                <a href="img/tm-img-08.jpg">                                                
-                                                    <img src="img/tm-img-08-tn.jpg" alt="Image" class="img-fluid tm-img-no-border">                                                
-                                                </a>
-                                            </div>
-                                            <div class="grid-item grid-item-square">
-                                                <a href="img/tm-img-09.jpg">                                                
-                                                    <img src="img/tm-img-09-tn.jpg" alt="Image" class="img-fluid tm-img-no-border">                                                
-                                                </a>
-                                            </div>
-                                            <div class="grid-item grid-item-square">
-                                                <a href="img/tm-img-10.jpg">                                                
-                                                    <img src="img/tm-img-10-tn.jpg" alt="Image" class="img-fluid tm-img-no-border">                                                
-                                                </a>
-                                            </div>
-                                            <div class="grid-item grid-item-square">
-                                                <a href="img/tm-img-11.jpg">                                                
-                                                    <img src="img/tm-img-11-tn.jpg" alt="Image" class="img-fluid tm-img-no-border">                                                
-                                                </a>
-                                            </div>
-                                            <div class="grid-item grid-item-square">
-                                                <a href="img/tm-img-12.jpg">                                                
-                                                    <img src="img/tm-img-12-tn.jpg" alt="Image" class="img-fluid tm-img-no-border">                                                
-                                                </a>
-                                            </div>                                                                            
-                                        </div>                                         
-                                    </div> <!-- .tm-img-gallery-container -->                                     
-                                </div>  <!-- col-xs-12 -->                          
-                            </div> <!-- row --> 
                         </div> <!-- .container -->
                                                     
                     </div> <!-- .cd-full-width -->
@@ -273,14 +178,14 @@ http://www.tooplate.com/view/2088-big-city
         </div>
         
         <!-- load JS files -->
-        <script src="js/jquery-1.11.3.min.js"></script>         <!-- jQuery (https://jquery.com/download/) -->
-        <script src="js/tether.min.js"></script>                <!-- http://tether.io/ -->
-        <script src="js/isInViewport.min.js"></script>          <!-- isInViewport js (https://github.com/zeusdeux/isInViewport) -->
-        <script src="js/bootstrap.min.js"></script>             <!-- Bootstrap js (v4-alpha.getbootstrap.com/) -->
-        <script src="js/hero-slider-main.js"></script>          <!-- Hero slider (https://codyhouse.co/gem/hero-slider/) -->
-        <script src="js/jquery.magnific-popup.min.js"></script> <!-- Magnific popup (http://dimsemenov.com/plugins/magnific-popup/) -->
+        <script src="{% static "js/jquery-1.11.3.min.js" %}"></script>         <!-- jQuery (https://jquery.com/download/) -->
+        <script src="{% static "js/tether.min.js" %}"></script>                <!-- http://tether.io/ -->
+        <script src="{% static "js/isInViewport.min.js" %}"></script>          <!-- isInViewport js (https://github.com/zeusdeux/isInViewport) -->
+        <script src="{% static "js/bootstrap.min.js" %}"></script>             <!-- Bootstrap js (v4-alpha.getbootstrap.com/) -->
+        <script src="{% static "js/hero-slider-main.js" %}"></script>          <!-- Hero slider (https://codyhouse.co/gem/hero-slider/) -->
+        <script src="{% static "js/jquery.magnific-popup.min.js" %}"></script> <!-- Magnific popup (http://dimsemenov.com/plugins/magnific-popup/) -->
 		<script src="https://static.filestackapi.com/v3/filestack.js"></script>
-        <script src="js/filestack.js"></script> <!-- funciones del filestack -->
+        <script src="{% static "js/filestack.js" %}"></script> <!-- funciones del filestack -->
 		
         <script>
             function adjustHeightOfPage(pageNo) {

@@ -1,0 +1,22 @@
+.load-images-button {
+  background-color: #008CBA;
+  color: white;
+  border: none;
+  font-size: 24px;
+  padding: 12px 28px;
+  border-radius: 8px;
+  width: 200px;
+  display: block;
+  margin: 0 auto;
+  transition-duration: 0.4s;
+}
+
+.load-images-button:hover {
+  background-color: #4CAF50;
+}
+
+.load-images-button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}

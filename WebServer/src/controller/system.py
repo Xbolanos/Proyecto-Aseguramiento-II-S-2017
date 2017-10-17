@@ -25,7 +25,7 @@ def show_index_page(request):
     ------
     @return: the home page of the web site.
     """
-    return render(request, 'html/inicio.html')
+    return render(request, 'html/index.html')
 
 
 def train_system(request):
@@ -46,17 +46,17 @@ def train_system(request):
     """
     if request.method != 'post':
         # No other method are allowed for this function than post.
-        return render(request, 'html/inicio.html')
+        return render(request, 'html/index.html')
 
     result, images_paths = get_request_images(request)
 
     if not result:
-        return render(request, 'html/inicio.html')
+        return render(request, 'html/index.html')
 
     im = ImagesManager()
     im.load_images(images_paths)
 
-    return render(request, 'html/inicio.html')
+    return render(request, 'html/index.html')
 
 
 def get_request_images(request):
