@@ -8,8 +8,11 @@ Created on Oct 10, 2017
 from django.shortcuts import render
 from django.core.files.storage import FileSystemStorage
 from WebServer.settings import MEDIA_ROOT
+from WebServer.settings import STATICFILES_DIRS
 from controller import images_manager
 from controller.images_manager import ImagesManager
+from django.http.response import JsonResponse
+from filestack import Filelink
 
 
 def show_index_page(request):
@@ -25,7 +28,7 @@ def show_index_page(request):
     ------
     @return: the home page of the web site.
     """
-    return render(request, 'html/index.html')
+    return render(request, 'index.html')
 
 
 def train_system(request):
@@ -44,19 +47,31 @@ def train_system(request):
     @return: a success page if the processing and training went well. a failure
     page otherwise.
     """
-    if request.method != 'post':
+    if request.method != 'POST':
         # No other method are allowed for this function than post.
-        return render(request, 'html/index.html')
+        return JsonResponse({'type': 'error',
+                             'title': 'Metodo invalido',
+                             'message': 'No se permiten otros metodos además \
+de post.'})
 
-    result, images_paths = get_request_images(request)
+    handlers = request.body.decode('UTF-8')
+    handlers = eval(handlers)
+    path = STATICFILES_DIRS[0]
+    images_paths = []
 
-    if not result:
-        return render(request, 'html/index.html')
+    for handle in handlers:
+        filelink = Filelink(handle, apikey='ABeQAmZTIQ8ygf76s90Bnz')
+        extension = filelink.get_metadata()['filename'][-4:]
+        fullpath = path + '/subjects/' + handle + extension
+        filelink.download(fullpath)
+        images_paths.append(fullpath)
 
     im = ImagesManager()
     im.load_images(images_paths)
-
-    return render(request, 'html/index.html')
+    return JsonResponse({'type': 'success',
+                         'title': '¡Registrado!',
+                         'message': 'Se ha agregado al nuevo sujeto al \
+sistema.'})
 
 
 def get_request_images(request):

@@ -186,6 +186,12 @@ http://www.tooplate.com/view/2088-big-city
         <script src="{% static "js/jquery.magnific-popup.min.js" %}"></script> <!-- Magnific popup (http://dimsemenov.com/plugins/magnific-popup/) -->
 		<script src="https://static.filestackapi.com/v3/filestack.js"></script>
         <script src="{% static "js/filestack.js" %}"></script> <!-- funciones del filestack -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.10.3/sweetalert2.all.min.js"></script>
+        
+        {% csrf_token %}
+        <script type="text/javascript">
+            var csrftoken = jQuery("[name=csrfmiddlewaretoken]").val();
+        </script>
 		
         <script>
             function adjustHeightOfPage(pageNo) {
@@ -247,7 +253,6 @@ http://www.tooplate.com/view/2088-big-city
                 /* Collapse menu after click 
                 -----------------------------------------*/
                 $('#tmNavbar a').click(function(){
-                    $('#tmNavbar').collapse('hide');
                     adjustHeightOfPage($(this).data("no")); // Adjust page height       
                 });
                 /* Browser resized 
