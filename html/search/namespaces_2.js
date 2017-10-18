@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['manage',['manage',['../namespacemanage.html',1,'']]],
-  ['person',['person',['../namespacemodel_1_1person.html',1,'model']]]
+  ['metrics',['metrics',['../namespacetest_1_1metrics.html',1,'test']]],
+  ['test',['test',['../namespacetest_1_1test.html',1,'test']]]
 ];

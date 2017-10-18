@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['proccess_5ffiles',['proccess_files',['../namespacecontroller_1_1ui.html#a8dd913048eeb7b2118896741b2263c74',1,'controller::ui']]],
-  ['projectimages',['projectImages',['../classcontroller_1_1images__manager_1_1_images_manager.html#a31525a8462e7fd2696171000bcefc394',1,'controller::images_manager::ImagesManager']]]
+  ['show_5findex_5fpage',['show_index_page',['../namespacecontroller_1_1facade.html#a9d5c0d3f727adaf25daa149567745094',1,'controller.facade.show_index_page()'],['../namespacecontroller_1_1system.html#a9f9e500512a0e3eba52af3f297432b61',1,'controller.system.show_index_page()'],['../namespacecontroller_1_1ui.html#a3881b5a4868b1b6872e1aa21a905e413',1,'controller.ui.show_index_page()']]]
 ];

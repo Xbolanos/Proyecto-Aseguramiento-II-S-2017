@@ -1,5 +1,3 @@
-// Para una imagen--------------------------------------------------------
-
 var apikey = 'AFWdiEhaQUP00SdiMZPugz';
 // El api es para subir las imagenes a internet
 
@@ -27,6 +25,14 @@ var recognizeOptions = { //Cuando es 1 foto
   fromSources: ['local_file_system','webcam', 'customsource']
 };
 
+/**
+ * Makes a request to the application backend to add the new subject
+ * to the system, this will show a waiting dialog while it waits for the
+ * server's response.
+ * 
+ * @param {string} destiny 
+ * @param {object} data 
+ */
 var sendRequest = (destiny, data) => {
   swal({
     title: 'Registrando sujeto',
@@ -62,8 +68,13 @@ var sendRequest = (destiny, data) => {
     })
   );
 }
-   
-var openPickerForTraining = () => { //Cuando es 1 foto
+
+/**
+ * Opens a new dialog to allow the client the upload of images. In this case
+ * it is formated as requested for the system training and then allows up to
+ * 8 images.
+ */
+var openPickerForTraining = () => {
   return client.pick(trainingOptions).then(function(result) {
     var data = {
       handlers: [],
@@ -87,7 +98,12 @@ var openPickerForTraining = () => { //Cuando es 1 foto
   });
 }
 
-var openPickerForRecognition = () => { //Cuando es 1 foto
+/**
+ * Opens a new dialog to allow the client the upload of images. In this case
+ * it is formated as requested for the system recognition and then allows
+ * only one image.
+ */
+var openPickerForRecognition = () => {
   return client.pick(recognizeOptions).then(function(result){
 	  result.filesUploaded.forEach(function(file){
       console.log(file.url); //file.url tiene la dirección de las imagenes

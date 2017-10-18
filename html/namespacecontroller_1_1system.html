@@ -64,7 +64,8 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">controller.system Namespace Reference</div>  </div>
 </div><!--header-->
@@ -76,101 +77,34 @@ Functions</h2></td></tr>
 <tr class="separator:a9f9e500512a0e3eba52af3f297432b61"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac32f523ab26cfed99c30173815043e23"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecontroller_1_1system.html#ac32f523ab26cfed99c30173815043e23">train_system</a> (request)</td></tr>
 <tr class="separator:ac32f523ab26cfed99c30173815043e23"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae026f97918c8955dd2e7d1ca1bcf1dd6"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecontroller_1_1system.html#ae026f97918c8955dd2e7d1ca1bcf1dd6">get_request_images</a> (request)</td></tr>
-<tr class="separator:ae026f97918c8955dd2e7d1ca1bcf1dd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4160411730e638f9c8aa127a18a44b82"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecontroller_1_1system.html#a4160411730e638f9c8aa127a18a44b82">is_image</a> (file)</td></tr>
-<tr class="separator:a4160411730e638f9c8aa127a18a44b82"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a35925b850af5ff5ef00d9f5b6234183b"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecontroller_1_1system.html#a35925b850af5ff5ef00d9f5b6234183b">save_image</a> (image)</td></tr>
-<tr class="separator:a35925b850af5ff5ef00d9f5b6234183b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:ae6c5d5f710956988b761b4d946f271b6"><td class="memItemLeft" align="right" valign="top"><a id="ae6c5d5f710956988b761b4d946f271b6"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>IM</b> = <a class="el" href="classcontroller_1_1images__manager_1_1_images_manager.html">ImagesManager</a>()</td></tr>
+<tr class="separator:ae6c5d5f710956988b761b4d946f271b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02fb1c5a6e36c93d0249295f48504cab"><td class="memItemLeft" align="right" valign="top"><a id="a02fb1c5a6e36c93d0249295f48504cab"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>EIGEN_VECTORS</b> = 300</td></tr>
+<tr class="separator:a02fb1c5a6e36c93d0249295f48504cab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab07b0a89eb9781211f2bd1819fe1ada"><td class="memItemLeft" align="right" valign="top"><a id="aab07b0a89eb9781211f2bd1819fe1ada"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>IMAGES_PER_SUBJECT</b> = 8</td></tr>
+<tr class="separator:aab07b0a89eb9781211f2bd1819fe1ada"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><pre class="fragment">Created on Oct 10, 2017
 
+@summary: the main controller of the system, will handle request, control the
+image processing module and responding to the clients.
+
+Variables
+---------
+@var IM: instance of the ImagesManager class.
+@var EIGEN_VECTORS: The quantity of eigen vectors to be used in the training.
+@var IMAGES_PER_SUBJECT: The quantity of images to be used by subject in the
+training.
+
 @author: erickhdez, bermudezarii, xbolanos, nicolmorice
 </pre> </div><h2 class="groupheader">Function Documentation</h2>
-<a id="ae026f97918c8955dd2e7d1ca1bcf1dd6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae026f97918c8955dd2e7d1ca1bcf1dd6">&#9670;&nbsp;</a></span>get_request_images()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">def controller.system.get_request_images </td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>request</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<pre class="fragment">@summary: extracts only the image like files from the given uploaded set.
-
-Parameters
-----------
-@param request: the http request from the client.
-
-Returns
--------
-@return: True and a filled list if valid images were found, False and an
-empty list otherwise.
-</pre> 
-</div>
-</div>
-<a id="a4160411730e638f9c8aa127a18a44b82"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4160411730e638f9c8aa127a18a44b82">&#9670;&nbsp;</a></span>is_image()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">def controller.system.is_image </td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>file</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<pre class="fragment">@summary: checks if a given file is a valid image format for the system.
-
-Parameters
-----------
-@param file: the file to be tested.
-
-Returns
--------
-@return: true if the file is a valid image., false otherwise.
-</pre> 
-</div>
-</div>
-<a id="a35925b850af5ff5ef00d9f5b6234183b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a35925b850af5ff5ef00d9f5b6234183b">&#9670;&nbsp;</a></span>save_image()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">def controller.system.save_image </td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>image</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<pre class="fragment">@summary: saves a image into the static folder of the project, for later
-use.
-
-Parameters
-----------
-@param image: the image file to be saved.
-
-Returns
--------
-@return: the full path of the saved image.
-</pre> 
-</div>
-</div>
 <a id="a9f9e500512a0e3eba52af3f297432b61"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9f9e500512a0e3eba52af3f297432b61">&#9670;&nbsp;</a></span>show_index_page()</h2>
 
@@ -214,10 +148,9 @@ Return
         </tr>
       </table>
 </div><div class="memdoc">
-<pre class="fragment">@summary: look up for images in the request as well if it is a post
-request, in case this fails a the system will not be trained. Otherwise,
-the images are processed and used to train the system. The result of the
-function is always sent to the client.
+<pre class="fragment">@summary: gets the images handlers and use the FileStack API to download
+them into the local file system to use them into the training of the
+system.
 
 Parameters
 ----------
@@ -225,8 +158,8 @@ Parameters
 
 Returns
 -------
-@return: a success page if the processing and training went well. a failure
-page otherwise.
+@return: a json response containing the type, title and message fields to
+describe what happen within the server.
 </pre> 
 </div>
 </div>

@@ -1,5 +1,12 @@
 var searchData=
 [
-  ['save_5fimage',['save_image',['../namespacecontroller_1_1system.html#a35925b850af5ff5ef00d9f5b6234183b',1,'controller::system']]],
-  ['show_5findex_5fpage',['show_index_page',['../namespacecontroller_1_1facade.html#a9d5c0d3f727adaf25daa149567745094',1,'controller.facade.show_index_page()'],['../namespacecontroller_1_1system.html#a9f9e500512a0e3eba52af3f297432b61',1,'controller.system.show_index_page()'],['../namespacecontroller_1_1ui.html#a3881b5a4868b1b6872e1aa21a905e413',1,'controller.ui.show_index_page()']]]
+  ['metrics',['metrics',['../namespacetest_1_1metrics.html',1,'test']]],
+  ['test',['Test',['../classtest_1_1_unit_test2_1_1_test.html',1,'test.UnitTest2.Test'],['../classtest_1_1test_1_1_test.html',1,'test.test.Test'],['../namespacetest_1_1test.html',1,'test.test']]],
+  ['test_5faddimages',['test_addImages',['../classtest_1_1test_1_1_test.html#ad62429a61f0bc57b2da6e0c0100be5f5',1,'test::test::Test']]],
+  ['test_5fcov',['test_cov',['../classtest_1_1test_1_1_test.html#ac4bf2330a25003b4f925fa70b2cdae83',1,'test::test::Test']]],
+  ['test_5fmatrix2vector',['test_matrix2vector',['../classtest_1_1test_1_1_test.html#afda2a8035b3175452a078fb963c7db5e',1,'test::test::Test']]],
+  ['test_5ftranspose',['test_transpose',['../classtest_1_1test_1_1_test.html#ab43b63f05e54f63e712558bf5bcdad1b',1,'test::test::Test']]],
+  ['train_5fsystem',['train_system',['../namespacecontroller_1_1facade.html#a1f8eb36f8f571949e1c6d1ec80568847',1,'controller.facade.train_system()'],['../namespacecontroller_1_1system.html#ac32f523ab26cfed99c30173815043e23',1,'controller.system.train_system()']]],
+  ['training',['training',['../classcontroller_1_1images__manager_1_1_images_manager.html#adaac6f427089f6e25e54187e0c73cb67',1,'controller::images_manager::ImagesManager']]],
+  ['transpose',['transpose',['../classcontroller_1_1images__manager_1_1_images_manager.html#a522f2fca8c7fa191d7116c6536e82367',1,'controller::images_manager::ImagesManager']]]
 ];

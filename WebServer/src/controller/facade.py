@@ -16,7 +16,7 @@ def show_index_page(request):
 
     Return
     ------
-    @return: the system response.
+    @return: the system's response to the request.
     """
     return system.show_index_page(request)
 
@@ -32,6 +32,6 @@ def train_system(request):
 
     Return
     ------
-    @return: the system response.
+    @return: the system's response to the request.
     """
     return system.train_system(request)

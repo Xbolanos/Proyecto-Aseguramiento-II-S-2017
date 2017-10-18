@@ -8,23 +8,31 @@ import numpy as np
 
 
 class ImagesManager:
+    """
+    @summary: class for handling all the images processing as well as
+    guiding the system through learning and recognition.
+
+    Variables
+    ---------
+    @var images_paths: contains all the paths to the images currently being
+    used in the system.
+    @var images: contains the processed images matrix.
+    """
+
     images_paths = []
     images = []
-    A = []
-    G = 0
 
     def read_image(self, path):
         """
-        @summary: This function reads the image
+        @summary: This function reads the image.
 
         Parameters
         ----------
-        @param self: part of OOP syntax
-        @param path: is the address of the file that needs to be read
+        @param path: is the address of the file that needs to be read.
 
         Returns
         ----------
-        @return: the matrix of the image selected by the parameter path
+        @return: the matrix of the image selected by the parameter path.
         """
 
         return cv2.imread(path, 0)
@@ -38,7 +46,6 @@ class ImagesManager:
 
         Parameters
         ----------
-        @param self: part of OOP syntax
         @param samples: the matrix with all the samples of a given image. Which
         should have every sample as a column.
 
@@ -56,12 +63,11 @@ class ImagesManager:
 
         Parameters
         ----------
-        @param self: part of OOP syntax
         @param matrix: is the matrix of a given image.
 
         Returns
         ----------
-        @return: the same matrix in an array format
+        @return: the same matrix in an array format.
         """
 
         return np.asarray(matrix).reshape(-1)
@@ -73,12 +79,12 @@ class ImagesManager:
 
         Parameters
         ----------
-        @param self: part of OOP syntax
-        vector: receives a vector (the image matrix transformed in a vector)
+        @param vector: receives a vector (the image matrix transformed in a
+        vector).
 
         Returns
         ----------
-        @return: void
+        @return: void.
         """
 
         self.images.append(vector)
@@ -88,35 +94,31 @@ class ImagesManager:
         """
         @summary: This function transforms the matrix of images, puts each row
         as a column because each sample is as a row, but for the matrix of
-        covariance
+        covariance.
 
         Parameters
         ----------
-        @param self: part of OOP syntax
-        images: an array with the images transformed in a vector
-
+        @param images: an array with the images transformed in a vector.
 
         Returns
         ----------
-        @return: the matrix of images transposed
+        @return: the matrix of images transposed.
         """
         return np.array(images).transpose()
 
     def average_face(self, images):
         """
         @summary: This function calculates the mean from the
-        columns of the matrix images
-        which is the average face
+        columns of the matrix images which is the average face.
 
         Parameters
         ----------
-        @param self: part of OOP syntax
-        images: an array (matrix) with the images, each sample
-        is a column
+        @param images: an array (matrix) with the images, each sample
+        is a column.
 
         Returns
         ----------
-        @return: the mean of the columns in a single column
+        @return: the mean of the columns in a single column.
         """
         a = np.array(images)
         b = np.mean(a, axis=1)[np.newaxis]
@@ -124,21 +126,19 @@ class ImagesManager:
 
     def matrix_of_differences(self, images_n, av_face):
         """
-        @summary: This function calculates the matrix
-        of Differences, which is the each column of
-        the images matrix minus the average face
+        @summary: This function calculates the matrix of Differences, which
+        is the each column of the images matrix minus the average face.
 
         Parameters
         ----------
-        @param self: part of OOP syntax
-        images_n: an array (matrix) with the images, each sample
-        is a column
-        av_face: the mean between all the samples of the matrix
-        images
+        @para images_n: an array (matrix) with the images, each sample
+        is a column.
+        @param av_face: the mean between all the samples of the matrix
+        images.
 
         Returns
         ----------
-        @return: the matrix of difference
+        @return: the matrix of difference.
         """
         return images_n - av_face
 
@@ -147,16 +147,15 @@ class ImagesManager:
         @summary: This function calculates the covariance
         matrix multiplying the matrix of Differences with
         its transposed, this is the efficient covariance
-        matrix
+        matrix.
 
         Parameters
         ----------
-        @param self: part of OOP syntax
-        m_dif: matrix of Differences
+        @param m_dif: matrix of Differences.
 
         Returns
         ----------
-        @return: the efficent covariance matrix
+        @return: the efficent covariance matrix.
         """
         DT = np.matrix(np.transpose(m_dif))
         D = np.matrix(m_dif)
@@ -166,16 +165,15 @@ class ImagesManager:
         """
         @summary: This function calculates the covariance
         matrix multiplying the matrix of Differences with
-        its transposed, the big covariance matrix
+        its transposed, the big covariance matrix.
 
         Parameters
         ----------
-        @param self: part of OOP syntax
-        m_dif: matrix of Differences
+        @param m_dif: matrix of Differences.
 
         Returns
         ----------
-        @return: the no efficent covariance matrix
+        @return: the no efficent covariance matrix.
         """
         DT = np.matrix(m_dif.transpose())
         D = np.matrix(m_dif)
@@ -184,33 +182,31 @@ class ImagesManager:
     def eigen_values_of_matrix(self, matrix):
         """
         @summary: This function calculates with the help of
-        the library NUMPY, the eigen values from a matrix
+        the library NUMPY, the eigen values from a matrix.
 
         Parameters
         ----------
-        @param self: part of OOP syntax
-        matrix: matrix which needs the eigen values
+        @param matrix: matrix which needs the eigen values.
 
         Returns
         ----------
-        @return: an array of eigen values
+        @return: an array of eigen values.
         """
         return np.linalg.eig(matrix)[0]
 
     def eigen_vectors_of_matrix(self, matrix, n):
         """
         @summary: This function calculates with the help of
-        the library NUMPY, the eigen vectors from a matrix
+        the library NUMPY, the eigen vectors from a matrix.
 
         Parameters
         ----------
-        @param self: part of OOP syntax
-        matrix: matrix which needs the eigen vectors
-        n: how many eigen vectors do you want to work with
+        @param matrix: matrix which needs the eigen vectors.
+        @param n: how many eigen vectors do you want to work with.
 
         Returns
         ----------
-        @return: an array of eigen vectors
+        @return: an array of eigen vectors.
         """
         matrix_vectors = np.linalg.eig(matrix)[1]
         matrix_reduced = np.array(matrix_vectors)[:, 0:n]
@@ -218,18 +214,17 @@ class ImagesManager:
 
     def calculate_w(self, m_dif, n):
         """
-        @summary: This function calculates W that is the
-        N-k eigenvectors
+        @summary: This function calculates W that is the N-k eigenvectors.
+
         Parameters
         ----------
-        @param self: part of OOP syntax
-        m_dif: matrix of Differences
-        n: how many eigen vectors do you want to work with
+        @param m_dif: matrix of Differences
+        @param n: how many eigen vectors do you want to work with
 
         Returns
         ----------
         @return: W = the N-k eigenvalues of the efficent matrix
-        of covariance
+        of covariance.
         """
         ev = self.calculate_cov_matrix_ev(m_dif)
         eigen = self.eigen_vectors_of_matrix(ev, n)
@@ -238,17 +233,16 @@ class ImagesManager:
 
     def project_images(self, m_dif, w):
         """
-        @summary: This function transforms the columns
-        into a projected space
+        @summary: This function transforms the columns into a projected space.
+
         Parameters
         ----------
-        @param self: part of OOP syntax
-        m_dif: matrix of Differences
-        w: the matrix of difference multiplied eigen values
+        @param m_dif: matrix of Differences.
+        @param w: the matrix of difference multiplied eigen values.
 
         Returns
         ----------
-        @return: a matrix of the matrix of difference projected
+        @return: a matrix of the matrix of difference projected.
         """
         wt = np.transpose(np.matrix(w))
         m_dif_projected = wt * np.matrix(m_dif)
@@ -256,13 +250,13 @@ class ImagesManager:
 
     def classify_nearest_centroid(self, new_image, projected_images):
         """
-        @summary: This function search the face of the new image
+        @summary: This function search the face of the new image.
+
         Parameters
         ----------
-        @param self: part of OOP syntax
-        new_image: the image that you need the face of, it has
-        come processed
-        projected_images: the images of training already projected
+        @param new_image: the image that you need the face of, it has
+        come processed.
+        @param projected_images: the images of training already projected
         into the space.
 
         Returns
@@ -292,6 +286,10 @@ class ImagesManager:
         ----------
         @param images_paths: a list containing all the paths of the images to
         be loaded.
+
+        Returns
+        -------
+        @return: void.
         """
         del self.images[:]
 
@@ -303,7 +301,8 @@ class ImagesManager:
     def training(self, n_eigen_vectors, paths, n_training):
         """
         @summary: This function trains the system with faces
-        calling different functions
+        calling different functions.
+
         Parameters
         ----------
         @param n_eigen_vectors: how many eigen vectors
@@ -311,6 +310,10 @@ class ImagesManager:
         @param paths: a list of paths containing the address to the new images
         to be added to the system.
         @param n_training: number of faces/images per subject
+
+        Returns
+        -------
+        @return: void.
         """
         self.images_paths.extend(paths)
         self.load_images()
@@ -332,10 +335,12 @@ class ImagesManager:
 
     def recognize(self, path):
         """
-        @summary: This function search the face of the new image
+        @summary: This function search the face of the new image.
+
         Parameters
         ----------
-        @param path: address of the image
+        @param path: address of the image.
+
         Returns
         ----------
         @return: the value that correspond to the person detected
@@ -352,8 +357,3 @@ class ImagesManager:
         print("pls result ")
         print(result)
         return (result)
-
-    # ---------------------------------------------------------------------
-    # plt.imshow(img, cmap = 'gray', interpolation = 'bicubic')
-    # plt.xticks([]), plt.yticks([])  # to hide tick values on X and Y axis
-    # plt.show()

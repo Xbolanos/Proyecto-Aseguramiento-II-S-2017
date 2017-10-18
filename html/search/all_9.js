@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['read_5fimage',['read_image',['../classcontroller_1_1images__manager_1_1_images_manager.html#a8751e3cd2665e9f4d618d3d6194f7c28',1,'controller::images_manager::ImagesManager']]]
+  ['show_5findex_5fpage',['show_index_page',['../namespacecontroller_1_1facade.html#a9d5c0d3f727adaf25daa149567745094',1,'controller.facade.show_index_page()'],['../namespacecontroller_1_1system.html#a9f9e500512a0e3eba52af3f297432b61',1,'controller.system.show_index_page()'],['../namespacecontroller_1_1ui.html#a3881b5a4868b1b6872e1aa21a905e413',1,'controller.ui.show_index_page()']]]
 ];

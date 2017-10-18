@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['get_5frequest_5fimages',['get_request_images',['../namespacecontroller_1_1system.html#ae026f97918c8955dd2e7d1ca1bcf1dd6',1,'controller::system']]]
+  ['imagesmanager',['ImagesManager',['../classcontroller_1_1images__manager_1_1_images_manager.html',1,'controller::images_manager']]]
 ];

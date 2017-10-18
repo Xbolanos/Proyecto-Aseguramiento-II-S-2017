@@ -1,6 +1,16 @@
 '''
 Created on Oct 10, 2017
 
+@summary: the main controller of the system, will handle request, control the
+image processing module and responding to the clients.
+
+Variables
+---------
+@var IM: instance of the ImagesManager class.
+@var EIGEN_VECTORS: The quantity of eigen vectors to be used in the training.
+@var IMAGES_PER_SUBJECT: The quantity of images to be used by subject in the
+training.
+
 @author: erickhdez, bermudezarii, xbolanos, nicolmorice
 '''
 
@@ -34,10 +44,9 @@ def show_index_page(request):
 
 def train_system(request):
     """
-    @summary: look up for images in the request as well if it is a post
-    request, in case this fails a the system will not be trained. Otherwise,
-    the images are processed and used to train the system. The result of the
-    function is always sent to the client.
+    @summary: gets the images handlers and use the FileStack API to download
+    them into the local file system to use them into the training of the
+    system.
 
     Parameters
     ----------
@@ -45,8 +54,8 @@ def train_system(request):
 
     Returns
     -------
-    @return: a success page if the processing and training went well. a failure
-    page otherwise.
+    @return: a json response containing the type, title and message fields to
+    describe what happen within the server.
     """
     if request.method != 'POST':
         # No other method are allowed for this function than post.
@@ -55,12 +64,13 @@ def train_system(request):
                              'message': 'No se permiten otros metodos además' +
                                         'de post.'})
 
-    data = request.body.decode('UTF-8')
-    data = eval(data)
-    path = STATICFILES_DIRS[0]
+    data = request.body.decode('UTF-8')  # Turns bytes body into a string.
+    data = eval(data)  # Turns the string into a working list.
+    path = STATICFILES_DIRS[0]  # The static path for de subjects images.
     images_paths = []
 
     for handler in data['handlers']:
+        # Creates a new object to connect to FileStack with the given API.
         filelink = Filelink(handler, apikey='AFWdiEhaQUP00SdiMZPugz')
         extension = filelink.get_metadata()['filename'][-4:]
         fullpath = path + '/subjects/' + handler + extension

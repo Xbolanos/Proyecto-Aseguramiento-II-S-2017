@@ -18,7 +18,7 @@ def show_index_page(request):
 
     Return
     ------
-    @return: the facade response.
+    @return: the system's response to the request.
     """
     return facade.show_index_page(request)
 
@@ -34,6 +34,6 @@ def learn(request):
 
     Return
     ------
-    @return: the facade response.
+    @return: the system's response to the request.
     """
     return facade.train_system(request)

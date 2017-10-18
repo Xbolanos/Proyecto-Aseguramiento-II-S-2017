@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['imagesmanager',['ImagesManager',['../classcontroller_1_1images__manager_1_1_images_manager.html',1,'controller::images_manager']]],
-  ['is_5fimage',['is_image',['../namespacecontroller_1_1system.html#a4160411730e638f9c8aa127a18a44b82',1,'controller::system']]],
-  ['test',['test',['../namespace_images_management_1_1test.html',1,'ImagesManagement']]]
+  ['learn',['learn',['../namespacecontroller_1_1ui.html#a15d69e121399166729fbd06e76d7ba63',1,'controller::ui']]],
+  ['load_5fimages',['load_images',['../classcontroller_1_1images__manager_1_1_images_manager.html#a9e8d7db6399512773669e84ae2f589bf',1,'controller::images_manager::ImagesManager']]]
 ];
