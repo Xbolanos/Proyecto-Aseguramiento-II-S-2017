@@ -1,3 +1,7 @@
+'''
+Created on Oct 15, 2017
+@author: xbolanos
+'''
 import numpy as np
 import random
 import pandas as pd
@@ -421,6 +425,17 @@ path_list = [
 
 
 def classifaction_report_csv(report):
+    """
+        @summary: This function reads the report and convert it into csv file
+
+        Parameters
+        ----------
+        @param report: classification_report
+
+        Returns
+        ----------
+        @return: void
+        """
     report_data = []
     lines = report.split('\n')
     for line in lines[2:-3]:
@@ -433,10 +448,22 @@ def classifaction_report_csv(report):
         row['support'] = float(row_data[4])
         report_data.append(row)
     dataframe = pd.DataFrame.from_dict(report_data)
-    dataframe.to_csv('classification_report.csv', index = False)
+    dataframe.to_csv('classification_report.csv', index=False)
 
 
 def create_report_csv():
+    """
+    @summary: This function get the recall, precision and f1-score and save it
+    into csv
+
+    Parameters
+    ----------
+    @param void
+
+    Returns
+    ----------
+    @return: void
+    """
     matrix_true = []
     matrix_pred = []
 
