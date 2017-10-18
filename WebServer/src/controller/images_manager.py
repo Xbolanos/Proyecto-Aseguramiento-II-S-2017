@@ -8,7 +8,7 @@ import numpy as np
 
 
 class ImagesManager:
-
+    images_paths = []
     images = []
     A = []
     G = 0
@@ -283,7 +283,7 @@ class ImagesManager:
             i = i + n
         return results.index(min(results)) + 1
 
-    def load_images(self, images_paths):
+    def load_images(self):
         """
         @summary: loads all the images from the given parameter list and add
         them to the images list.
@@ -293,12 +293,14 @@ class ImagesManager:
         @param images_paths: a list containing all the paths of the images to
         be loaded.
         """
-        for path in images_paths:
+        del self.images[:]
+
+        for path in self.images_paths:
             greys_image = self.read_image(path)
             column_vector = self.matrix_2_vector(greys_image)
             self.add_2_images(column_vector)
 
-    def training(self, n_eigen_vectors, path, n_training):
+    def training(self, n_eigen_vectors, paths, n_training):
         """
         @summary: This function trains the system with faces
         calling different functions
@@ -306,11 +308,12 @@ class ImagesManager:
         ----------
         @param n_eigen_vectors: how many eigen vectors
         would you like to work with
-        path: a list that contains the paths of the
-        images
-        n_training: number of faces/images per subject
+        @param paths: a list of paths containing the address to the new images
+        to be added to the system.
+        @param n_training: number of faces/images per subject
         """
-        self.load_images(path)
+        self.images_paths.extend(paths)
+        self.load_images()
         normalized = self.transpose(self.images)
         av_face = self.average_face(normalized)
         print("a")
@@ -332,7 +335,7 @@ class ImagesManager:
         @summary: This function search the face of the new image
         Parameters
         ----------
-        @param path: address of the image 
+        @param path: address of the image
         Returns
         ----------
         @return: the value that correspond to the person detected
