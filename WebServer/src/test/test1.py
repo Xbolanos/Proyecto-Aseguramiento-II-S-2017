@@ -421,8 +421,11 @@ path_list = [
         "Muestras/s41/9.pgm",
         "Muestras/s41/10.pgm"
     ]
-#imagesm.training(300, path_list, 10)
 
+
+
+imagesm.training(300, path_list, 10)
+imagesm.recognize(path_list[0])
 """
 matrix_true=[]
 matrix_pred=[]
@@ -434,11 +437,11 @@ for x in range(int(len(path_list)*0.2)):
 
 print(matrix_true)
 print(matrix_pred)
-"""
+
 matrix_true=[29, 4, 6, 32, 5, 27, 26, 3, 37, 32, 18, 5, 21, 40, 21, 18, 38, 2, 36, 22, 34, 20, 14, 39, 1, 1, 38, 14, 11, 23, 18, 26, 4, 14, 9, 1, 5, 41, 32, 19, 5, 5, 11, 19, 24, 11, 15, 32, 35, 9, 5, 1, 21, 9, 4, 38, 39, 32, 16, 12, 15, 21, 18, 33, 41, 14, 21, 41, 34, 39, 14, 1, 11, 14, 11, 20, 17, 20, 38, 38, 6, 38]
 matrix_pred=[39, 3, 6, 32, 5, 27, 12, 3, 37, 32, 18, 5, 21, 40, 21, 5, 38, 2, 36, 22, 34, 33, 14, 39, 1, 1, 38, 37, 11, 23, 18, 3, 17, 14, 9, 1, 5, 41, 32, 28, 40, 5, 11, 28, 24, 11, 15, 32, 35, 23, 5, 1, 31, 9, 4, 23, 39, 32, 16, 12, 15, 21, 5, 33, 41, 37, 21, 41, 31, 39, 37, 1, 11, 14, 27, 20, 36, 20, 38, 38, 6, 38]
 
 from sklearn.metrics import precision_recall_fscore_support
 
 y=precision_recall_fscore_support(np.array(matrix_true),np.array(matrix_pred), average='macro')
-print(y)
+print(y)"""

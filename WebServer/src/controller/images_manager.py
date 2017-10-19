@@ -5,6 +5,7 @@ Created on Aug 12, 2017
 
 import cv2
 import numpy as np
+from WebServer.settings import STATICFILES_DIRS
 
 
 class ImagesManager:
@@ -17,10 +18,12 @@ class ImagesManager:
     @var images_paths: contains all the paths to the images currently being
     used in the system.
     @var images: contains the processed images matrix.
+    @var path_saved: contains the path of saved stuff
     """
 
     images_paths = []
     images = []
+    path_saved = STATICFILES_DIRS[0] + '/saved/'
 
     def read_image(self, path):
         """
@@ -266,7 +269,7 @@ class ImagesManager:
         """
         cols = projected_images.shape[1]
         results = []
-        n = int(np.loadtxt('n_training.out'))
+        n = int(np.loadtxt(self.path_saved+'n_training.out'))
         i = 0
         while (i < cols):
             analyse = np.array(projected_images[:, [i, i+(n-1)]])
@@ -315,23 +318,25 @@ class ImagesManager:
         -------
         @return: void.
         """
+
         self.images_paths.extend(paths)
         self.load_images()
         normalized = self.transpose(self.images)
         av_face = self.average_face(normalized)
         print("a")
-        np.savetxt('AverageFace.out', av_face, delimiter=',')
+        np.savetxt(self.path_saved+'AverageFace.out', av_face, delimiter=',')
         print("a")
         m_dif = self.matrix_of_differences(normalized, av_face)
-        print("a")
+        print(m_dif)
         w = self.calculate_w(m_dif, n_eigen_vectors)
-        print("a")
-        np.savetxt('W.out', w, delimiter=',')
+        print(w)
+        np.savetxt(self.path_saved+'W.out', w, delimiter=',')
         all_projected = self.project_images(m_dif, w)
-        np.savetxt('projectedFaces.out', all_projected, delimiter=',')
-        print("a")
+        all_p = self.path_saved+'projectedFaces.out'
+        np.savetxt(all_p, all_projected, delimiter=',')
+        print(all_projected)
         n_train = np.matrix(n_training)
-        np.savetxt('n_training.out', n_train)
+        np.savetxt(self.path_saved+'n_training.out', n_train)
 
     def recognize(self, path):
         """
@@ -346,9 +351,11 @@ class ImagesManager:
         @return: the value that correspond to the person detected
         in the image.
         """
-        av_face = np.loadtxt('AverageFace.out', delimiter=',')[np.newaxis]
-        w = np.loadtxt('W.out', delimiter=',')
-        all_projected = np.loadtxt('projectedFaces.out', delimiter=',')
+        av = self.path_saved+'AverageFace.out'
+        av_face = np.loadtxt(av, delimiter=',')[np.newaxis]
+        w = np.loadtxt(self.path_saved+'W.out', delimiter=',')
+        all_p = self.path_saved+'projectedFaces.out'
+        all_projected = np.loadtxt(all_p, delimiter=',')
         e_image = self.matrix_2_vector(self.read_image(path))[np.newaxis]
         t_image = self.transpose(e_image)
         image = self.matrix_of_differences(t_image, av_face.T)
