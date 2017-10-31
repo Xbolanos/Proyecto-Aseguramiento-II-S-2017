@@ -6,7 +6,6 @@ Created on 19 ago. 2017
 import unittest
 import numpy as np
 from controller.images_manager import ImagesManager
-from numpy import loadtxt
 
 
 class Test(unittest.TestCase):
@@ -15,7 +14,7 @@ class Test(unittest.TestCase):
     """
     path_list = [
         "Muestras/s1/1.pgm",
-        "Muestras/s1/2.pgm", 
+        "Muestras/s1/2.pgm",
         "Muestras/s1/3.pgm",
         "Muestras/s1/4.pgm",
         "Muestras/s1/5.pgm",
@@ -25,9 +24,10 @@ class Test(unittest.TestCase):
         "Muestras/s1/9.pgm",
         "Muestras/s1/10.pgm"
     ]
-    
+
     """
-    las matrices de las imagenes, cada una corresponde a una imagen, del sujeto s1 
+    las matrices de las imagenes, cada una corresponde a una imagen, del sujeto
+    s1.
     """
     expected = [
         np.loadtxt("Pruebas/s1 matrizImg/1"),
@@ -41,9 +41,9 @@ class Test(unittest.TestCase):
         np.loadtxt("Pruebas/s1 matrizImg/9"),
         np.loadtxt("Pruebas/s1 matrizImg/10")
     ]
-    
+
     """
-    matrices transformadas en vectores de cada imagen del sujeto 1 
+    matrices transformadas en vectores de cada imagen del sujeto 1
     """
     expectedt2 = [
         np.loadtxt("Pruebas/s1 mxv/v1"),
@@ -57,9 +57,9 @@ class Test(unittest.TestCase):
         np.loadtxt("Pruebas/s1 mxv/v9"),
         np.loadtxt("Pruebas/s1 mxv/v10")
     ]
-    
+
     """
-    muestras sin ser transpuestas, es cada sujeto, s1, s2, s3 
+    muestras sin ser transpuestas, es cada sujeto, s1, s2, s3
     """
     samples = [
         np.loadtxt("Pruebas/MuestrasSinTransponer/s1"),
@@ -73,7 +73,7 @@ class Test(unittest.TestCase):
         np.loadtxt("Pruebas/MuestrasSinTransponer/s9"),
         np.loadtxt("Pruebas/MuestrasSinTransponer/s10")
     ]
-    
+
     """
     muestras transpuestas
     """
@@ -89,112 +89,118 @@ class Test(unittest.TestCase):
         np.loadtxt("Pruebas/MuestrtasTranspuestas/s9"),
         np.loadtxt("Pruebas/MuestrtasTranspuestas/s10")
     ]
-    
+
     """
-    el siguiente archivo esta comentado porque debe estar seguro de tener el archivo cov s1-10
-    https://1drv.ms/u/s!AivfRA4YYnYCgcsfFKOWWW6QvarZ6Q link para descargar la prueba 
+    el siguiente archivo esta comentado porque debe estar seguro de tener el
+    archivo cov s1-10 https://1drv.ms/u/s!AivfRA4YYnYCgcsfFKOWWW6QvarZ6Q link
+    para descargar la prueba.
     """
-    #DEBE DESCARGAR LA PRUEBA SINO NO CORRE 
+    # DEBE DESCARGAR LA PRUEBA SINO NO CORRE
     expectedcov = np.loadtxt("Pruebas/cov s1-10")
-    
-    G = 0 
-    
+
+    G = 0
+
     def test_addImages(self):
         """
-        @summary: This function is an unit test for add images of the class Imagesmanager
-        
+        @summary: This function is an unit test for add images of the class
+        Imagesmanager
+
         Parameters
         ----------
         @param self: part of OOP syntax
-        
+
         Returns
         ----------
         @return: void
         """
-        
-        self.G = 0 
+
+        self.G = 0
         imagesm = ImagesManager()
-        for path in self.path_list:    
-            result = ImagesManager.addImage(imagesm, path)
+        for path in self.path_list:
+            result = imagesm.addImage(imagesm, path)
             result = result.astype('float')
-            
-            self.assertEqual(result.all(), self.expected[self.G].all(), "No devuelve la misma matriz de la respectiva imagen")
-            
-            print(self.G)
-            self.G = self.G + 1  
-            
-    def test_matrix2vector(self):
-        """
-        @summary: This function is an unit test for matrix2vector of the class Imagesmanager
-        
-        Parameters
-        ----------
-        @param self: part of OOP syntax
-        
-        Returns
-        ----------
-        @return: void
-        """
-        imagesm = ImagesManager()
-        self.G = 0 
-        for mat in self.expected:    
-            result = imagesm.matrix2vector(mat)
-            result = result.astype('float')
-            
-            self.assertEqual(result.all(), self.expectedt2[self.G].all(), "El vector no coincide con el resultado esperado")
-            
-            print(self.G)
-            self.G = self.G + 1  
-        
-        
-    def test_transpose(self):
-        """
-        @summary: This function is an unit test for transpose of the class Imagesmanager
-        
-        Parameters
-        ----------
-        @param self: part of OOP syntax
-        
-        Returns
-        ----------
-        @return: void
-        """
-        imagesm = ImagesManager()
-        self.G = 0 
-        for muestra in self.samples:  
-              
-            result = imagesm.transpose(muestra)
-            result = result.astype('float')
-            
-            self.assertEqual(result.all(), self.samplesTranposed[self.G].all(), "La matriz dada no coincide con el resultado esperado")
-            
+
+            self.assertEqual(result.all(), self.expected[self.G].all(),
+                             "No devuelve la misma matriz de la respectiva" +
+                             "imagen")
+
             print(self.G)
             self.G = self.G + 1
-            
-#DEBE tener el archivo cov s1-10 DESCARGAR DE https://1drv.ms/u/s!AivfRA4YYnYCgcsfFKOWWW6QvarZ6Q   
 
-    def test_cov(self):
+    def test_matrix2vector(self):
         """
-        @summary: This function is an unit test for calculating covariance matrix of the class Imagesmanager
-        
+        @summary: This function is an unit test for matrix2vector of the class
+        Imagesmanager.
+
         Parameters
         ----------
         @param self: part of OOP syntax
-        
+
         Returns
         ----------
         @return: void
         """
         imagesm = ImagesManager()
-        
-        self.G = 0 
-      
-           
-        result = imagesm.calculateCovarianceMatrix(np.loadtxt("Pruebas/muestra s1-10"))
-        
-        self.assertEqual(result.all(), self.expectedcov.all(), "No son la misma matriz")
+        self.G = 0
+        for mat in self.expected:
+            result = imagesm.matrix2vector(mat)
+            result = result.astype('float')
+
+            self.assertEqual(result.all(), self.expectedt2[self.G].all(),
+                             "El vector no coincide con el resultado esperado")
+
+            print(self.G)
+            self.G = self.G + 1
+
+    def test_transpose(self):
+        """
+        @summary: This function is an unit test for transpose of the class
+        Imagesmanager
+
+        Parameters
+        ----------
+        @param self: part of OOP syntax
+
+        Returns
+        ----------
+        @return: void
+        """
+        imagesm = ImagesManager()
+        self.G = 0
+        for muestra in self.samples:
+
+            result = imagesm.transpose(muestra)
+            result = result.astype('float')
+
+            self.assertEqual(result.all(), self.samplesTranposed[self.G].all(),
+                             "La matriz dada no coincide con el resultado" +
+                             "esperado")
+
+            print(self.G)
+            self.G = self.G + 1
+
+# DEBE tener el archivo cov s1-10 DESCARGAR DE
+# https://1drv.ms/u/s!AivfRA4YYnYCgcsfFKOWWW6QvarZ6Q
+    def test_cov(self):
+        """
+        @summary: This function is an unit test for calculating covariance
+        matrix of the class Imagesmanager
+
+        Parameters
+        ----------
+        @param self: part of OOP syntax
+
+        Returns
+        ----------
+        @return: void
+        """
+        imagesm = ImagesManager()
+
+        self.G = 0
+
+        result = imagesm.calculateCovarianceMatrix(
+            np.loadtxt("Pruebas/muestra s1-10"))
+
+        self.assertEqual(result.all(), self.expectedcov.all(),
+                         "No son la misma matriz")
         print("Listo test cov")
-     
-     
-     
-   
