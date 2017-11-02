@@ -22,7 +22,7 @@ from django.http.response import JsonResponse
 from filestack import Filelink
 
 IM = ImagesManager()
-EIGEN_VECTORS = 300
+EIGEN_VECTORS = 1000
 IMAGES_PER_SUBJECT = 8
 
 

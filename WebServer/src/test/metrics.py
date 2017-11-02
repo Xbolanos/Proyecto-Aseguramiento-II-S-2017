@@ -422,6 +422,25 @@ path_list = [
         "Muestras/s41/9.pgm",
         "Muestras/s41/10.pgm",
     ]
+def getSamples(): 
+    newList = []
+    n = len(path_list)
+    i = 0
+    while (i < n):
+        if(i%10 >= 8):
+            newList.append(path_list[i])
+            i = i + 1
+        else:
+            i = i + 8
+    print(newList)
+    return newList
+
+
+
+def answer(index):
+    if (index % 2 != 0): 
+        index = index - 1 
+    return int(index / 2) + 1 
 
 
 def classifaction_report_csv(report):
@@ -441,12 +460,13 @@ def classifaction_report_csv(report):
     for line in lines[2:-3]:
         row = {}
         row_data = line.split('      ')
-        row['class'] = row_data[0]
-        row['precision'] = float(row_data[1])
-        row['recall'] = float(row_data[2])
-        row['f1_score'] = float(row_data[3])
-        row['support'] = float(row_data[4])
+        row['class'] = row_data[1]
+        row['precision'] = float(row_data[2])
+        row['recall'] = float(row_data[3])
+        row['f1_score'] = float(row_data[4])
+        row['support'] = float(row_data[5])
         report_data.append(row)
+
     dataframe = pd.DataFrame.from_dict(report_data)
     dataframe.to_csv('classification_report.csv', index=False)
 
@@ -466,19 +486,19 @@ def create_report_csv():
     """
     matrix_true = []
     matrix_pred = []
-
-    for x in range(int(len(path_list)*0.2)):
-        path = path_list[random.randint(0, 409)]
-        type_face = path.split('/')[1][1:]
+    samples = getSamples()
+    for x in range(len(samples)):
+        path = samples[x]
+        type_face = answer(x)
         matrix_true.append(imagesm.recognize(path))
-        matrix_pred.append(int(type_face))
+        matrix_pred.append(type_face)
     print(x)
     print(matrix_true)
     print(matrix_pred)
-    print(int(len(path_list)*0.2))
 
     conf_mat = confusion_matrix(matrix_true, matrix_pred)
     class_report = classification_report(matrix_true, matrix_pred)
+    print(class_report)
     classifaction_report_csv(class_report)
     tp_fp_fn_tn = []
     for i in range(len(conf_mat)):

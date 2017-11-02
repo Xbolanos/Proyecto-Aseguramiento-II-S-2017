@@ -164,39 +164,6 @@ class ImagesManager:
         D = np.matrix(m_dif)
         return DT*D
 
-    def calculate_cov_matrix_ew(self, m_dif):
-        """
-        @summary: This function calculates the covariance
-        matrix multiplying the matrix of Differences with
-        its transposed, the big covariance matrix.
-
-        Parameters
-        ----------
-        @param m_dif: matrix of Differences.
-
-        Returns
-        ----------
-        @return: the no efficent covariance matrix.
-        """
-        DT = np.matrix(m_dif.transpose())
-        D = np.matrix(m_dif)
-        return D*DT
-
-    def eigen_values_of_matrix(self, matrix):
-        """
-        @summary: This function calculates with the help of
-        the library NUMPY, the eigen values from a matrix.
-
-        Parameters
-        ----------
-        @param matrix: matrix which needs the eigen values.
-
-        Returns
-        ----------
-        @return: an array of eigen values.
-        """
-        return np.linalg.eig(matrix)[0]
-
     def eigen_vectors_of_matrix(self, matrix, n):
         """
         @summary: This function calculates with the help of
@@ -211,7 +178,7 @@ class ImagesManager:
         ----------
         @return: an array of eigen vectors.
         """
-        matrix_vectors = np.linalg.eig(matrix)[1]
+        matrix_vectors = np.linalg.eigh(matrix)[1]
         matrix_reduced = np.array(matrix_vectors)[:, 0:n]
         return matrix_reduced
 
@@ -231,7 +198,8 @@ class ImagesManager:
         """
         ev = self.calculate_cov_matrix_ev(m_dif)
         eigen = self.eigen_vectors_of_matrix(ev, n)
-        w = np.matrix(m_dif) * eigen
+        w = np.dot(np.matrix(m_dif), eigen)
+        #matmul
         return w
 
     def project_images(self, m_dif, w):
@@ -267,18 +235,12 @@ class ImagesManager:
         @return: the value that correspond to the person detected
         in the image.
         """
-        cols = projected_images.shape[1]
-        results = []
-        n = int(np.loadtxt(self.path_saved+'n_training.out'))
-        i = 0
-        while (i < cols):
-            analyse = np.array(projected_images[:, [i, i+(n-1)]])
-            face = np.transpose(self.average_face(analyse))
-            new_i = np.transpose(new_image)
-            distance_norm = np.linalg.norm(face-new_i)
-            results.append(distance_norm)
-            i = i + n
-        return results.index(min(results)) + 1
+        a = projected_images-new_image
+        distance_norm = np.linalg.norm(a, axis=0)
+        n = np.argmin(distance_norm)
+        final = int(n/8)
+        print("resultado " + str(final))
+        return final + 1 
 
     def load_images(self):
         """
@@ -359,7 +321,7 @@ class ImagesManager:
         e_image = self.matrix_2_vector(self.read_image(path))[np.newaxis]
         t_image = self.transpose(e_image)
         image = self.matrix_of_differences(t_image, av_face.T)
-        processed = self.project_images(image, w)
+        processed = self.project_images(image, w) #esto multiplica la imagen x por autovectores transpuestos 
         result = self.classify_nearest_centroid(processed, all_projected)
         print("pls result ")
         print(result)

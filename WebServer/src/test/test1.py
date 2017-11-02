@@ -423,9 +423,19 @@ path_list = [
     ]
 
 
+newList = []
+n = len(path_list)
+i = 0
+while (i < n):
+    if(i%10 == 8):
+        i = i + 2
+    else: 
+        newList.append(path_list[i])
+        i = i + 1
 
-imagesm.training(300, path_list, 10)
-imagesm.recognize(path_list[0])
+print(newList)
+imagesm.training(328, newList, 8)
+imagesm.recognize(path_list[9])
 """
 matrix_true=[]
 matrix_pred=[]
