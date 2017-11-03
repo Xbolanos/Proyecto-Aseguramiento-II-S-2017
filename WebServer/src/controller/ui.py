@@ -5,6 +5,7 @@ Created on Aug 12, 2017
 '''
 
 from controller import facade
+from django.shortcuts import render
 
 
 def show_index_page(request):
@@ -20,7 +21,8 @@ def show_index_page(request):
     ------
     @return: the system's response to the request.
     """
-    return facade.show_index_page(request)
+    page = facade.get_index_page()
+    return render(request, page)
 
 
 def learn(request):
@@ -36,4 +38,15 @@ def learn(request):
     ------
     @return: the system's response to the request.
     """
-    return facade.train_system(request)
+    if request.method != 'POST':
+        # No other method are allowed for this function than post.
+        return JsonResponse({'type': 'error',
+                             'title': 'Metodo invalido',
+                             'message': 'No se permiten otros metodos además' +
+                                        'de post.'})
+
+    data = request.body.decode('UTF-8')  # Turns bytes body into a string.
+    data = eval(data)  # Turns the string into a working list.
+
+    reponse = facade.train_system(date)
+    return JsonResponse(response)

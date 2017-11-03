@@ -6,7 +6,7 @@ Created on Oct 10, 2017
 from controller import system
 
 
-def show_index_page(request):
+def get_index_page():
     """
     @summary: asks the core system for the home page of the website.
 
@@ -18,20 +18,20 @@ def show_index_page(request):
     ------
     @return: the system's response to the request.
     """
-    return system.show_index_page(request)
+    return system.get_index_page()
 
 
-def train_system(request):
+def train_system(data):
     """
     @summary: pass the request to the system so it can get the uploaded images
     and process them.
 
     Parameters
     ----------
-    @param request: the http request from the client.
+    @param data: the data from the client's http request.
 
     Return
     ------
     @return: the system's response to the request.
     """
-    return system.train_system(request)
+    return system.train_system(data)

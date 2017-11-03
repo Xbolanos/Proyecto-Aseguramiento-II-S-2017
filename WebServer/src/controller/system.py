@@ -15,7 +15,6 @@ training.
 '''
 
 
-from django.shortcuts import render
 from WebServer.settings import STATICFILES_DIRS
 from controller.images_manager import ImagesManager
 from django.http.response import JsonResponse
@@ -26,7 +25,7 @@ EIGEN_VECTORS = 1000
 IMAGES_PER_SUBJECT = 8
 
 
-def show_index_page(request):
+def get_index_page():
     """
     @summary: a basic function to retrieve the home page of the website and
     returns it to the client.
@@ -39,10 +38,10 @@ def show_index_page(request):
     ------
     @return: the home page of the web site.
     """
-    return render(request, 'index.html')
+    return 'index.html'
 
 
-def train_system(request):
+def train_system(data):
     """
     @summary: gets the images handlers and use the FileStack API to download
     them into the local file system to use them into the training of the
@@ -50,22 +49,13 @@ def train_system(request):
 
     Parameters
     ----------
-    @param request: the http request from the client.
+    @param data: the data from the client's http request.
 
     Returns
     -------
     @return: a json response containing the type, title and message fields to
     describe what happen within the server.
     """
-    if request.method != 'POST':
-        # No other method are allowed for this function than post.
-        return JsonResponse({'type': 'error',
-                             'title': 'Metodo invalido',
-                             'message': 'No se permiten otros metodos además' +
-                                        'de post.'})
-
-    data = request.body.decode('UTF-8')  # Turns bytes body into a string.
-    data = eval(data)  # Turns the string into a working list.
     path = STATICFILES_DIRS[0]  # The static path for de subjects images.
     images_paths = []
 
@@ -79,7 +69,6 @@ def train_system(request):
 
     IM.training(EIGEN_VECTORS, images_paths, IMAGES_PER_SUBJECT)
 
-    return JsonResponse({'type': 'success',
-                         'title': '¡Registrado!',
-                         'message': 'Se ha agregado al nuevo sujeto al' +
-                                    'sistema.'})
+    return {'type': 'success',
+            'title': '¡Registrado!',
+            'message': 'Se ha agregado al nuevo sujeto al sistema.'}
