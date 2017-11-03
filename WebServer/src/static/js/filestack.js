@@ -1,4 +1,4 @@
-var apikey = 'AFWdiEhaQUP00SdiMZPugz';
+var apikey = 'AhZpdzSRTdW9nhvd946LAz';
 // El api es para subir las imagenes a internet
 
 var client = filestack.init(apikey);

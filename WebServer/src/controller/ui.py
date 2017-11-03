@@ -6,6 +6,7 @@ Created on Aug 12, 2017
 
 from controller import facade
 from django.shortcuts import render
+from django.http import JsonResponse
 
 
 def show_index_page(request):
@@ -48,5 +49,5 @@ def learn(request):
     data = request.body.decode('UTF-8')  # Turns bytes body into a string.
     data = eval(data)  # Turns the string into a working list.
 
-    reponse = facade.train_system(date)
+    response = facade.train_system(data)
     return JsonResponse(response)

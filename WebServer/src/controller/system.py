@@ -14,15 +14,10 @@ training.
 @author: erickhdez, bermudezarii, xbolanos, nicolmorice
 '''
 
-
 from WebServer.settings import STATICFILES_DIRS
 from controller.images_manager import ImagesManager
-from django.http.response import JsonResponse
+from controller.training_manager import Training
 from filestack import Filelink
-
-IM = ImagesManager()
-EIGEN_VECTORS = 1000
-IMAGES_PER_SUBJECT = 8
 
 
 def get_index_page():
@@ -61,13 +56,18 @@ def train_system(data):
 
     for handler in data['handlers']:
         # Creates a new object to connect to FileStack with the given API.
-        filelink = Filelink(handler, apikey='AFWdiEhaQUP00SdiMZPugz')
+        filelink = Filelink(handler, apikey='AhZpdzSRTdW9nhvd946LAz')
         extension = filelink.get_metadata()['filename'][-4:]
         fullpath = path + '/subjects/' + handler + extension
         filelink.download(fullpath)
         images_paths.append(fullpath)
 
-    IM.training(EIGEN_VECTORS, images_paths, IMAGES_PER_SUBJECT)
+    im = ImagesManager()
+    im.add_images_paths(images_paths)
+    im.load_images()
+
+    training = Training()
+    training.process(im)
 
     return {'type': 'success',
             'title': '¡Registrado!',
