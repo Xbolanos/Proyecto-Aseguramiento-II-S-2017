@@ -28,6 +28,7 @@ class Recognize(FacesManager):
         in the image.
         """
         subject = image_manager.images_matrix[0]
+        print("subject " + str(subject))
         av = self.path_saved+'AverageFace.out'
         av_face = np.loadtxt(av, delimiter=',')[np.newaxis]
         w = np.loadtxt(self.path_saved+'W.out', delimiter=',')
@@ -35,6 +36,8 @@ class Recognize(FacesManager):
         all_projected = np.loadtxt(all_p, delimiter=',')
         e_image = subject[np.newaxis]
         t_image = super(Recognize, Recognize).transpose(e_image)
+        print("T image: " + str(t_image))
+        print("av face: " + str(av_face))
         image = super(Recognize, Recognize).matrix_of_differences(t_image, 
                                                                   av_face.T)
         # Esto multiplica la imagen x por autovectores transpuestos 

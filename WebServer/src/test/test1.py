@@ -3,11 +3,13 @@ import numpy as np
 import random
 import pandas as pd
 from collections import Counter
+from controller.training_manager import Training
 from controller.images_manager import ImagesManager
 from controller import images_manager
 from numpy import newaxis, average
 import csv
 
+train = Training()
 imagesm = ImagesManager()
 path_list = [
         "Muestras/s1/1.pgm",
@@ -434,8 +436,12 @@ while (i < n):
         i = i + 1
 
 print(newList)
-imagesm.training(328, newList, 8)
-imagesm.recognize(path_list[9])
+imagesm.images_paths = newList
+train.EIGEN_VECTORS= 328 
+train.IMAGES_PER_SUBJECT = 8  
+imagesm.load_images()
+train.process(imagesm)
+#imagesm.recognize(path_list[9])
 """
 matrix_true=[]
 matrix_pred=[]

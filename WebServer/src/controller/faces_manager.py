@@ -6,7 +6,7 @@ Created on Nov 3, 2017
 from abc import ABC, abstractmethod
 import numpy as np
 from WebServer.settings import STATICFILES_DIRS
-from controller.images_manager import ImagesManager
+
 
 
 class FacesManager(ABC):
@@ -77,6 +77,7 @@ class FacesManager(ABC):
         @return: the mean of the columns in a single column.
         """
         a = np.array(images)
+        print("a es: " + str(a))
         b = np.mean(a, axis=1)[np.newaxis]
         return b.T
 

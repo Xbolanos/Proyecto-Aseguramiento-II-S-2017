@@ -1,15 +1,21 @@
 '''
 Created on Oct 15, 2017
-@author: xbolanos
+@author: xbolanos, bermudezarii
 '''
 import numpy as np
 import random
 import pandas as pd
 from controller.images_manager import ImagesManager
+from controller.recognizing_manager import Recognize
 from sklearn.metrics import confusion_matrix, classification_report
+from controller.faces_manager import FacesManager
+from controller import images_manager
 
 
-imagesm = ImagesManager()
+
+ 
+recognize = Recognize() 
+
 path_list = [
         "Muestras/s1/1.pgm",
         "Muestras/s1/2.pgm",
@@ -422,6 +428,8 @@ path_list = [
         "Muestras/s41/9.pgm",
         "Muestras/s41/10.pgm",
     ]
+
+
 def getSamples(): 
     newList = []
     n = len(path_list)
@@ -489,8 +497,13 @@ def create_report_csv():
     samples = getSamples()
     for x in range(len(samples)):
         path = samples[x]
+        print("path " + str(path)) 
         type_face = answer(x)
-        matrix_true.append(imagesm.recognize(path))
+        image_manager = ImagesManager() 
+        image_manager.images_paths = [path]   
+        image_manager.load_images()
+        print("matrix " + str(image_manager.images_matrix))
+        matrix_true.append(recognize.process(image_manager))
         matrix_pred.append(type_face)
     print(x)
     print(matrix_true)
