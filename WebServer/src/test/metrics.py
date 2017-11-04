@@ -497,13 +497,11 @@ def create_report_csv():
     samples = getSamples()
     for x in range(len(samples)):
         path = samples[x]
-        print("path " + str(path)) 
         type_face = answer(x)
-        image_manager = ImagesManager() 
-        image_manager.images_paths = [path]   
+        image_manager = ImagesManager()
+        image_manager.images_paths = [path]
         image_manager.load_images()
-        print("matrix " + str(image_manager.images_matrix))
-        matrix_true.append(recognize.process(image_manager))
+        matrix_true.append(recognize.process(image_manager,1))
         matrix_pred.append(type_face)
     print(x)
     print(matrix_true)

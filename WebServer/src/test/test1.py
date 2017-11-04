@@ -424,7 +424,7 @@ path_list = [
         "Muestras/s41/10.pgm"
     ]
 
-
+"""
 newList = []
 n = len(path_list)
 i = 0
@@ -441,7 +441,16 @@ train.EIGEN_VECTORS= 328
 train.IMAGES_PER_SUBJECT = 8  
 imagesm.load_images()
 train.process(imagesm)
-#imagesm.recognize(path_list[9])
+#imagesm.recognize(path_list[9])"""
+a = np.array([[1,3,4],
+              [4,5,6]])
+a[:,1] = [0,0]
+print("a1; " + str(a))
+a[:,1][0] = 5000
+print("a2: " + str(a)) 
+
+
+
 """
 matrix_true=[]
 matrix_pred=[]
