@@ -238,7 +238,12 @@ class FacesManager(ABC):
             neighbors.append(FacesManager.getMin(distance_norm)[0])
             new_distance_norm = FacesManager.getMin(distance_norm)[1]
             distance_norm = new_distance_norm
+        unique, counts = np.unique(neighbors, return_counts=True)
+        print("unique: " + str(unique)) 
+        print("counts: " + str(counts))
+        j = np.argmax(counts)
         print(neighbors)
+        return unique[j]
 
 
 
