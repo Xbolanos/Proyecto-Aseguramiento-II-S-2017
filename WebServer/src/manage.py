@@ -4,7 +4,7 @@ Created on Aug 12, 2017
 @author: erickhdez, bermudezarii, xbolanos, nicolmorice
 '''
 
-#!/usr/bin/env python
+
 import os
 import sys
 
