@@ -6,7 +6,8 @@ Created on Nov 3, 2017
 from abc import ABC, abstractmethod
 import numpy as np
 from WebServer.settings import STATICFILES_DIRS
-from controller.images_manager import ImagesManager
+from networkx.classes.function import neighbors
+np.set_printoptions(threshold=np.nan)
 
 
 class FacesManager(ABC):
@@ -77,6 +78,7 @@ class FacesManager(ABC):
         @return: the mean of the columns in a single column.
         """
         a = np.array(images)
+        print("a es: " + str(a))
         b = np.mean(a, axis=1)[np.newaxis]
         return b.T
 
@@ -199,6 +201,51 @@ class FacesManager(ABC):
         final = int(n/8)
         print("resultado " + str(final))
         return final + 1
+
+    @staticmethod
+    def getMin(distance):
+        n = np.argmin(distance)
+        print("disntace: " + str(distance))
+        final = int(n/8)
+        print("tama;o; " + str(np.size(distance)))
+        distance[n] = 50000000000
+        print("cambio: " + str(distance[n]))
+        return final + 1, distance
+
+    @staticmethod
+    def k_neighbors(k, new_image, projected_images):
+        """
+        @summary: This function search the face of the new image.
+
+        Parameters
+        ----------
+        @param new_image: the image that you need the face of, it has
+        come processed.
+        @param projected_images: the images of training already projected
+        into the space.
+
+        Returns
+        ----------
+        @return: the value that correspond to the person detected
+        in the image.
+        """
+        a = projected_images-new_image
+        distance_norm = np.linalg.norm(a, axis=0)
+        neighbors = []
+        for i in range(k): 
+            #//consigue el numero del sujetoy lo agrega
+            #tambien devuelve el nuevo distance norm 
+            neighbors.append(FacesManager.getMin(distance_norm)[0])
+            new_distance_norm = FacesManager.getMin(distance_norm)[1]
+            distance_norm = new_distance_norm
+        unique, counts = np.unique(neighbors, return_counts=True)
+        print("unique: " + str(unique)) 
+        print("counts: " + str(counts))
+        j = np.argmax(counts)
+        print(neighbors)
+        return unique[j]
+
+
 
     @abstractmethod
     def process(self, image_manager):

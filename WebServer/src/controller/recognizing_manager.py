@@ -14,13 +14,13 @@ class Recognize(FacesManager):
     def __init__(self):
         super(Recognize, self).__init__()
 
-    def process(self, image_manager):
+    def process(self, image_manager, mode):
         """
         @summary: This function search the face of the new image.
 
         Parameters
         ----------
-        @param path: address of the image.
+        @param
 
         Returns
         ----------
@@ -39,8 +39,12 @@ class Recognize(FacesManager):
                                                                   av_face.T)
         # Esto multiplica la imagen x por autovectores transpuestos 
         processed = super(Recognize, Recognize).project_images(image, w)
-        result = super(Recognize, Recognize).classify_nearest_centroid(
-                                                processed, all_projected)
+        result = 0 
+        if (mode == 0):
+            result = super(Recognize, Recognize).classify_nearest_centroid( 
+                                                 processed, all_projected)
+        elif (mode == 1):
+            result = super(Recognize, Recognize).k_neighbors(10, processed, all_projected)
         print("pls result ")
         print(result)
         return (result)

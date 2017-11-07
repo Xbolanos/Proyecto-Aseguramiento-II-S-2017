@@ -78,7 +78,7 @@ class ImagesManager(object):
 
     def load_images(self):
         """
-        Loads all the images from the images_paths static attribute and add 
+        Loads all the images from the images_paths static attribute and add
         them to the images_matrix attibute.
 
         Parameters
