@@ -1,6 +1,7 @@
 '''
 Created on Aug 12, 2017
 @author: erickhdez, bermudezarii, xbolanos, nicolmorice
+@version: version 1.0 beta
 '''
 
 import cv2 as cv

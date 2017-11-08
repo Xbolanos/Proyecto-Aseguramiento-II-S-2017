@@ -12,6 +12,7 @@ Variables
 training.
 
 @author: erickhdez, bermudezarii, xbolanos, nicolmorice
+@version: version 1.0 beta
 '''
 
 from WebServer.settings import STATICFILES_DIRS

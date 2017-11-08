@@ -1,6 +1,7 @@
 '''
 Created on Oct 15, 2017
 @author: xbolanos, bermudezarii
+@version: version 1.0 beta
 '''
 import numpy as np
 import pandas as pd

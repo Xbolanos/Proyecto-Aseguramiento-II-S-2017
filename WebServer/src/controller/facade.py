@@ -2,6 +2,7 @@
 Created on Oct 10, 2017
 
 @author: epikhdez
+@version: version 1.0 beta
 '''
 from controller import system
 
@@ -34,4 +35,7 @@ def train_system(data):
     ------
     @return: the system's response to the request.
     """
-    return system.train_system(data)
+    if (data is not None):
+        return system.train_system(data)
+    else:
+        return -1
