@@ -7,7 +7,7 @@ Created on 8 nov. 2017
 
 class ErrorHandler(object):
 
-    def __init__(self, params):
+    def __init__(self):
         '''
         Constructor
         '''

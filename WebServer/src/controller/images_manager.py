@@ -6,6 +6,7 @@ Created on Aug 12, 2017
 
 import cv2 as cv
 import numpy as np
+from controller.ErrorHandler import ErrorHandler
 
 
 class ImagesManager(object):
@@ -29,7 +30,17 @@ class ImagesManager(object):
         -------
         Nothing is returned.
         """
-        self.images_paths.extend(paths)
+        try:
+            if(paths is not None):
+                if(isinstance(paths, list)):
+                    self.images_paths.extend(paths)
+                else:
+                    raise Exception("add images: paths type doesn't match")
+            else:
+                raise Exception("add images: paths type is null")
+        except Exception as msg:
+            e = ErrorHandler
+            e.error(msg)
 
     @staticmethod
     def read_image(path):
@@ -44,7 +55,17 @@ class ImagesManager(object):
         ----------
         The image as a matrix of values between 0 and 255.
         """
-        return cv.imread(path, 0)
+        try:
+            if(path is not None):
+                if(isinstance(path, str)):
+                    return cv.imread(path, 0)
+                else:
+                    raise Exception("read images: path type doesn't match")
+            else:
+                raise Exception("read images: path type is null")
+        except Exception as msg:
+            e = ErrorHandler
+            e.error(msg)
 
     @staticmethod
     def matrix_to_vector(matrix):
@@ -60,7 +81,17 @@ class ImagesManager(object):
         ----------
         The matrix transformed as a vector.
         """
-        return np.asarray(matrix).reshape(-1)
+        try:
+            if(matrix is not None):
+                if(isinstance(matrix, list) or isinstance(matrix, np.ndarray)):
+                    return np.asarray(matrix).reshape(-1)
+                else:
+                    raise Exception("mtx2vct: matrix type doesn't match")
+            else:
+                raise Exception("mtx2vct: matrix type is null")
+        except Exception as msg:
+            e = ErrorHandler
+            e.error(msg)
 
     def add_to_images(self, vector):
         """
@@ -75,7 +106,17 @@ class ImagesManager(object):
         ------
         Nothing is returned.
         """
-        self.images_matrix.append(vector)
+        try:
+            if(vector is not None):
+                if(isinstance(vector, list) or isinstance(vector, np.ndarray)):
+                    self.images_matrix.append(vector)
+                else:
+                    raise Exception("add2img: vector type doesn't match")
+            else:
+                raise Exception("add2img: vector type is null")
+        except Exception as msg:
+            e = ErrorHandler
+            e.error(msg)
 
     def load_images(self):
         """

@@ -8,6 +8,7 @@ import pandas as pd
 from controller.images_manager import ImagesManager
 from controller.recognizing_manager import Recognize
 from sklearn.metrics import confusion_matrix, classification_report
+from controller.ErrorHandler import ErrorHandler
 
 
 class metric:
@@ -443,7 +444,6 @@ class metric:
                 i = i + 1
             else:
                 i = i + 8
-        print(newList)
         return newList
 
     def answer(self, index):
@@ -509,9 +509,6 @@ class metric:
             image_manager.load_images()
             matrix_true.append(self.recognize.process(image_manager, 1))
             matrix_pred.append(type_face)
-        print(x)
-        print(matrix_true)
-        print(matrix_pred)
         conf_mat = confusion_matrix(matrix_true, matrix_pred)
         class_report = classification_report(matrix_true, matrix_pred)
         print(class_report)
@@ -525,8 +522,8 @@ class metric:
             tp_fp_fn_tn.append([TP, FP, FN, TN])
         np.savetxt("confusion_matrix.csv", conf_mat, delimiter=",")
         np.savetxt("tp_fp_fn_tn.csv", tp_fp_fn_tn, delimiter=",")
-        print("CSV listo")
 
 
 m = metric()
 m.create_report_csv()
+
