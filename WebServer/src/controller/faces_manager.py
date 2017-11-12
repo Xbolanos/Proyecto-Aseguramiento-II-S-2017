@@ -24,11 +24,12 @@ class FacesManager(ABC):
     @var images: contains the processed images matrix.
     @var path_saved: contains the path of saved stuff
     """
+    
+    path_saved = ""
     def __init__(self):
         self.path_saved = STATICFILES_DIRS[0] + '/saved/'
+         
 
-
-    # le da vuelta a image, que ya volveria cada muestra en columna (:
     @staticmethod
     def transpose(images):
         """
@@ -249,6 +250,24 @@ class FacesManager(ABC):
             e.error(msg)
 
     @staticmethod
+    def get_person(n):
+        try:
+            if (n is not None):
+                    k = int(np.loadtxt(FacesManager.path_saved + 'IMAGES_PER_SUBJECT.out'))
+                    return int(n/k) + 1
+            else:
+                raise Exception("n of get_person is NULL")
+        except Exception as msg:
+            e = ErrorHandler()
+            e.error(msg)
+
+    @staticmethod
+    def change_images_per_person(n):
+        n_train = np.matrix(n)
+        np.savetxt(FacesManager.path_saved+'IMAGES_PER_SUBJECT.out', n_train)
+
+
+    @staticmethod
     def classify_nearest_centroid(new_image, projected_images):
         """
         @summary: This function search the face of the new image.
@@ -274,8 +293,7 @@ class FacesManager(ABC):
                     a = projected_images-new_image
                     distance_norm = np.linalg.norm(a, axis=0)
                     n = np.argmin(distance_norm)
-                    final = int(n/8)
-                    return final + 1
+                    return FacesManager.get_person(n)
                 else:
                     raise Exception("some params of centroid doesn't match")
             else:
@@ -294,7 +312,6 @@ class FacesManager(ABC):
         ----------
         @param distance: is the euclidean distance of each
         eigenvectors
-
         Returns
         ----------
         @return: return the index of the minimun and
@@ -304,9 +321,8 @@ class FacesManager(ABC):
             if(distance is not None):
                 if(isinstance(distance, np.ndarray)):
                     n = np.argmin(distance)
-                    final = int(n/8)
-                    distance[n] = 50000000000
-                    return final + 1, distance
+                    distance[n] = 50000000
+                    return FacesManager.get_person(n), distance
                 else:
                     raise Exception("distance of get_min doesn't match")
             else:
@@ -344,10 +360,15 @@ class FacesManager(ABC):
                     distance_norm = np.linalg.norm(a, axis=0)
                     neighbors = []
                     for i in range(k):
-                        neighbors.append(FacesManager.get_min(distance_norm)[0])
-                        new_distance_norm = FacesManager.get_min(distance_norm)[1]
+                        neighbors.append(FacesManager.get_min(
+                            distance_norm)[0])
+                        new_distance_norm = FacesManager.get_min(
+                            distance_norm)[1]
                         distance_norm = new_distance_norm
                     unique, counts = np.unique(neighbors, return_counts=True)
+                    for i in range(len(unique)):
+                        print("Del sujeto: " + str(unique[i]) + " hay " +
+                              str(counts[i]) + " apariciones")
                     j = np.argmax(counts)
                     return unique[j]
                 else:
@@ -357,7 +378,6 @@ class FacesManager(ABC):
         except Exception as msg:
             e = ErrorHandler()
             e.error(msg)
-
 
     @abstractmethod
     def process(self, image_manager):
