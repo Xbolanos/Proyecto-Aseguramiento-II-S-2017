@@ -21,14 +21,13 @@ var recognizeOptions = { //Cuando es 1 foto
  * @param {string} destiny 
  * @param {object} data 
  */
-var sendRequest = (destiny, data) => {
+var sendRequest = (destiny, data, info) => {
   swal({
-    title: 'Registrando sujeto',
-    text: 'Por favor espere mientras se completa el registro.',
+    title: info.title,
+    text: info.text,
     closeOnClickOutside: false,
     closeOnEsc: false,
-    buttons: false,
-    showLoaderOnConfirm: true
+    buttons: false
   }).then(
     $.ajax({ 
       url: destiny, 
@@ -65,9 +64,18 @@ var sendRequest = (destiny, data) => {
  */
 var openPickerForRecognition = () => {
   return client.pick(recognizeOptions).then(function(result){
+    var fileHandler;
+
 	  result.filesUploaded.forEach(function(file){
-      console.log(file.url); //file.url tiene la dirección de las imagenes
+      fileHandler = file.handle; //file.url tiene la dirección de las imagenes
     });
+
+    var info = {
+      title: 'Identificando sujeto',
+      text: 'Por favor espere mientras se completa la identificación.'
+    }
+
+    sendRequest('http://localhost:8000/recongnize', fileHandler, info);
   });
 }
 
@@ -104,5 +112,10 @@ $('#training').submit((e) => {
     }
   }
 
-  sendRequest('http://localhost:8000/learn', form_data);
+  var info = {
+    title: 'Registrando sujeto(s)',
+    text: 'Por favor espere mientras se completa el registro.'
+  }
+
+  sendRequest('http://localhost:8000/learn', form_data, info);
 });

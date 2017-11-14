@@ -24,9 +24,9 @@ class FacesManager(ABC):
     @var path_saved: contains the path of saved stuff
     """
     
-    path_saved = ""
+    path_saved = STATICFILES_DIRS[0] + '/saved/'
     def __init__(self):
-        self.path_saved = STATICFILES_DIRS[0] + '/saved/'
+        pass
          
 
     @staticmethod

@@ -39,3 +39,6 @@ def train_system(data):
         return system.train_system(data)
     else:
         return -1
+    
+def recognize_subject(handler):
+    return system.recognize_subject(handler)

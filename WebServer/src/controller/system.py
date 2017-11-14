@@ -18,8 +18,11 @@ training.
 from WebServer.settings import STATICFILES_DIRS
 from controller.images_manager import ImagesManager
 from controller.training_manager import Training
+from controller.recognizing_manager import Recognize
 from filestack import Filelink
 
+
+im = ImagesManager()
 
 def get_index_page():
     """
@@ -52,8 +55,6 @@ def train_system(paths):
     @return: a json response containing the type, title and message fields to
     describe what happen within the server.
     """
-
-    im = ImagesManager()
     im.add_images_paths(paths)
     im.load_images()
 
@@ -63,3 +64,23 @@ def train_system(paths):
     return {'type': 'success',
             'title': '¡Registrado!',
             'message': 'Se ha agregado al nuevo sujeto al sistema.'}
+    
+def recognize_subject(handler):
+    path = STATICFILES_DIRS[0]  # The static path for de subjects images.
+
+    # Creates a new object to connect to FileStack with the given API.
+    filelink = Filelink(handler, apikey='AhZpdzSRTdW9nhvd946LAz')
+    extension = filelink.get_metadata()['filename'][-4:]
+    fullpath = path + '/subjects/' + handler + extension
+    filelink.download(fullpath)
+    
+    tempIM = ImagesManager()
+    tempIM.add_images_paths([fullpath])
+    tempIM.load_images()
+    
+    rm = Recognize()
+    result = rm.process(tempIM, mode=1)
+    
+    return {'type': 'success',
+            'title': 'Se ha reconocido al sujeto',
+            'message': 'El rostro pertenece al sujeto: ' + str(result)}

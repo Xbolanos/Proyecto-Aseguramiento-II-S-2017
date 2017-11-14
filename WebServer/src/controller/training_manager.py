@@ -15,7 +15,7 @@ class Training(FacesManager):
     Class incharge of training the system with the subjects faces.
     """
     EIGEN_VECTORS = 1000
-    IMAGES_PER_SUBJECT = 8
+    IMAGES_PER_SUBJECT = 10
 
     def __init__(self):
         super(Training, self).__init__()

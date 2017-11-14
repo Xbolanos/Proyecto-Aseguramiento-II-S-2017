@@ -17,7 +17,7 @@ class Recognize(FacesManager):
     def __init__(self):
         super(Recognize, self).__init__()
 
-    def process(self, image_manager, mode):
+    def process(self, image_manager, mode=0):
         """
         @summary: This function search the face of the new image.
 

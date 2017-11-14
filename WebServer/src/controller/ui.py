@@ -73,3 +73,16 @@ def learn(request):
 
     response = facade.train_system(paths)
     return JsonResponse(response)
+
+def recognize(request):
+    if request.method != 'POST':
+        # No other method are allowed for this function than post.
+        return JsonResponse({'type': 'error',
+                             'title': 'Metodo invalido',
+                             'message': 'No se permiten otros metodos además' +
+                                        'de post.'})
+        
+    data = request.body.decode('UTF-8')  # Turns bytes body into a string.
+
+    response = facade.recognize_subject(data)
+    return JsonResponse(response)
