@@ -30,17 +30,13 @@ class ImagesManager(object):
         -------
         Nothing is returned.
         """
-        try:
-            if(paths is not None):
-                if(isinstance(paths, list)):
-                    self.images_paths.extend(paths)
-                else:
-                    raise Exception("add images: paths type doesn't match")
+        if(paths is not None):
+            if(isinstance(paths, list)):
+                self.images_paths.extend(paths)
             else:
-                raise Exception("add images: paths type is null")
-        except Exception as msg:
-            e = ErrorHandler
-            e.error(msg)
+                raise Exception("add images: paths type doesn't match")
+        else:
+            raise Exception("add images: paths type is null")
 
     @staticmethod
     def read_image(path):
@@ -55,17 +51,13 @@ class ImagesManager(object):
         ----------
         The image as a matrix of values between 0 and 255.
         """
-        try:
-            if(path is not None):
-                if(isinstance(path, str)):
-                    return cv.imread(path, 0)
-                else:
-                    raise Exception("read images: path type doesn't match")
+        if(path is not None):
+            if(isinstance(path, str)):
+                return cv.imread(path, 0)
             else:
-                raise Exception("read images: path type is null")
-        except Exception as msg:
-            e = ErrorHandler
-            e.error(msg)
+                raise Exception("read images: path type doesn't match")
+        else:
+            raise Exception("read images: path type is null")
 
     @staticmethod
     def matrix_to_vector(matrix):
@@ -81,17 +73,13 @@ class ImagesManager(object):
         ----------
         The matrix transformed as a vector.
         """
-        try:
-            if(matrix is not None):
-                if(isinstance(matrix, list) or isinstance(matrix, np.ndarray)):
-                    return np.asarray(matrix).reshape(-1)
-                else:
-                    raise Exception("mtx2vct: matrix type doesn't match")
+        if(matrix is not None):
+            if(isinstance(matrix, list) or isinstance(matrix, np.ndarray)):
+                return np.asarray(matrix).reshape(-1)
             else:
-                raise Exception("mtx2vct: matrix type is null")
-        except Exception as msg:
-            e = ErrorHandler
-            e.error(msg)
+                raise Exception("mtx2vct: matrix type doesn't match")
+        else:
+            raise Exception("mtx2vct: matrix type is null")
 
     def add_to_images(self, vector):
         """
@@ -106,17 +94,13 @@ class ImagesManager(object):
         ------
         Nothing is returned.
         """
-        try:
-            if(vector is not None):
-                if(isinstance(vector, list) or isinstance(vector, np.ndarray)):
-                    self.images_matrix.append(vector)
-                else:
-                    raise Exception("add2img: vector type doesn't match")
+        if(vector is not None):
+            if(isinstance(vector, list) or isinstance(vector, np.ndarray)):
+                self.images_matrix.append(vector)
             else:
-                raise Exception("add2img: vector type is null")
-        except Exception as msg:
-            e = ErrorHandler
-            e.error(msg)
+                raise Exception("add2img: vector type doesn't match")
+        else:
+            raise Exception("add2img: vector type is null")
 
     def load_images(self):
         """
