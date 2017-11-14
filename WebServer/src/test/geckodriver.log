@@ -131,3 +131,509 @@ JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: Synt
 1510605848435	Marionette	WARN	TLS certificate errors will be ignored for this session
 JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
 1510605861973	Marionette	INFO	New connections will no longer be accepted
+JavaScript error: , line 0: Error: operation not possible on dead CPOW
+1510606238122	Marionette	INFO	Ceased listening
+1510632659264	geckodriver	INFO	geckodriver 0.18.0
+1510632659292	geckodriver	INFO	Listening on 127.0.0.1:41509
+1510632660675	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1510632673440	Marionette	INFO	Listening on port 33253
+1510632673819	Marionette	WARN	TLS certificate errors will be ignored for this session
+1510632675964	Marionette	INFO	New connections will no longer be accepted
+1510632698933	geckodriver	INFO	geckodriver 0.18.0
+1510632698954	geckodriver	INFO	Listening on 127.0.0.1:52453
+1510632700266	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1510632705475	Marionette	INFO	Listening on port 45431
+1510632705587	Marionette	WARN	TLS certificate errors will be ignored for this session
+1510632773420	Marionette	INFO	Ceased listening
+JavaScript error: chrome://selenium-ide/content/selenium-ide-overlay.js, line 274: ReferenceError: Application is not defined
+1510632778479	Marionette	INFO	Listening on port 45431
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+JavaScript warning: chrome://selenium-ide/content/selenium-core/scripts/htmlutils.js, line 6182: unreachable code after return statement
+JavaScript error: http://localhost:8000/, line 1: ReferenceError: selectFolder is not defined
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+JavaScript error: http://localhost:8000/, line 1: ReferenceError: selectFolder is not defined
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+*************************
+A coding exception was thrown and uncaught in a Task.
+
+Full message: TypeError: NetworkError when attempting to fetch resource.
+Full stack: 
+*************************
+JavaScript error: http://localhost:8000/, line 1: ReferenceError: selectFolder is not defined
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+1510633620230	geckodriver	INFO	geckodriver 0.18.0
+1510633620269	geckodriver	INFO	Listening on 127.0.0.1:56737
+1510633622236	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1510633635567	Marionette	INFO	Listening on port 44669
+1510633638302	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+JavaScript error: http://localhost:8000/, line 1: ReferenceError: selectFolder is not defined
+1510633648627	Marionette	INFO	New connections will no longer be accepted
+1510633838428	geckodriver	INFO	geckodriver 0.18.0
+1510633838435	geckodriver	INFO	Listening on 127.0.0.1:39179
+1510633838839	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1510633847918	Marionette	INFO	Listening on port 42907
+1510633848061	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+1510633857352	Marionette	INFO	New connections will no longer be accepted
+1510633888810	geckodriver	INFO	geckodriver 0.18.0
+1510633888828	geckodriver	INFO	Listening on 127.0.0.1:54981
+1510633889271	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1510633898635	Marionette	INFO	Listening on port 41899
+1510633898772	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+JavaScript error: http://localhost:8000/, line 1: ReferenceError: selectFolder is not defined
+1510633906752	Marionette	INFO	New connections will no longer be accepted
+1510633935757	geckodriver	INFO	geckodriver 0.18.0
+1510633935768	geckodriver	INFO	Listening on 127.0.0.1:48901
+1510633937340	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1510633945252	Marionette	INFO	Listening on port 40527
+1510633945519	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+JavaScript error: http://localhost:8000/, line 1: ReferenceError: selectFolder is not defined
+1510633980913	Marionette	INFO	New connections will no longer be accepted
+1510633999964	geckodriver	INFO	geckodriver 0.18.0
+1510633999978	geckodriver	INFO	Listening on 127.0.0.1:47877
+1510634000495	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1510634007830	Marionette	INFO	Listening on port 36237
+1510634007956	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+JavaScript error: http://localhost:8000/, line 1: ReferenceError: selectFolder is not defined
+1510634011711	Marionette	INFO	New connections will no longer be accepted
+1510634030077	geckodriver	INFO	geckodriver 0.18.0
+1510634030085	geckodriver	INFO	Listening on 127.0.0.1:33047
+1510634030485	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1510634037874	Marionette	INFO	Listening on port 41443
+1510634037978	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+JavaScript error: http://localhost:8000/, line 1: ReferenceError: selectFolder is not defined
+1510634089511	geckodriver	INFO	geckodriver 0.18.0
+1510634089531	geckodriver	INFO	Listening on 127.0.0.1:35185
+1510634091412	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1510634153030	Marionette	INFO	Listening on port 42045
+1510634237609	Marionette	INFO	Ceased listening
+1510634269220	geckodriver	INFO	geckodriver 0.18.0
+1510634269279	geckodriver	INFO	Listening on 127.0.0.1:41495
+1510634270463	Marionette	INFO	Ceased listening
+1510634271055	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1510634296068	Marionette	INFO	Listening on port 37169
+1510634297165	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+1510634474238	geckodriver	INFO	geckodriver 0.18.0
+1510634474266	geckodriver	INFO	Listening on 127.0.0.1:44795
+1510634475604	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1510634482960	Marionette	INFO	Listening on port 39283
+1510634483449	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+1510634580307	geckodriver	INFO	geckodriver 0.18.0
+1510634580317	geckodriver	INFO	Listening on 127.0.0.1:48913
+1510634582362	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1510634592593	Marionette	INFO	Listening on port 45153
+1510634593504	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+1510634683893	geckodriver	INFO	geckodriver 0.18.0
+1510634683926	geckodriver	INFO	Listening on 127.0.0.1:34799
+1510634685529	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1510634707061	Marionette	INFO	Listening on port 43307
+1510634710772	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+JavaScript error: http://localhost:8000/, line 1: ReferenceError: selectFolder is not defined
+JavaScript error: http://localhost:8000/, line 1: ReferenceError: selectFolder is not defined
+*************************
+A coding exception was thrown and uncaught in a Task.
+
+Full message: TypeError: NetworkError when attempting to fetch resource.
+Full stack: 
+*************************
+console.error: 
+  Message: Error: Source map at http://localhost:8000/static/css/bootstrap.min.css.map not found or invalid
+  Stack:
+    _fetchSourceMap/</map<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/actors/stylesheets.js:579:27
+process@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:922:23
+walkerLoop@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:806:7
+scheduleWalkerLoop/<@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:742:11
+
+_fetchSourceMap/</map<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/actors/stylesheets.js:579:27
+process@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:922:23
+walkerLoop@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:806:7
+scheduleWalkerLoop/<@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:742:11
+console.error: 
+  Protocol error (unknownError): Source map at http://localhost:8000/static/css/bootstrap.min.css.map not found or invalid
+*************************
+A coding exception was thrown and uncaught in a Task.
+
+Full message: TypeError: NetworkError when attempting to fetch resource.
+Full stack: 
+*************************
+1510635193150	geckodriver	INFO	geckodriver 0.18.0
+1510635193250	geckodriver	INFO	Listening on 127.0.0.1:50959
+1510635197920	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+*************************
+A coding exception was thrown and uncaught in a Task.
+
+Full message: TypeError: NetworkError when attempting to fetch resource.
+Full stack: syncClients@resource://gre/modules/services-common/blocklist-updater.js:71:28
+TaskImpl_run@resource://gre/modules/Task.jsm:319:42
+TaskImpl@resource://gre/modules/Task.jsm:277:3
+asyncFunction@resource://gre/modules/Task.jsm:252:14
+Task_spawn@resource://gre/modules/Task.jsm:166:12
+this.checkVersions@resource://gre/modules/services-common/blocklist-updater.js:37:10
+notify@resource://gre/components/nsBlocklistService.js:626:7
+TM_notify/<@resource://gre/components/nsUpdateTimerManager.js:218:11
+TM_notify@resource://gre/components/nsUpdateTimerManager.js:263:7
+
+*************************
+console.error: 
+console.error: 
+  Message: Error: SessionFile is closed
+  Stack:
+    write@resource://app/modules/sessionstore/SessionFile.jsm:315:29
+write@resource://app/modules/sessionstore/SessionFile.jsm:76:12
+_writeState@resource://app/modules/sessionstore/SessionSaver.jsm:265:12
+_saveState@resource://app/modules/sessionstore/SessionSaver.jsm:236:12
+_saveStateAsync@resource://app/modules/sessionstore/SessionSaver.jsm:249:5
+runDelayed/this._timeoutID<@resource://app/modules/sessionstore/SessionSaver.jsm:147:40
+setTimeout_timer@resource://gre/modules/Timer.jsm:30:5
+
+  Message: Error: SessionFile is closed
+  Stack:
+    write@resource://app/modules/sessionstore/SessionFile.jsm:315:29
+write@resource://app/modules/sessionstore/SessionFile.jsm:76:12
+_writeState@resource://app/modules/sessionstore/SessionSaver.jsm:265:12
+_saveState@resource://app/modules/sessionstore/SessionSaver.jsm:236:12
+_saveStateAsync@resource://app/modules/sessionstore/SessionSaver.jsm:249:5
+runDelayed/this._timeoutID<@resource://app/modules/sessionstore/SessionSaver.jsm:147:40
+setTimeout_timer@resource://gre/modules/Timer.jsm:30:5
+
+1510635230294	addons.xpi-utils	WARN	Error: XPI database modified after shutdown began (resource://gre/modules/addons/XPIProvider.jsm -> resource://gre/modules/addons/XPIProviderUtils.js:430:17) JS Stack trace: saveChanges@XPIProviderUtils.js:430:17 < verifySignatures/</<@XPIProvider.jsm:3257:9
+console.error: 
+  Message: Error: SessionFile is closed
+  Stack:
+    write@resource://app/modules/sessionstore/SessionFile.jsm:315:29
+write@resource://app/modules/sessionstore/SessionFile.jsm:76:12
+_writeState@resource://app/modules/sessionstore/SessionSaver.jsm:265:12
+_saveState@resource://app/modules/sessionstore/SessionSaver.jsm:236:12
+_saveStateAsync@resource://app/modules/sessionstore/SessionSaver.jsm:249:5
+runDelayed/this._timeoutID<@resource://app/modules/sessionstore/SessionSaver.jsm:147:40
+setTimeout_timer@resource://gre/modules/Timer.jsm:30:5
+
+1510635238331	Marionette	INFO	Ceased listening
+1510635238862	Marionette	INFO	Ceased listening
+1510635238967	Marionette	INFO	Ceased listening
+1510635258434	Marionette	INFO	Listening on port 33443
+1510635259071	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+1510635313096	geckodriver	INFO	geckodriver 0.18.0
+1510635313113	geckodriver	INFO	Listening on 127.0.0.1:34063
+1510635314799	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1510635324992	Marionette	INFO	Listening on port 39941
+1510635325107	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+1510635391812	geckodriver	INFO	geckodriver 0.18.0
+1510635391845	geckodriver	INFO	Listening on 127.0.0.1:36967
+1510635395071	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1510635417783	Marionette	INFO	Listening on port 38643
+1510635420492	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+JavaScript error: http://localhost:8000/, line 1: ReferenceError: selectFolder is not defined
+1510635531066	Marionette	INFO	Ceased listening
+1510635536666	Marionette	INFO	Ceased listening
+1510635537458	Marionette	INFO	Ceased listening
+1510635538471	Marionette	INFO	Ceased listening
+1510635547082	geckodriver	INFO	geckodriver 0.18.0
+1510635547152	geckodriver	INFO	Listening on 127.0.0.1:33211
+1510635547624	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1510635555775	Marionette	INFO	Listening on port 40397
+1510635555992	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+1510635750055	geckodriver	INFO	geckodriver 0.18.0
+1510635750063	geckodriver	INFO	Listening on 127.0.0.1:49919
+1510635751645	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1510635759609	Marionette	INFO	Listening on port 42991
+1510635760135	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+JavaScript error: http://localhost:8000/, line 1: ReferenceError: selectFolder is not defined
+JavaScript error: http://localhost:8000/, line 1: ReferenceError: selectFolder is not defined
+1510635860723	geckodriver	INFO	geckodriver 0.18.0
+1510635860782	geckodriver	INFO	Listening on 127.0.0.1:48545
+1510635863764	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1510635874611	Marionette	INFO	Listening on port 34459
+1510635875093	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+JavaScript error: http://localhost:8000/, line 1: ReferenceError: selectFolder is not defined
+JavaScript error: http://localhost:8000/, line 1: ReferenceError: selectFolder is not defined
+JavaScript error: http://localhost:8000/, line 1: ReferenceError: selectFolder is not defined
+JavaScript error: http://localhost:8000/, line 1: ReferenceError: selectFolder is not defined
+JavaScript error: http://localhost:8000/, line 1: ReferenceError: selectFolder is not defined
+JavaScript error: http://localhost:8000/, line 1: ReferenceError: selectFolder is not defined
+JavaScript error: http://localhost:8000/, line 1: ReferenceError: selectFolder is not defined
+JavaScript error: http://localhost:8000/, line 1: ReferenceError: selectFolder is not defined
+1510635968631	Marionette	INFO	Ceased listening
+1510635973044	Marionette	INFO	Ceased listening
+1510635976064	Marionette	INFO	Ceased listening
+1510636018425	geckodriver	INFO	geckodriver 0.18.0
+1510636018434	geckodriver	INFO	Listening on 127.0.0.1:60477
+1510636018660	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1510636025826	Marionette	INFO	Listening on port 41225
+1510636026042	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+JavaScript error: http://localhost:8000/, line 1: ReferenceError: selectFolder is not defined
+JavaScript error: http://localhost:8000/, line 1: ReferenceError: selectFolder is not defined
+JavaScript error: http://localhost:8000/, line 1: ReferenceError: selectFolder is not defined
+JavaScript error: http://localhost:8000/, line 1: ReferenceError: selectFolder is not defined
+JavaScript error: http://localhost:8000/, line 1: ReferenceError: selectFolder is not defined
+JavaScript error: http://localhost:8000/, line 1: ReferenceError: selectFolder is not defined
+JavaScript error: http://localhost:8000/, line 1: ReferenceError: selectFolder is not defined
+JavaScript error: http://localhost:8000/, line 1: ReferenceError: selectFolder is not defined
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+JavaScript error: chrome://selenium-ide/content/selenium-runner.js, line 390: TypeError: window is null
+JavaScript error: chrome://selenium-ide/content/selenium-runner.js, line 390: TypeError: window is null
+1510636140438	geckodriver	INFO	geckodriver 0.18.0
+1510636140448	geckodriver	INFO	Listening on 127.0.0.1:46245
+1510636141541	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1510636153431	Marionette	INFO	Ceased listening
+1510636154202	Marionette	INFO	Listening on port 43739
+1510636154798	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+JavaScript error: http://localhost:8000/, line 1: ReferenceError: selectFolder is not defined
+JavaScript error: http://localhost:8000/, line 1: ReferenceError: selectFolder is not defined
+JavaScript error: http://localhost:8000/, line 1: ReferenceError: selectFolder is not defined
+JavaScript error: http://localhost:8000/, line 1: ReferenceError: selectFolder is not defined
+JavaScript error: http://localhost:8000/, line 1: ReferenceError: selectFolder is not defined
+JavaScript error: http://localhost:8000/, line 1: ReferenceError: selectFolder is not defined
+JavaScript error: http://localhost:8000/, line 1: ReferenceError: selectFolder is not defined
+JavaScript error: http://localhost:8000/, line 1: ReferenceError: selectFolder is not defined
+1510636205231	Marionette	INFO	Ceased listening
+1510636302998	geckodriver	INFO	geckodriver 0.18.0
+1510636303004	geckodriver	INFO	Listening on 127.0.0.1:60457
+1510636304203	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1510636308663	Marionette	INFO	Listening on port 35803
+1510636308747	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+JavaScript error: http://localhost:8000/, line 1: ReferenceError: selectFolder is not defined
+JavaScript error: http://localhost:8000/, line 1: ReferenceError: selectFolder is not defined
+JavaScript error: http://localhost:8000/, line 1: ReferenceError: selectFolder is not defined
+JavaScript error: http://localhost:8000/, line 1: ReferenceError: selectFolder is not defined
+JavaScript error: http://localhost:8000/, line 1: ReferenceError: selectFolder is not defined
+JavaScript error: http://localhost:8000/, line 1: ReferenceError: selectFolder is not defined
+JavaScript error: http://localhost:8000/, line 1: ReferenceError: selectFolder is not defined
+JavaScript error: http://localhost:8000/, line 1: ReferenceError: selectFolder is not defined
+1510636411458	geckodriver	INFO	geckodriver 0.18.0
+1510636411466	geckodriver	INFO	Listening on 127.0.0.1:38207
+1510636411919	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1510636418029	Marionette	INFO	Listening on port 41413
+1510636418602	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+JavaScript error: http://localhost:8000/, line 1: ReferenceError: selectFolder is not defined
+JavaScript error: http://localhost:8000/, line 1: ReferenceError: selectFolder is not defined
+JavaScript error: http://localhost:8000/, line 1: ReferenceError: selectFolder is not defined
+JavaScript error: http://localhost:8000/, line 1: ReferenceError: selectFolder is not defined
+JavaScript error: http://localhost:8000/, line 1: ReferenceError: selectFolder is not defined
+JavaScript error: http://localhost:8000/, line 1: ReferenceError: selectFolder is not defined
+JavaScript error: http://localhost:8000/, line 1: ReferenceError: selectFolder is not defined
+JavaScript error: http://localhost:8000/, line 1: ReferenceError: selectFolder is not defined
+1510636513648	geckodriver	INFO	geckodriver 0.18.0
+1510636513669	geckodriver	INFO	Listening on 127.0.0.1:39815
+1510636514334	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1510636525456	Marionette	INFO	Listening on port 43415
+1510636526218	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+1510636574598	geckodriver	INFO	geckodriver 0.18.0
+1510636574660	geckodriver	INFO	Listening on 127.0.0.1:40709
+1510636578500	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1510636597466	Marionette	INFO	Ceased listening
+1510636603288	Marionette	INFO	Ceased listening
+1510636604378	Marionette	INFO	Listening on port 33937
+1510636605960	Marionette	WARN	TLS certificate errors will be ignored for this session
+1510636608140	Marionette	INFO	Ceased listening
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+1510636624713	geckodriver	INFO	geckodriver 0.18.0
+1510636624719	geckodriver	INFO	Listening on 127.0.0.1:43953
+1510636625021	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1510636634575	Marionette	INFO	Ceased listening
+1510636634845	Marionette	INFO	Listening on port 37339
+1510636635228	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+1510636687786	geckodriver	INFO	geckodriver 0.18.0
+1510636687794	geckodriver	INFO	Listening on 127.0.0.1:44607
+1510636689199	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1510636695129	Marionette	INFO	Listening on port 43655
+1510636695241	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+JavaScript error: http://localhost:8000/, line 1: ReferenceError: selectFolder is not defined
+1510636731099	geckodriver	INFO	geckodriver 0.18.0
+1510636731113	geckodriver	INFO	Listening on 127.0.0.1:48831
+1510636733185	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1510636743925	Marionette	INFO	Ceased listening
+1510636743925	Marionette	INFO	Listening on port 40127
+1510636744435	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+1510636755988	Marionette	INFO	Ceased listening
+1510636770765	Marionette	INFO	Ceased listening
+1510636779687	geckodriver	INFO	geckodriver 0.18.0
+1510636779696	geckodriver	INFO	Listening on 127.0.0.1:51321
+1510636780869	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1510636785250	Marionette	INFO	Listening on port 35853
+1510636785332	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+1510636811404	geckodriver	INFO	geckodriver 0.18.0
+1510636811414	geckodriver	INFO	Listening on 127.0.0.1:56847
+1510636812835	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1510636819424	Marionette	INFO	Listening on port 41033
+1510636819521	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+1510636874068	Marionette	INFO	Ceased listening
+1510636875941	Marionette	INFO	Ceased listening
+1510636877792	Marionette	INFO	Ceased listening
+1510636897623	geckodriver	INFO	geckodriver 0.18.0
+1510636897630	geckodriver	INFO	Listening on 127.0.0.1:49953
+1510636898808	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1510636903394	Marionette	INFO	Listening on port 39737
+1510636903459	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+1510636982915	geckodriver	INFO	geckodriver 0.18.0
+1510636982923	geckodriver	INFO	Listening on 127.0.0.1:44027
+1510636984302	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1510636990278	Marionette	INFO	Listening on port 37595
+1510636990470	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+1510637047832	geckodriver	INFO	geckodriver 0.18.0
+1510637047856	geckodriver	INFO	Listening on 127.0.0.1:56553
+1510637049947	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1510637056797	Marionette	INFO	Ceased listening
+1510637059507	Marionette	INFO	Listening on port 44421
+1510637060136	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+1510637143125	Marionette	INFO	Ceased listening
+1510637149809	Marionette	INFO	Ceased listening
+JavaScript error: chrome://selenium-ide/content/selenium-ide-overlay.js, line 274: ReferenceError: Application is not defined
+1510637150711	Marionette	INFO	Listening on port 44421
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+JavaScript warning: chrome://selenium-ide/content/selenium-core/scripts/htmlutils.js, line 6182: unreachable code after return statement
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+JavaScript error: http://localhost:8000/, line 1: ReferenceError: selectFolder is not defined
+JavaScript error: http://localhost:8000/, line 1: ReferenceError: selectFolder is not defined
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+1510637394472	geckodriver	INFO	geckodriver 0.18.0
+1510637394490	geckodriver	INFO	Listening on 127.0.0.1:36905
+1510637395919	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1510637402736	Marionette	INFO	Listening on port 35257
+1510637403132	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+1510637411887	Marionette	INFO	Ceased listening
+1510637443870	geckodriver	INFO	geckodriver 0.18.0
+1510637443877	geckodriver	INFO	Listening on 127.0.0.1:55129
+1510637445069	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1510637449546	Marionette	INFO	Listening on port 38259
+1510637449678	Marionette	WARN	TLS certificate errors will be ignored for this session
+1510637453274	Marionette	INFO	New connections will no longer be accepted
+1510637486849	geckodriver	INFO	geckodriver 0.18.0
+1510637486856	geckodriver	INFO	Listening on 127.0.0.1:44959
+1510637488042	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1510637492271	Marionette	INFO	Listening on port 35689
+1510637492423	Marionette	WARN	TLS certificate errors will be ignored for this session
+1510637492814	Marionette	INFO	New connections will no longer be accepted
+1510637516301	geckodriver	INFO	geckodriver 0.18.0
+1510637516310	geckodriver	INFO	Listening on 127.0.0.1:44253
+1510637517541	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1510637522053	Marionette	INFO	Listening on port 35715
+1510637522106	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+1510637524817	Marionette	INFO	New connections will no longer be accepted
+1510637540602	geckodriver	INFO	geckodriver 0.18.0
+1510637540608	geckodriver	INFO	Listening on 127.0.0.1:58205
+1510637541801	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1510637546439	Marionette	INFO	Listening on port 42003
+1510637546794	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+1510637549143	Marionette	INFO	New connections will no longer be accepted
+1510637562095	geckodriver	INFO	geckodriver 0.18.0
+1510637562103	geckodriver	INFO	Listening on 127.0.0.1:53885
+1510637563322	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1510637568035	Marionette	INFO	Listening on port 39821
+1510637568106	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+1510637570567	Marionette	INFO	New connections will no longer be accepted
+1510637607543	geckodriver	INFO	geckodriver 0.18.0
+1510637607549	geckodriver	INFO	Listening on 127.0.0.1:45477
+1510637607754	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1510637612228	Marionette	INFO	Listening on port 45487
+1510637612324	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+JavaScript error: http://localhost:8000/, line 1: ReferenceError: selectFolder is not defined
+JavaScript error: http://localhost:8000/, line 1: ReferenceError: selectFolder is not defined
+JavaScript error: http://localhost:8000/, line 1: ReferenceError: selectFolder is not defined
+JavaScript error: http://localhost:8000/, line 1: ReferenceError: selectFolder is not defined
+JavaScript error: http://localhost:8000/, line 1: ReferenceError: selectFolder is not defined
+JavaScript error: http://localhost:8000/, line 1: ReferenceError: selectFolder is not defined
+JavaScript error: http://localhost:8000/, line 1: ReferenceError: selectFolder is not defined
+JavaScript error: http://localhost:8000/, line 1: ReferenceError: selectFolder is not defined
+1510637624110	Marionette	INFO	Ceased listening
+1510637637686	geckodriver	INFO	geckodriver 0.18.0
+1510637637695	geckodriver	INFO	Listening on 127.0.0.1:36563
+1510637638875	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1510637643188	Marionette	INFO	Listening on port 36297
+1510637643327	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+JavaScript error: http://localhost:8000/, line 1: ReferenceError: selectFolder is not defined
+JavaScript error: http://localhost:8000/, line 1: ReferenceError: selectFolder is not defined
+JavaScript error: http://localhost:8000/, line 1: ReferenceError: selectFolder is not defined
+JavaScript error: http://localhost:8000/, line 1: ReferenceError: selectFolder is not defined
+JavaScript error: http://localhost:8000/, line 1: ReferenceError: selectFolder is not defined
+JavaScript error: http://localhost:8000/, line 1: ReferenceError: selectFolder is not defined
+JavaScript error: http://localhost:8000/, line 1: ReferenceError: selectFolder is not defined
+JavaScript error: http://localhost:8000/, line 1: ReferenceError: selectFolder is not defined
+*************************
+A coding exception was thrown and uncaught in a Task.
+
+Full message: TypeError: NetworkError when attempting to fetch resource.
+Full stack: 
+*************************
+1510637771122	geckodriver	INFO	geckodriver 0.18.0
+1510637771131	geckodriver	INFO	Listening on 127.0.0.1:51065
+1510637772427	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1510637778137	Marionette	INFO	Listening on port 41993
+1510637778223	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+JavaScript error: http://localhost:8000/, line 1: ReferenceError: selectFolder is not defined
+JavaScript error: http://localhost:8000/, line 1: ReferenceError: selectFolder is not defined
+JavaScript error: http://localhost:8000/, line 1: ReferenceError: selectFolder is not defined
+JavaScript error: http://localhost:8000/, line 1: ReferenceError: selectFolder is not defined
+JavaScript error: http://localhost:8000/, line 1: ReferenceError: selectFolder is not defined
+JavaScript error: http://localhost:8000/, line 1: ReferenceError: selectFolder is not defined
+JavaScript error: http://localhost:8000/, line 1: ReferenceError: selectFolder is not defined
+JavaScript error: http://localhost:8000/, line 1: ReferenceError: selectFolder is not defined
+1510637786694	Marionette	INFO	New connections will no longer be accepted
+1510637842062	geckodriver	INFO	geckodriver 0.18.0
+1510637842083	geckodriver	INFO	Listening on 127.0.0.1:46461
+1510637843499	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1510637849530	Marionette	INFO	Listening on port 42357
+1510637849845	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+JavaScript error: http://localhost:8000/, line 1: ReferenceError: selectFolder is not defined
+JavaScript error: http://localhost:8000/, line 1: ReferenceError: selectFolder is not defined
+JavaScript error: http://localhost:8000/, line 1: ReferenceError: selectFolder is not defined
+JavaScript error: http://localhost:8000/, line 1: ReferenceError: selectFolder is not defined
+JavaScript error: http://localhost:8000/, line 1: ReferenceError: selectFolder is not defined
+JavaScript error: http://localhost:8000/, line 1: ReferenceError: selectFolder is not defined
+JavaScript error: http://localhost:8000/, line 1: ReferenceError: selectFolder is not defined
+JavaScript error: http://localhost:8000/, line 1: ReferenceError: selectFolder is not defined
+1510637864046	Marionette	INFO	New connections will no longer be accepted
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+1510638060591	geckodriver	INFO	geckodriver 0.18.0
+1510638060657	geckodriver	INFO	Listening on 127.0.0.1:60599
+1510638063463	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1510638079777	Marionette	INFO	Listening on port 46525
+1510638081180	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+1510638091788	Marionette	INFO	New connections will no longer be accepted

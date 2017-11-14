@@ -3,6 +3,7 @@ Created on 6 nov. 2017
 
 @author:  xbolanos
 '''
+# -*- coding: utf-8 -*-
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
@@ -22,9 +23,29 @@ class Pythonprueba(unittest.TestCase):
     def test_pythonprueba(self):
         driver = self.driver
         driver.get(self.base_url + "/")
-        driver.find_element_by_link_text("Inicio (current)").click()
         driver.find_element_by_link_text("ReconoceME").click()
-        driver.find_element_by_link_text("Acerca").click()
+        time.sleep(3)
+
+        driver.find_element_by_id("trainingFiles").clear()
+        driver.find_element_by_id("trainingFiles").send_keys(
+            "/home/ximena/Documents/Repos/Proyecto-Aseguramiento-II-S-2017/WebServer/src/test/Muestras/s1/1.pgm")
+        driver.find_element_by_id("trainingFiles").send_keys(
+            "/home/ximena/Documents/Repos/Proyecto-Aseguramiento-II-S-2017/WebServer/src/test/Muestras/s1/2.pgm")
+        driver.find_element_by_id("trainingFiles").send_keys(
+            "/home/ximena/Documents/Repos/Proyecto-Aseguramiento-II-S-2017/WebServer/src/test/Muestras/s1/3.pgm")
+        driver.find_element_by_id("trainingFiles").send_keys(
+            "/home/ximena/Documents/Repos/Proyecto-Aseguramiento-II-S-2017/WebServer/src/test/Muestras/s1/4.pgm")
+        driver.find_element_by_id("trainingFiles").send_keys(
+            "/home/ximena/Documents/Repos/Proyecto-Aseguramiento-II-S-2017/WebServer/src/test/Muestras/s1/5.pgm")
+        driver.find_element_by_id("trainingFiles").send_keys(
+            "/home/ximena/Documents/Repos/Proyecto-Aseguramiento-II-S-2017/WebServer/src/test/Muestras/s1/6.pgm")
+        driver.find_element_by_id("trainingFiles").send_keys(
+            "/home/ximena/Documents/Repos/Proyecto-Aseguramiento-II-S-2017/WebServer/src/test/Muestras/s1/7.pgm")
+        driver.find_element_by_id("trainingFiles").send_keys(
+            "/home/ximena/Documents/Repos/Proyecto-Aseguramiento-II-S-2017/WebServer/src/test/Muestras/s1/8.pgm")
+
+        driver.find_element_by_name("Registrar").click()
+        #driver.find_element_by_css_selector("button.swal-button.swal-button--confirm").click()
     
     def is_element_present(self, how, what):
         try: self.driver.find_element(by=how, value=what)
