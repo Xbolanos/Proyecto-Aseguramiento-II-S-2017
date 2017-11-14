@@ -3,18 +3,6 @@ var apikey = 'AhZpdzSRTdW9nhvd946LAz';
 
 var client = filestack.init(apikey);
 
-var trainingOptions = {
-  uploadInBackground: false,
-  disableTransformer: true,
-  accept: ['image/*', '.pgm'],
-  minFiles: 8,
-  maxFiles: 8,
-  imageMin: [92, 112],
-  imageMax: [92, 112],
-  imageDim: [92, 112],
-  fromSources: ['local_file_system','webcam', 'customsource']
-};
-
 var recognizeOptions = { //Cuando es 1 foto
   uploadInBackground: false,
   disableTransformer: true,
@@ -37,10 +25,10 @@ var sendRequest = (destiny, data) => {
   swal({
     title: 'Registrando sujeto',
     text: 'Por favor espere mientras se completa el registro.',
-    allowOutsideClick: false,
-    onOpen: function () {
-      swal.showLoading()
-    }
+    closeOnClickOutside: false,
+    closeOnEsc: false,
+    buttons: false,
+    showLoaderOnConfirm: true
   }).then(
     $.ajax({ 
       url: destiny, 
@@ -70,59 +58,6 @@ var sendRequest = (destiny, data) => {
   );
 }
 
-var openSelectTrainingMethod = () => {
-  swal({
-    title: '¿Folder o imágenes?',
-    text: '¿Va a cargar un folder con varios sujetos o imágenes de un solo sujeto?',
-    icon: 'warning',
-    buttons: {
-      folder: {
-        text: 'Folder',
-        value: true
-      },
-      image: {
-        text: 'Imágenes',
-        value: false
-      }
-    }
-  }).then((value) => {
-    if(!value) {
-      openPickerForTraining();
-    } else {
-
-    }
-  })
-}
-
-/**
- * Opens a new dialog to allow the client the upload of images. In this case
- * it is formated as requested for the system training and then allows up to
- * 8 images.
- */
-var openPickerForTraining = () => {
-  return client.pick(trainingOptions).then(function(result) {
-    var data = {
-      handlers: [],
-      tag: ''
-    };
-    
-    result.filesUploaded.forEach(function(file) {
-      data.handlers.push(file.handle);
-    });
-
-    swal({
-      title: 'Agregar tag para el nuevo sujeto',
-      input: 'text',
-      showCancelButton: false,
-      confirmButtonText: 'Completar registro',
-      allowOutsideClick: false
-    }).then(function (tag) {
-      data.tag = tag
-      sendRequest('http://localhost:8000/learn', data);
-    });
-  });
-}
-
 /**
  * Opens a new dialog to allow the client the upload of images. In this case
  * it is formated as requested for the system recognition and then allows
@@ -136,23 +71,38 @@ var openPickerForRecognition = () => {
   });
 }
 
+var isValid = (fileName) => {
+  var validFiles = ['jpeg', 'png', 'pgm', 'jpg'];
+  var length = validFiles.length;
+
+  for(var i = 0; i < length; i++) {
+    if(fileName.endsWith(validFiles[i])) {
+      return true;
+    }
+  }
+
+  return false;
+}
+
 $('#training').submit((e) => {
   e.preventDefault();
   var files = document.getElementById("trainingFiles").files;
-  var form_data = new FormData()
+  var form_data = new FormData();
+  
+  var name = '';
+  var file;
   
   for(var i = 0; i < files.length; i++) {
-    form_data.append('file' + i, files[i]);
+    file = files[i];
+
+    if(isValid(file.name)) {
+      name = file.webkitRelativePath;
+      name = name.split('/');
+      name = name.length == 3 ? name[1] : '';
+      form_data.append('file' + i, file);
+      form_data.append('file' + i + 'data', name);
+    }
   }
 
   sendRequest('http://localhost:8000/learn', form_data);
 });
-
-var selectFolder = (e) => {
-  for (var i = 0; i < e.target.files.length; i++) {
-     var s = e.target.files[i].name + '\n';
-     s += e.target.files[i].size + ' Bytes\n';
-     s += e.target.files[i].type;
-     console.log(s)
-  }
-}

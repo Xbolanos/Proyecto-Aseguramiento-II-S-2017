@@ -9,6 +9,8 @@ from controller import facade
 from django.shortcuts import render
 from django.http import JsonResponse
 from django.core.files.storage import FileSystemStorage
+from WebServer.settings import MEDIA_ROOT
+import os
 
 
 def show_index_page(request):
@@ -49,18 +51,25 @@ def learn(request):
                                         'de post.'})
         
     files = request.FILES
-    fs = FileSystemStorage()
+    filesData = request.POST
+    fs = FileSystemStorage(location=MEDIA_ROOT)
+    basePath = fs.location
     paths = []
     
     for key in files.keys():
         file = files[key]
-        fileName = fs.save(file.name, file)
-        fileUrl = fs.url(fileName)
-        paths.append(fileUrl)
+        fileData = filesData[key + 'data']
         
+        try:
+            os.makedirs(fileData)
+        except Exception:
+            pass
+        
+        fs.location = basePath + '/' + fileData
+        
+        fileName = fs.save(file.name, file)
+        fileUrl = fs.location + '/' + fileName
+        paths.append(fileUrl)
 
-    data = request.body.decode('UTF-8')  # Turns bytes body into a string.
-    data = eval(data)  # Turns the string into a working list.
-
-    response = facade.train_system(data)
+    response = facade.train_system(paths)
     return JsonResponse(response)

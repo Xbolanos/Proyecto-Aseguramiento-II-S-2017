@@ -37,7 +37,7 @@ def get_index_page():
     return 'index.html'
 
 
-def train_system(data):
+def train_system(paths):
     """
     @summary: gets the images handlers and use the FileStack API to download
     them into the local file system to use them into the training of the
@@ -45,26 +45,16 @@ def train_system(data):
 
     Parameters
     ----------
-    @param data: the data from the client's http request.
+    @param paths: the paths of the new added images.
 
     Returns
     -------
     @return: a json response containing the type, title and message fields to
     describe what happen within the server.
     """
-    path = STATICFILES_DIRS[0]  # The static path for de subjects images.
-    images_paths = []
-
-    for handler in data['handlers']:
-        # Creates a new object to connect to FileStack with the given API.
-        filelink = Filelink(handler, apikey='AhZpdzSRTdW9nhvd946LAz')
-        extension = filelink.get_metadata()['filename'][-4:]
-        fullpath = path + '/subjects/' + handler + extension
-        filelink.download(fullpath)
-        images_paths.append(fullpath)
 
     im = ImagesManager()
-    im.add_images_paths(images_paths)
+    im.add_images_paths(paths)
     im.load_images()
 
     training = Training()
