@@ -58,6 +58,25 @@ class Test(unittest.TestCase):
             self.assertEqual(result, expected, err)
             print("Nearest centroid unittest: " + str(G))
             G = G + 1
+            
+    def test_nearest_centroid_dif(self):
+        exception = "some params of centroid don't match"
+        with self.assertRaisesRegexp(Exception, exception):
+            FacesManager.classify_nearest_centroid(self.prueba, "o")
+        print("Nearest centroid dif unittest: raise specific exception")
+        with self.assertRaisesRegexp(Exception, exception):
+            FacesManager.classify_nearest_centroid("o", self.test_4_centroid)
+        print("Nearest centroid dif unittest: raise specific exception")
+
+    def test_nearest_centroid_null(self):
+        exception = "some params of centroid are null"
+        with self.assertRaisesRegexp(Exception, exception):
+            FacesManager.classify_nearest_centroid(self.prueba, None)
+        print("Nearest centroid null unittest: raise specific exception")
+        with self.assertRaisesRegexp(Exception, exception):
+            FacesManager.classify_nearest_centroid(None, self.test_4_centroid)
+        print("Nearest centroid null unittest: raise specific exception")
+
 
     def test_k_neighbors(self):
         FacesManager.change_images_per_person(10)
@@ -72,6 +91,30 @@ class Test(unittest.TestCase):
             print("K neighbors unittest: " + str(G))
             G = G + 1
 
+    def test_k_neighbors_dif(self):
+        exception = "some params of k-neighborhs don't match"
+        with self.assertRaisesRegexp(Exception, exception):
+            FacesManager.k_neighbors(3, self.prueba_k[0], "o")
+        print("K neighbors dif unittest: raise specific exception")
+        with self.assertRaisesRegexp(Exception, exception):
+            FacesManager.k_neighbors(3, "o", self.test_k)
+        print("K neighbors dif unittest: raise specific exception")
+        with self.assertRaisesRegexp(Exception, exception):
+            FacesManager.k_neighbors("o", self.prueba_k[0], self.test_k)
+        print("K neighbors dif unittest: raise specific exception")
+
+    def test_k_neighbors_null(self):
+        exception = "some params of k neighbors are null"
+        with self.assertRaisesRegexp(Exception, exception):
+            FacesManager.k_neighbors(3, self.prueba_k[0], None)
+        print("K neighbors null unittest: raise specific exception")
+        with self.assertRaisesRegexp(Exception, exception):
+            FacesManager.k_neighbors(3, None, self.test_k)
+        print("K neighbors null unittest: raise specific exception")
+        with self.assertRaisesRegexp(Exception, exception):
+            FacesManager.k_neighbors(None, self.prueba_k[0], self.test_k)
+        print("K neighbors null unittest: raise specific exception")
+
     def test_get_min(self):
         G = 0 
         max = len(self.test_min)
@@ -82,6 +125,18 @@ class Test(unittest.TestCase):
             self.assertEqual(result.all(), expected.all(), err)
             print("Get min unittest: " + str(G))
             G = G + 1
+
+    def test_get_min_dif(self):
+        exception = "distance of get_min doesn't match"
+        with self.assertRaisesRegexp(Exception, exception):
+            FacesManager.get_min("other")
+        print("Get min dif unittest: raise specific exception")
+
+    def test_get_min_null(self):
+        exception = "distance of get_min is null"
+        with self.assertRaisesRegexp(Exception, exception):
+            FacesManager.get_min(None)
+        print("Get min null unittest: raise specific exception")
 
     def test_get_person(self):
         G = 0 
@@ -95,4 +150,15 @@ class Test(unittest.TestCase):
             print("Get Person unittest: " + str(G))
             G = G + 1
 
+    def test_get_person_dif(self):
+        exception = "n of get_person doesn't match"
+        with self.assertRaisesRegexp(Exception, exception):
+            FacesManager.get_person("other")
+        print("Get person dif unittest: raise specific exception")
+
+    def test_get_person_null(self):
+        exception = "distance of get_min is null"
+        with self.assertRaisesRegexp(Exception, exception):
+            FacesManager.get_min(None)
+        print("Get min null unittest: raise specific exception")
             
