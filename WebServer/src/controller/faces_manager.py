@@ -7,7 +7,6 @@ Created on Nov 3, 2017
 from abc import ABC, abstractmethod
 import numpy as np
 from WebServer.settings import STATICFILES_DIRS
-from networkx.classes.function import neighbors
 from controller.ErrorHandler import ErrorHandler
 np.set_printoptions(threshold=np.nan)
 

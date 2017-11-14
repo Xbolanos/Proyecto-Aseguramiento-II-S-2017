@@ -48,9 +48,10 @@ var sendRequest = (destiny, data) => {
       beforeSend: function(xhr, settings) { 
         xhr.setRequestHeader('X-CSRFToken', csrftoken); 
       }, 
-      data: JSON.stringify(data), 
-      dataType: 'json', 
-      contentType: 'application/json; charset=utf-8'
+      data: data,
+      cache: false,
+      contentType: false,
+      processData: false,
     })
     .done(function(result) {
       swal( 
@@ -63,10 +64,34 @@ var sendRequest = (destiny, data) => {
       swal( 
         'Ha ocurrido un error', 
         'Verifique su conexión a internet o contactese con su proveedor', 
-        'question' 
+        'error' 
       ) 
     })
   );
+}
+
+var openSelectTrainingMethod = () => {
+  swal({
+    title: '¿Folder o imágenes?',
+    text: '¿Va a cargar un folder con varios sujetos o imágenes de un solo sujeto?',
+    icon: 'warning',
+    buttons: {
+      folder: {
+        text: 'Folder',
+        value: true
+      },
+      image: {
+        text: 'Imágenes',
+        value: false
+      }
+    }
+  }).then((value) => {
+    if(!value) {
+      openPickerForTraining();
+    } else {
+
+    }
+  })
 }
 
 /**
@@ -109,4 +134,25 @@ var openPickerForRecognition = () => {
       console.log(file.url); //file.url tiene la dirección de las imagenes
     });
   });
+}
+
+$('#training').submit((e) => {
+  e.preventDefault();
+  var files = document.getElementById("trainingFiles").files;
+  var form_data = new FormData()
+  
+  for(var i = 0; i < files.length; i++) {
+    form_data.append('file' + i, files[i]);
+  }
+
+  sendRequest('http://localhost:8000/learn', form_data);
+});
+
+var selectFolder = (e) => {
+  for (var i = 0; i < e.target.files.length; i++) {
+     var s = e.target.files[i].name + '\n';
+     s += e.target.files[i].size + ' Bytes\n';
+     s += e.target.files[i].type;
+     console.log(s)
+  }
 }

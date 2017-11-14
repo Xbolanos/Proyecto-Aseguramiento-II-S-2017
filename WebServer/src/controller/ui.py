@@ -8,6 +8,7 @@ Created on Aug 12, 2017
 from controller import facade
 from django.shortcuts import render
 from django.http import JsonResponse
+from django.core.files.storage import FileSystemStorage
 
 
 def show_index_page(request):
@@ -46,6 +47,17 @@ def learn(request):
                              'title': 'Metodo invalido',
                              'message': 'No se permiten otros metodos además' +
                                         'de post.'})
+        
+    files = request.FILES
+    fs = FileSystemStorage()
+    paths = []
+    
+    for key in files.keys():
+        file = files[key]
+        fileName = fs.save(file.name, file)
+        fileUrl = fs.url(fileName)
+        paths.append(fileUrl)
+        
 
     data = request.body.decode('UTF-8')  # Turns bytes body into a string.
     data = eval(data)  # Turns the string into a working list.
