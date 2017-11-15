@@ -61,6 +61,10 @@ def learn(request):
         fileData = filesData[key + 'data']
         
         try:
+            
+            if(len(fileData) == 2):
+                fileData = fileData[:1] + '0' + fileData[1:]
+            
             os.makedirs(fileData)
         except Exception:
             pass
@@ -86,3 +90,34 @@ def recognize(request):
 
     response = facade.recognize_subject(data)
     return JsonResponse(response)
+
+def signin(request):
+    if request.method != 'POST':
+        # No other method are allowed for this function than post.
+        return JsonResponse({'type': 'error',
+                             'title': 'Metodo invalido',
+                             'message': 'No se permiten otros metodos además' +
+                                        'de post.'})
+    
+    user = {
+        'email': request.POST['email'],
+        'password': request.POST['password']
+    }   
+    
+    if(facade.signin(user)):
+        return render(request, 'index.html', {'userEmail': user['email']})
+    
+    return render(request, 'index.html')
+
+def logout(request):
+    if request.method != 'POST':
+        # No other method are allowed for this function than post.
+        return JsonResponse({'type': 'error',
+                             'title': 'Metodo invalido',
+                             'message': 'No se permiten otros metodos además' +
+                                        'de post.'})
+        
+    return JsonResponse({'type': 'success',
+            'title': 'Se ha cerrado sesión',
+            'message': ''})
+    

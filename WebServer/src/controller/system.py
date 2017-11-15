@@ -55,6 +55,8 @@ def train_system(paths):
     @return: a json response containing the type, title and message fields to
     describe what happen within the server.
     """
+    #paths = order_paths(paths)
+    
     im.add_images_paths(paths)
     im.load_images()
 
@@ -63,7 +65,9 @@ def train_system(paths):
 
     return {'type': 'success',
             'title': '¡Registrado!',
-            'message': 'Se ha agregado al nuevo sujeto al sistema.'}
+            'message': 'Se ha(n) registrado con exito al sistema.',
+            'id': 0
+    }
     
 def recognize_subject(handler):
     path = STATICFILES_DIRS[0]  # The static path for de subjects images.
@@ -83,4 +87,20 @@ def recognize_subject(handler):
     
     return {'type': 'success',
             'title': 'Se ha reconocido al sujeto',
-            'message': 'El rostro pertenece al sujeto: ' + str(result)}
+            'message': 'El rostro pertenece al sujeto: ' + str(result),
+            'id': 1
+    }
+    
+def signin(user):
+    admin = {
+        'email': 'admin@reconoceme.com',
+        'password': '123Queso'
+    }
+    
+    if(user['email'] == admin['email']):
+        if(user['password'] == user['password']):
+            return True
+        else:
+            False
+    else:
+        False

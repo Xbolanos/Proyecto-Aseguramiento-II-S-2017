@@ -25,6 +25,7 @@ var sendRequest = (destiny, data, info) => {
   swal({
     title: info.title,
     text: info.text,
+    icon: 'warning',
     closeOnClickOutside: false,
     closeOnEsc: false,
     buttons: false
@@ -45,14 +46,14 @@ var sendRequest = (destiny, data, info) => {
         result.title, 
         result.message, 
         result.type 
-      ) 
+      );
     })
     .fail(function(result) {
       swal( 
         'Ha ocurrido un error', 
         'Verifique su conexión a internet o contactese con su proveedor', 
         'error' 
-      ) 
+      );
     })
   );
 }
@@ -94,7 +95,7 @@ var isValid = (fileName) => {
 
 $('#training').submit((e) => {
   e.preventDefault();
-  var files = document.getElementById("trainingFiles").files;
+  var files = document.getElementById('trainingFiles').files;
   var form_data = new FormData();
   
   var name = '';
@@ -119,3 +120,32 @@ $('#training').submit((e) => {
 
   sendRequest('http://localhost:8000/learn', form_data, info);
 });
+
+var logout = () => {
+  $.ajax({ 
+    url: 'http://localhost:8000/logout', 
+    method: 'POST',
+    beforeSend: function(xhr, settings) { 
+      xhr.setRequestHeader('X-CSRFToken', csrftoken); 
+    },
+    dataType: 'json'
+  })
+  .done((result) => {
+    window.location.replace('http://localhost:8000');
+  })
+  .fail((result) => {
+    swal( 
+      'Ha ocurrido un error', 
+      'Verifique su conexión a internet o contactese con su proveedor', 
+      'error' 
+    );
+  })
+}
+
+var countFiles = (e) => {
+  e.preventDefault();
+  var files = document.getElementById('trainingFiles').files;
+  var labelFiles = document.getElementById('labelFiles');
+
+  labelFiles.textContent = 'Subir archivos... ' + files.length; 
+}

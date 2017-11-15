@@ -55,12 +55,18 @@ http://www.tooplate.com/view/2088-big-city
                                     <li class="nav-item active selected">
                                         <a class="nav-link" href="#0" data-no="1">Inicio <span class="sr-only">(current)</span></a>
                                     </li>
-                              
                                     <li class="nav-item">
                                         <a name='ReconoceME' class="nav-link" href="#0" data-no="2" onclick="adjustHeightOfPage(2)">ReconoceME</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="#0" data-no="3" onclick="adjustHeightOfPage(3)">Acerca</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        {% if userEmail != None %}
+                                            <a class="nav-link" href="#" onclick="logout()">Salir</a>
+                                        {% else %}
+                                            <a class="nav-link" href="#" data-no="4" onclick="adjustHeightOfPage(4)">Ingresar</a>
+                                        {% endif %}
                                     </li>
                                 </ul>
                             </div>                        
@@ -105,29 +111,32 @@ http://www.tooplate.com/view/2088-big-city
                             <div class="row">
                                 <div class="col-xs-12">
                                     <div class="tm-flex">
-                                        <div class="col-lg-6 tm-white-header-container-outer tm-margin-b tm-2-col-left">
+                                        {% if userEmail != None %}
+                                        <div id="training-div" class="col-lg-6 tm-white-header-container-outer tm-margin-b tm-2-col-left">
                                             <div class="tm-bg-white tm-white-header-container">
                                                 <h2 class="tm-text-title tm-text-title-small">Entrenamiento Facial</h2>
                                             </div>
                                             <div class="tm-bg-dark-blue text-xs-left tm-textbox tm-textbox-padding tm-white-header-body tm-white-border tm-2-col-equal-height">
-                                                <p class="tm-text">Ingrese a esta sección si lo que busca es registrar nuevos sujetos en el sistema para su posterior reconocimiento.</p>
+                                                <p class="tm-text">Ingrese a esta sección si lo que busca es registrar nuevos sujetos en el sistema para su posterior reconocimiento (necesita iniciar sesión).</p>
                                                 <form id="training" method="post" enctype="multipart/form-data">
-<<<<<<< HEAD
-                                                    <input id='trainingFiles' type="file" class="form-control TheFiles" webkitdirectory mozdirectory msdirectory odirectory directory multiple>                                            
-                                                    <input type="submit" class="load-images-button" value="Registrar">
-=======
-                                                    <input id='trainingFiles' name="browser" type="file" class="form-control TheFiles" onchange="selectFolder(event);" webkitdirectory mozdirectory msdirectory odirectory directory multiple>                                            
-                                                    <input type="submit" name="Registrar" class="load-images-button" value="Registrar">
->>>>>>> 897f90de6096e136100357bc47e2f39bb2244ca4
+                                                    <div class="row">
+                                                        <label id="labelFiles" for="trainingFiles" class="load-images-button col-xs-6 inputfile">
+                                                            Subir archivos...
+                                                        </label>
+                                                        <input type="file" name="file" id="trainingFiles" onchange="countFiles(event);" webkitdirectory mozdirectory msdirectory odirectory directory multiple>
+                                                        <div class="col-xs-2"></div>                               
+                                                        <input type="submit" name="Registrar" class="load-images-button col-xs-4" value="Registrar">
+                                                    </div>
                                                 </form>
                                             </div>    
                                         </div>
+                                        {% endif %}
                                         <div class="col-lg-6 tm-white-header-container-outer tm-margin-b tm-2-col-right">
                                             <div class="tm-bg-white tm-white-header-container">
                                                 <h2 class="tm-text-title tm-text-title-small">Reconocimiento Facial</h2>
                                             </div>
                                             <div class="tm-bg-dark-blue text-xs-left tm-textbox tm-textbox-padding tm-white-header-body tm-white-border tm-2-col-equal-height">
-                                                <p class="tm-text">¿Posee sujetos registrados en el sistema? ¡Arraste su folder aquí para comenzar el reconocimiento de algunos sujetos!</p> 
+                                                <p class="tm-text">¿Posee sujetos registrados en el sistema? ¡Presione en reconocer para comenzar el reconocimiento de algunos sujetos!</p> 
 											    <button class="load-images-button" onclick="openPickerForRecognition()">Reconocer</button>
                                             </div>    
                                         </div>
@@ -169,6 +178,33 @@ http://www.tooplate.com/view/2088-big-city
                             </div>
                         </div>                        
                     </div> <!-- .cd-full-width -->
+                </li>
+
+                <li>
+                    <div class="cd-full-width">                        
+                        <div class="container js-tm-page-content tm-section-margin-t" data-page-no="4">
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <div class="tm-flex">
+                                        <div class="col-lg-12 tm-white-header-container-outer tm-margin-b tm-2-col-left">
+                                            <div class="tm-bg-white tm-white-header-container">
+                                                <h2 class="tm-text-title tm-text-title-small">Iniciar sesión</h2>
+                                            </div>
+                                            <div class="tm-bg-dark-blue text-xs-left tm-textbox tm-textbox-padding tm-white-header-body tm-white-border tm-2-col-equal-height">
+                                                <form method="post" enctype="multipart/form-data" action="/signin">{% csrf_token %}
+                                                    <input type="email" id="email" name="email" class="form-control" placeholder="Email">                                            
+                                                    <input type="password" id=password name="password" class="form-control" placeholder="Contraseña"><br>
+                                                    <input type="submit" class="load-images-button" value="Ingresar">
+                                                </form>
+                                            </div>    
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> <!-- .container -->
+                                                    
+                    </div> <!-- .cd-full-width -->
+                    
                 </li>
             </ul> <!-- .cd-hero-slider -->
             

@@ -42,3 +42,6 @@ def train_system(data):
     
 def recognize_subject(handler):
     return system.recognize_subject(handler)
+
+def signin(user):
+    return system.signin(user)

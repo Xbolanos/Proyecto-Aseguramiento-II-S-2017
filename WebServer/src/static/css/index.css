@@ -2,7 +2,7 @@
   background-color: #008CBA;
   color: white;
   border: none;
-  font-size: 24px;
+  font-size: 20px;
   padding: 12px 28px;
   border-radius: 8px;
   width: 200px;
@@ -19,4 +19,12 @@
   background-color: #3e8e41;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.inputfile {
+  cursor: pointer;
 }

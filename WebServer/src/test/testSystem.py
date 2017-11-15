@@ -28,21 +28,21 @@ class Pythonprueba(unittest.TestCase):
 
         driver.find_element_by_id("trainingFiles").clear()
         driver.find_element_by_id("trainingFiles").send_keys(
-            "/home/ximena/Documents/Repos/Proyecto-Aseguramiento-II-S-2017/WebServer/src/test/Muestras/s1/1.pgm")
+            "/Users/erickhdez/Documents/Repositories/Proyecto-Aseguramiento-II-S-2017/WebServer/src/test/Muestras/s1/1.pgm")
         driver.find_element_by_id("trainingFiles").send_keys(
-            "/home/ximena/Documents/Repos/Proyecto-Aseguramiento-II-S-2017/WebServer/src/test/Muestras/s1/2.pgm")
+            "/Users/erickhdez/Documents/Repositories/Proyecto-Aseguramiento-II-S-2017/WebServer/src/test/Muestras/s1/2.pgm")
         driver.find_element_by_id("trainingFiles").send_keys(
-            "/home/ximena/Documents/Repos/Proyecto-Aseguramiento-II-S-2017/WebServer/src/test/Muestras/s1/3.pgm")
+            "/Users/erickhdez/Documents/Repositories/Proyecto-Aseguramiento-II-S-2017/WebServer/src/test/Muestras/s1/3.pgm")
         driver.find_element_by_id("trainingFiles").send_keys(
-            "/home/ximena/Documents/Repos/Proyecto-Aseguramiento-II-S-2017/WebServer/src/test/Muestras/s1/4.pgm")
+            "/Users/erickhdez/Documents/Repositories/Proyecto-Aseguramiento-II-S-2017/WebServer/src/test/Muestras/s1/4.pgm")
         driver.find_element_by_id("trainingFiles").send_keys(
-            "/home/ximena/Documents/Repos/Proyecto-Aseguramiento-II-S-2017/WebServer/src/test/Muestras/s1/5.pgm")
+            "/Users/erickhdez/Documents/Repositories/Proyecto-Aseguramiento-II-S-2017/WebServer/src/test/Muestras/s1/5.pgm")
         driver.find_element_by_id("trainingFiles").send_keys(
-            "/home/ximena/Documents/Repos/Proyecto-Aseguramiento-II-S-2017/WebServer/src/test/Muestras/s1/6.pgm")
+            "/Users/erickhdez/Documents/Repositories/Proyecto-Aseguramiento-II-S-2017/WebServer/src/test/Muestras/s1/6.pgm")
         driver.find_element_by_id("trainingFiles").send_keys(
-            "/home/ximena/Documents/Repos/Proyecto-Aseguramiento-II-S-2017/WebServer/src/test/Muestras/s1/7.pgm")
+            "/Users/erickhdez/Documents/Repositories/Proyecto-Aseguramiento-II-S-2017/WebServer/src/test/Muestras/s1/7.pgm")
         driver.find_element_by_id("trainingFiles").send_keys(
-            "/home/ximena/Documents/Repos/Proyecto-Aseguramiento-II-S-2017/WebServer/src/test/Muestras/s1/8.pgm")
+            "/Users/erickhdez/Documents/Repositories/Proyecto-Aseguramiento-II-S-2017/WebServer/src/test/Muestras/s1/8.pgm")
 
         driver.find_element_by_name("Registrar").click()
         #driver.find_element_by_css_selector("button.swal-button.swal-button--confirm").click()

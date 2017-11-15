@@ -25,5 +25,7 @@ urlpatterns = [
     url(r'^$', ui.show_index_page),
     url(r'^index$', ui.show_index_page),
     url(r'^learn$', ui.learn),
-    url(r'^recongnize$', ui.recognize)
+    url(r'^recongnize$', ui.recognize),
+    url(r'^signin$', ui.signin),
+    url(r'^logout$', ui.logout)
 ]

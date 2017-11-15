@@ -8,3 +8,4 @@
 WebServer/\.sonar/
 
 WebServer/src/static/subjects/
+WebServer/.settings

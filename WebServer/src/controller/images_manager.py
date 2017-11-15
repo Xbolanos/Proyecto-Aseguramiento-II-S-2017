@@ -33,10 +33,15 @@ class ImagesManager(object):
         if(paths is not None):
             if(isinstance(paths, list)):
                 self.images_paths.extend(paths)
+                self.orderPaths()
+                print(self.images_paths)
             else:
                 raise Exception("add images: paths type doesn't match")
         else:
             raise Exception("add images: paths type is null")
+        
+    def orderPaths(self):
+        self.images_paths.sort()
 
     @staticmethod
     def read_image(path):
