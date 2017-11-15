@@ -107,7 +107,7 @@ $('#training').submit((e) => {
     if(isValid(file.name)) {
       name = file.webkitRelativePath;
       name = name.split('/');
-      name = name.length == 3 ? name[1] : '';
+      name = name[name.length - 2];
       form_data.append('file' + i, file);
       form_data.append('file' + i + 'data', name);
     }

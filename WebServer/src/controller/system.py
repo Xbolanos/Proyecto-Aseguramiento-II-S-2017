@@ -65,8 +65,7 @@ def train_system(paths):
 
     return {'type': 'success',
             'title': '¡Registrado!',
-            'message': 'Se ha(n) registrado con exito al sistema.',
-            'id': 0
+            'message': 'Se ha(n) registrado con exito al sistema.'
     }
     
 def recognize_subject(handler):
@@ -87,8 +86,7 @@ def recognize_subject(handler):
     
     return {'type': 'success',
             'title': 'Se ha reconocido al sujeto',
-            'message': 'El rostro pertenece al sujeto: ' + str(result),
-            'id': 1
+            'message': 'El rostro pertenece al sujeto: ' + str(result)
     }
     
 def signin(user):
