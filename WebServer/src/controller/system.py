@@ -20,6 +20,8 @@ from controller.images_manager import ImagesManager
 from controller.training_manager import Training
 from controller.recognizing_manager import Recognize
 from filestack import Filelink
+from django.core.files.storage import FileSystemStorage
+from WebServer.settings import MEDIA_ROOT
 
 
 im = ImagesManager()
@@ -40,7 +42,7 @@ def get_index_page():
     return 'index.html'
 
 
-def train_system(paths):
+def train_system(files, filesData, autovectors, images_per_subject):
     """
     @summary: gets the images handlers and use the FileStack API to download
     them into the local file system to use them into the training of the
@@ -55,13 +57,29 @@ def train_system(paths):
     @return: a json response containing the type, title and message fields to
     describe what happen within the server.
     """
-    #paths = order_paths(paths)
+    fs = FileSystemStorage(location=MEDIA_ROOT)
+    basePath = fs.location
+    paths = []
+    subjects_names = []
     
-    im.add_images_paths(paths)
+    for key in files.keys():
+        file = files[key]
+        fileData = filesData[key + 'data']
+        
+        if fileData not in subjects_names:
+            subjects_names.append(fileData)
+        
+        fs.location = basePath + '/' + fileData
+        
+        fileName = fs.save(file.name, file)
+        fileUrl = fs.location + '/' + fileName
+        paths.append(fileUrl)
+    
+    im.add_images_paths(paths, subjects_names)
     im.load_images()
 
     training = Training()
-    training.process(im)
+    training.process(im, autovectors, images_per_subject)
 
     return {'type': 'success',
             'title': '¡Registrado!',
@@ -82,7 +100,8 @@ def recognize_subject(handler):
     tempIM.load_images()
     
     rm = Recognize()
-    result = rm.process(tempIM, mode=1)
+    index = rm.process(tempIM, mode=1)
+    result = im.get_subject_name(index - 1)
     
     return {'type': 'success',
             'title': 'Se ha reconocido al sujeto',

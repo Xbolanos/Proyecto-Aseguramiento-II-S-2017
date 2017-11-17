@@ -9,3 +9,4 @@ WebServer/\.sonar/
 
 WebServer/src/static/subjects/
 WebServer/.settings
+WebServer/src/static/saved/

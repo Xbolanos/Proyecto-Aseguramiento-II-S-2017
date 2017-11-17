@@ -93,6 +93,26 @@ var isValid = (fileName) => {
   return false;
 }
 
+var isInt = (value) => {
+  return !isNaN(value) && 
+         parseInt(Number(value)) == value && 
+         !isNaN(parseInt(value, 10));
+}
+
+var sameQuantityOfImagesPerFolder = (numFilesPerFolder, initialKey) => {
+  var baseValue = numFilesPerFolder[initialKey];
+
+  for (var key in numFilesPerFolder) {
+    if (numFilesPerFolder.hasOwnProperty(key)) {
+      if(baseValue != numFilesPerFolder[key]) {
+        return false;
+      }
+    }
+  }
+
+  return true;
+}
+
 $('#training').submit((e) => {
   e.preventDefault();
   var files = document.getElementById('trainingFiles').files;
@@ -100,6 +120,7 @@ $('#training').submit((e) => {
   
   var name = '';
   var file;
+  var numFilesPerFolder = {};
   
   for(var i = 0; i < files.length; i++) {
     file = files[i];
@@ -108,17 +129,53 @@ $('#training').submit((e) => {
       name = file.webkitRelativePath;
       name = name.split('/');
       name = name[name.length - 2];
+
+      if(!(name in numFilesPerFolder)) {
+        numFilesPerFolder[name] = 1;
+      } else {
+        numFilesPerFolder[name] += 1;
+      }
+
       form_data.append('file' + i, file);
       form_data.append('file' + i + 'data', name);
     }
   }
 
-  var info = {
-    title: 'Registrando sujeto(s)',
-    text: 'Por favor espere mientras se completa el registro.'
+  if(!sameQuantityOfImagesPerFolder(numFilesPerFolder, name)) {
+    swal('Entrada no valida', 'Se deben tener la misma cantidad de imágenes por sujeto. Verifique los archivos.', 'error');
+    return;
   }
 
-  sendRequest('http://localhost:8000/learn', form_data, info);
+  var numImagesPerSubject = numFilesPerFolder[name];
+
+  swal({
+    text: 'Ingrese el número de auto-vectores a utilizar',
+    content: "input",
+    button: {
+      text: "Entrenar",
+      closeModal: false,
+    },
+  }).then((numvectors) => {
+    if(!isInt(numvectors)) {
+      swal('Entrada no valida', 'Debe ingresar un número mayor a cero.', 'error');
+      return;
+    }
+
+    if(numvectors <= 0) {
+      swal('Número invalido', 'El número de auto-vectores no puede ser menor o igual a 0.', 'error');
+      return;
+    }
+
+    form_data.append('autovectors', numvectors);
+    form_data.append('imagesPerSubject', numImagesPerSubject);
+
+    var info = {
+      title: 'Registrando sujeto(s)',
+      text: 'Por favor espere mientras se completa el registro.'
+    }
+  
+    sendRequest('http://localhost:8000/learn', form_data, info);
+  });
 });
 
 var logout = () => {

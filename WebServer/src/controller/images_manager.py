@@ -16,9 +16,10 @@ class ImagesManager(object):
 
     def __init__(self):
         self.images_paths = []
+        self.subjects_names = []
         self.images_matrix = []
 
-    def add_images_paths(self, paths):
+    def add_images_paths(self, paths, subjects_names=None):
         """
         Adds a lists of paths to the already known paths of the class.
 
@@ -33,15 +34,22 @@ class ImagesManager(object):
         if(paths is not None):
             if(isinstance(paths, list)):
                 self.images_paths.extend(paths)
-                self.orderPaths()
+                if(subjects_names is not None):
+                    self.subjects_names.extend(subjects_names)
+                self.orderLists()
                 print(self.images_paths)
+                print(self.subjects_names)
             else:
                 raise Exception("add images: paths type doesn't match")
         else:
             raise Exception("add images: paths type is null")
         
-    def orderPaths(self):
+    def orderLists(self):
         self.images_paths.sort()
+        self.subjects_names.sort()
+        
+    def get_subject_name(self, index):
+        return self.subjects_names[index]
 
     @staticmethod
     def read_image(path):

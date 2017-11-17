@@ -8,9 +8,6 @@ Created on Aug 12, 2017
 from controller import facade
 from django.shortcuts import render
 from django.http import JsonResponse
-from django.core.files.storage import FileSystemStorage
-from WebServer.settings import MEDIA_ROOT
-import os
 
 
 def show_index_page(request):
@@ -52,30 +49,11 @@ def learn(request):
         
     files = request.FILES
     filesData = request.POST
-    fs = FileSystemStorage(location=MEDIA_ROOT)
-    basePath = fs.location
-    paths = []
+    autovectors = int(filesData['autovectors'])
+    images_per_subject = int(filesData['imagesPerSubject'])
     
-    for key in files.keys():
-        file = files[key]
-        fileData = filesData[key + 'data']
-        
-        try:
-            
-            if(len(fileData) == 2):
-                fileData = fileData[:1] + '0' + fileData[1:]
-            
-            os.makedirs(fileData)
-        except Exception:
-            pass
-        
-        fs.location = basePath + '/' + fileData
-        
-        fileName = fs.save(file.name, file)
-        fileUrl = fs.location + '/' + fileName
-        paths.append(fileUrl)
 
-    response = facade.train_system(paths)
+    response = facade.train_system(files, filesData, autovectors, images_per_subject)
     return JsonResponse(response)
 
 def recognize(request):

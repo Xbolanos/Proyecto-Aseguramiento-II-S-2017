@@ -14,13 +14,11 @@ class Training(FacesManager):
     """
     Class incharge of training the system with the subjects faces.
     """
-    EIGEN_VECTORS = 1000
-    IMAGES_PER_SUBJECT = 10
 
     def __init__(self):
         super(Training, self).__init__()
 
-    def process(self, image_manager):
+    def process(self, image_manager, eigenvectors, images_per_subject):
         """
         @summary: This function trains the system with faces
         calling different functions.
@@ -49,15 +47,14 @@ class Training(FacesManager):
                     m_dif = super(Training, Training).matrix_of_differences(normalized, 
                                                                             av_face)
                     print(m_dif)
-                    w = super(Training, Training).calculate_w(m_dif, 
-                                                              Training.EIGEN_VECTORS)
+                    w = super(Training, Training).calculate_w(m_dif, eigenvectors)
                     print(w)
                     np.savetxt(self.path_saved+'W.out', w, delimiter=',')
                     all_projected = super(Training, Training).project_images(m_dif, w)
                     all_p = self.path_saved+'projectedFaces.out'
                     np.savetxt(all_p, all_projected, delimiter=',')
                     print(all_projected)
-                    n_train = np.matrix(Training.IMAGES_PER_SUBJECT)
+                    n_train = np.matrix(images_per_subject)
                     np.savetxt(self.path_saved+'IMAGES_PER_SUBJECT.out', n_train)
                 else:
                     raise Exception("tProcess: param type doesn't match")

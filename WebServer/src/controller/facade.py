@@ -22,7 +22,7 @@ def get_index_page():
     return system.get_index_page()
 
 
-def train_system(data):
+def train_system(files, filesData, autovectors, images_per_subject):
     """
     @summary: pass the request to the system so it can get the uploaded images
     and process them.
@@ -35,10 +35,7 @@ def train_system(data):
     ------
     @return: the system's response to the request.
     """
-    if (data is not None):
-        return system.train_system(data)
-    else:
-        return -1
+    return system.train_system(files, filesData, autovectors, images_per_subject)
     
 def recognize_subject(handler):
     return system.recognize_subject(handler)
