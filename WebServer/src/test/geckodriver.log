@@ -987,3 +987,329 @@ JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: Synt
 JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
 JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
 1510962349321	Marionette	INFO	New connections will no longer be accepted
+1510962738702	geckodriver	INFO	geckodriver 0.18.0
+1510962738760	geckodriver	INFO	Listening on 127.0.0.1:55287
+1510962740048	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1510962769680	Marionette	INFO	Listening on port 41031
+1510962771490	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+1510962870494	Marionette	INFO	Ceased listening
+JavaScript error: chrome://selenium-ide/content/selenium-ide-overlay.js, line 274: ReferenceError: Application is not defined
+1510962883772	Marionette	INFO	Listening on port 41031
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+JavaScript error: http://localhost:8000/static/js/jquery-1.11.3.min.js, line 2: Error: Syntax error, unrecognized expression: :nth-of-type
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+JavaScript warning: chrome://selenium-ide/content/selenium-core/scripts/htmlutils.js, line 6182: unreachable code after return statement
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+1510963285544	geckodriver	INFO	geckodriver 0.18.0
+1510963285573	geckodriver	INFO	Listening on 127.0.0.1:50623
+1510963288467	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1510963311978	Marionette	INFO	Listening on port 45171
+1510963314083	Marionette	WARN	TLS certificate errors will be ignored for this session
+1510963324416	Marionette	INFO	New connections will no longer be accepted
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+*************************
+A coding exception was thrown and uncaught in a Task.
+
+Full message: TypeError: NetworkError when attempting to fetch resource.
+Full stack: 
+*************************
+1510963448004	geckodriver	INFO	geckodriver 0.18.0
+1510963448017	geckodriver	INFO	Listening on 127.0.0.1:42275
+1510963449369	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1510963466442	Marionette	INFO	Listening on port 41999
+1510963468433	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+1510963507478	Marionette	INFO	New connections will no longer be accepted
+1510963567241	geckodriver	INFO	geckodriver 0.18.0
+1510963567268	geckodriver	INFO	Listening on 127.0.0.1:45827
+1510963568766	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1510963594209	Marionette	INFO	Listening on port 42289
+1510963595736	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+1510963636619	Marionette	INFO	New connections will no longer be accepted
+JavaScript error: chrome://global/content/bindings/remote-browser.xml, line 357: uncaught exception: unknown (can't convert to string)
+1510963903188	Marionette	INFO	Ceased listening
+1510963924697	geckodriver	INFO	geckodriver 0.18.0
+1510963924729	geckodriver	INFO	Listening on 127.0.0.1:60815
+1510963925185	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1510963934576	Marionette	INFO	Listening on port 37379
+1510963935101	Marionette	WARN	TLS certificate errors will be ignored for this session
+1510963940430	Marionette	INFO	New connections will no longer be accepted
+1510964084688	geckodriver	INFO	geckodriver 0.18.0
+1510964084695	geckodriver	INFO	Listening on 127.0.0.1:42485
+1510964085899	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1510964090193	Marionette	INFO	Listening on port 35237
+1510964090261	Marionette	WARN	TLS certificate errors will be ignored for this session
+1510964195628	geckodriver	INFO	geckodriver 0.18.0
+1510964195633	geckodriver	INFO	Listening on 127.0.0.1:49113
+1510964196846	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1510964200805	Marionette	INFO	Listening on port 36869
+1510964200945	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+1510964504517	geckodriver	INFO	geckodriver 0.18.0
+1510964504524	geckodriver	INFO	Listening on 127.0.0.1:36893
+1510964504880	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1510964510045	Marionette	INFO	Listening on port 40683
+1510964510153	Marionette	WARN	TLS certificate errors will be ignored for this session
+1510964510704	Marionette	INFO	New connections will no longer be accepted
+1510964511701	Marionette	INFO	New connections will no longer be accepted
+1510964534983	geckodriver	INFO	geckodriver 0.18.0
+1510964534989	geckodriver	INFO	Listening on 127.0.0.1:47423
+1510964536167	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1510964540381	Marionette	INFO	Listening on port 39065
+1510964540543	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+1510964542608	Marionette	INFO	New connections will no longer be accepted
+1510964568069	geckodriver	INFO	geckodriver 0.18.0
+1510964568077	geckodriver	INFO	Listening on 127.0.0.1:53581
+1510964569248	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1510964575618	Marionette	INFO	Listening on port 43587
+1510964575742	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+console.error: 
+  Message: Error: Source map at http://localhost:8000/static/css/bootstrap.min.css.map not found or invalid
+  Stack:
+    _fetchSourceMap/</map<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/actors/stylesheets.js:579:27
+process@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:922:23
+walkerLoop@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:806:7
+scheduleWalkerLoop/<@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:742:11
+
+_fetchSourceMap/</map<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/actors/stylesheets.js:579:27
+process@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:922:23
+walkerLoop@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:806:7
+scheduleWalkerLoop/<@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:742:11
+console.error: 
+  Protocol error (unknownError): Source map at http://localhost:8000/static/css/bootstrap.min.css.map not found or invalid
+*************************
+A coding exception was thrown and uncaught in a Task.
+
+Full message: TypeError: NetworkError when attempting to fetch resource.
+Full stack: 
+*************************
+1510964926271	Marionette	INFO	Ceased listening
+1510964957148	geckodriver	INFO	geckodriver 0.18.0
+1510964957197	geckodriver	INFO	Listening on 127.0.0.1:60673
+1510964958917	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1510964974492	Marionette	INFO	Ceased listening
+1510964978952	Marionette	INFO	Listening on port 38499
+1510964979413	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+1510965089970	geckodriver	INFO	geckodriver 0.18.0
+1510965089986	geckodriver	INFO	Listening on 127.0.0.1:50849
+1510965091178	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1510965096301	Marionette	INFO	Listening on port 45695
+1510965096456	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+1510965130462	geckodriver	INFO	geckodriver 0.18.0
+1510965130477	geckodriver	INFO	Listening on 127.0.0.1:42735
+1510965131951	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1510965140859	Marionette	INFO	Listening on port 46085
+1510965141439	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+*************************
+A coding exception was thrown and uncaught in a Task.
+
+Full message: TypeError: NetworkError when attempting to fetch resource.
+Full stack: 
+*************************
+*************************
+A coding exception was thrown and uncaught in a Task.
+
+Full message: TypeError: NetworkError when attempting to fetch resource.
+Full stack: 
+*************************
+1510965754740	geckodriver	INFO	geckodriver 0.18.0
+1510965754759	geckodriver	INFO	Listening on 127.0.0.1:40925
+1510965756043	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+*************************
+A coding exception was thrown and uncaught in a Task.
+
+Full message: TypeError: NetworkError when attempting to fetch resource.
+Full stack: 
+*************************
+1510965771630	Marionette	INFO	Ceased listening
+1510965771799	Marionette	INFO	Ceased listening
+1510965771914	Marionette	INFO	Ceased listening
+1510965773706	Marionette	INFO	Listening on port 33395
+1510965775142	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+1510965812059	geckodriver	INFO	geckodriver 0.18.0
+1510965812067	geckodriver	INFO	Listening on 127.0.0.1:52901
+1510965813261	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1510965819079	Marionette	INFO	Listening on port 34323
+1510965819250	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+1510966214528	geckodriver	INFO	geckodriver 0.18.0
+1510966214537	geckodriver	INFO	Listening on 127.0.0.1:54211
+1510966215892	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1510966221387	Marionette	INFO	Listening on port 33979
+1510966221514	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+1510966280766	geckodriver	INFO	geckodriver 0.18.0
+1510966280777	geckodriver	INFO	Listening on 127.0.0.1:36491
+1510966282821	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1510966292699	Marionette	INFO	Listening on port 37191
+1510966293441	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+1510966404976	geckodriver	INFO	geckodriver 0.18.0
+1510966405013	geckodriver	INFO	Listening on 127.0.0.1:47407
+1510966407307	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1510966417720	Marionette	INFO	Ceased listening
+1510966419963	Marionette	INFO	Ceased listening
+1510966420822	Marionette	INFO	Listening on port 36429
+1510966421159	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+1510966442591	Marionette	INFO	Ceased listening
+1510966445337	Marionette	INFO	Ceased listening
+1510966450040	geckodriver	INFO	geckodriver 0.18.0
+1510966450045	geckodriver	INFO	Listening on 127.0.0.1:38089
+1510966451263	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1510966456193	Marionette	INFO	Listening on port 43341
+1510966456299	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+1510966541597	geckodriver	INFO	geckodriver 0.18.0
+1510966541608	geckodriver	INFO	Listening on 127.0.0.1:47281
+1510966542987	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1510966548398	Marionette	INFO	Listening on port 34889
+1510966548728	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+1510966606361	geckodriver	INFO	geckodriver 0.18.0
+1510966606385	geckodriver	INFO	Listening on 127.0.0.1:35861
+1510966608156	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1510966619106	Marionette	INFO	Listening on port 33467
+1510966620069	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+1510966752852	geckodriver	INFO	geckodriver 0.18.0
+1510966752913	geckodriver	INFO	Listening on 127.0.0.1:42089
+1510966755161	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1510966769990	Marionette	INFO	Listening on port 33709
+1510966771503	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+1510966859477	geckodriver	INFO	geckodriver 0.18.0
+1510966859492	geckodriver	INFO	Listening on 127.0.0.1:36649
+1510966862531	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1510966880620	Marionette	INFO	Ceased listening
+1510966886329	Marionette	INFO	Listening on port 37899
+1510966887380	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+1510966950604	Marionette	INFO	Ceased listening
+1510966960455	geckodriver	INFO	geckodriver 0.18.0
+1510966960501	geckodriver	INFO	Listening on 127.0.0.1:55923
+1510966963028	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1510966976686	Marionette	INFO	Listening on port 34101
+1510966977679	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+console.error: 
+  Message: Error: Source map at http://localhost:8000/static/css/bootstrap.min.css.map not found or invalid
+  Stack:
+    _fetchSourceMap/</map<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/actors/stylesheets.js:579:27
+process@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:922:23
+walkerLoop@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:806:7
+scheduleWalkerLoop/<@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:742:11
+
+_fetchSourceMap/</map<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/actors/stylesheets.js:579:27
+process@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:922:23
+walkerLoop@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:806:7
+scheduleWalkerLoop/<@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:742:11
+console.error: 
+  Protocol error (unknownError): Source map at http://localhost:8000/static/css/bootstrap.min.css.map not found or invalid
+*************************
+A coding exception was thrown and uncaught in a Task.
+
+Full message: TypeError: NetworkError when attempting to fetch resource.
+Full stack: 
+*************************
+1510967154896	geckodriver	INFO	geckodriver 0.18.0
+1510967154925	geckodriver	INFO	Listening on 127.0.0.1:50409
+1510967157646	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+*************************
+A coding exception was thrown and uncaught in a Task.
+
+Full message: TypeError: NetworkError when attempting to fetch resource.
+Full stack: 
+*************************
+1510967184311	Marionette	INFO	Listening on port 33963
+1510967186626	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+1510968252426	geckodriver	INFO	geckodriver 0.18.0
+1510968252482	geckodriver	INFO	Listening on 127.0.0.1:39525
+1510968253874	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1510968269740	Marionette	INFO	Listening on port 39873
+1510968270941	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+1510968346962	geckodriver	INFO	geckodriver 0.18.0
+1510968346977	geckodriver	INFO	Listening on 127.0.0.1:55037
+1510968347823	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1510968357997	Marionette	INFO	Listening on port 33757
+1510968358088	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+1510968470557	geckodriver	INFO	geckodriver 0.18.0
+1510968470565	geckodriver	INFO	Listening on 127.0.0.1:52153
+1510968472074	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1510968479392	Marionette	INFO	Listening on port 33219
+1510968479548	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+1510968547149	geckodriver	INFO	geckodriver 0.18.0
+1510968547207	geckodriver	INFO	Listening on 127.0.0.1:59883
+1510968548592	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1510968668202	geckodriver	INFO	geckodriver 0.18.0
+1510968668212	geckodriver	INFO	Listening on 127.0.0.1:50511
+1510968669466	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1510968674350	Marionette	INFO	Listening on port 35595
+1510968674435	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+1510968708859	Marionette	INFO	New connections will no longer be accepted
+1510968756077	geckodriver	INFO	geckodriver 0.18.0
+1510968756082	geckodriver	INFO	Listening on 127.0.0.1:59199
+1510968756463	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1510968761151	Marionette	INFO	Listening on port 43895
+1510968761471	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+1510968819796	geckodriver	INFO	geckodriver 0.18.0
+1510968819806	geckodriver	INFO	Listening on 127.0.0.1:39231
+1510968821062	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1510968826071	Marionette	INFO	Listening on port 39713
+1510968826152	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+1510971425169	geckodriver	INFO	geckodriver 0.18.0
+1510971425366	geckodriver	INFO	Listening on 127.0.0.1:39637
+1510971426684	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1510971461360	Marionette	INFO	Listening on port 42293
+1510971462672	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+1510971692932	Marionette	INFO	Ceased listening
+JavaScript error: chrome://selenium-ide/content/selenium-ide-overlay.js, line 274: ReferenceError: Application is not defined
+1510971700428	Marionette	INFO	Listening on port 42293
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+JavaScript warning: chrome://selenium-ide/content/selenium-core/scripts/htmlutils.js, line 6182: unreachable code after return statement
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+JavaScript error: http://localhost:8000/static/js/jquery-1.11.3.min.js, line 2: Error: Syntax error, unrecognized expression: :nth-of-type
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+*************************
+A coding exception was thrown and uncaught in a Task.
+
+Full message: TypeError: NetworkError when attempting to fetch resource.
+Full stack: 
+*************************
+1510972183397	geckodriver	INFO	geckodriver 0.18.0
+1510972183461	geckodriver	INFO	Listening on 127.0.0.1:46187
+1510972184845	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1510972219349	Marionette	INFO	Listening on port 38969
+1510972221191	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+1510972242691	Marionette	INFO	New connections will no longer be accepted
+1510972536927	geckodriver	INFO	geckodriver 0.18.0
+1510972536984	geckodriver	INFO	Listening on 127.0.0.1:43867
+1510972538314	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1510972559706	Marionette	INFO	Listening on port 35579
+1510972562891	Marionette	WARN	TLS certificate errors will be ignored for this session
+1510972595508	Marionette	INFO	New connections will no longer be accepted
