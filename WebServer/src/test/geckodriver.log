@@ -637,3 +637,353 @@ JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: Synt
 1510638081180	Marionette	WARN	TLS certificate errors will be ignored for this session
 JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
 1510638091788	Marionette	INFO	New connections will no longer be accepted
+1510955890560	geckodriver	INFO	geckodriver 0.18.0
+1510955890588	geckodriver	INFO	Listening on 127.0.0.1:50051
+1510955891819	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1510955905646	Marionette	INFO	Listening on port 35905
+1510955906094	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+1510955949132	Marionette	INFO	New connections will no longer be accepted
+1510955979893	geckodriver	INFO	geckodriver 0.18.0
+1510955979902	geckodriver	INFO	Listening on 127.0.0.1:39989
+1510955980356	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1510955988184	Marionette	INFO	Listening on port 35781
+1510955988256	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+1510956169649	Marionette	INFO	Ceased listening
+JavaScript error: chrome://selenium-ide/content/selenium-ide-overlay.js, line 274: ReferenceError: Application is not defined
+1510956186171	Marionette	INFO	Listening on port 35781
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+JavaScript warning: chrome://selenium-ide/content/selenium-core/scripts/htmlutils.js, line 6182: unreachable code after return statement
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+*************************
+A coding exception was thrown and uncaught in a Task.
+
+Full message: TypeError: NetworkError when attempting to fetch resource.
+Full stack: 
+*************************
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+1510956875999	geckodriver	INFO	geckodriver 0.18.0
+1510956876028	geckodriver	INFO	Listening on 127.0.0.1:59039
+1510956877858	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1510956892811	Marionette	INFO	Listening on port 41605
+1510956893370	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+1510956928884	Marionette	INFO	New connections will no longer be accepted
+1510956968649	geckodriver	INFO	geckodriver 0.18.0
+1510956968659	geckodriver	INFO	Listening on 127.0.0.1:38683
+1510956969846	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1510956983395	Marionette	INFO	Listening on port 37539
+1510956985766	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+1510957179617	geckodriver	INFO	geckodriver 0.18.0
+1510957179832	geckodriver	INFO	Listening on 127.0.0.1:34611
+1510957182852	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1510957212734	Marionette	INFO	Ceased listening
+1510957249155	Marionette	INFO	Listening on port 37461
+1510957304469	addons.productaddons	WARN	Failed downloading XML, status: 0, reason: error
+1510957307135	Marionette	INFO	Ceased listening
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+1510957322355	geckodriver	INFO	geckodriver 0.18.0
+1510957322374	geckodriver	INFO	Listening on 127.0.0.1:43547
+1510957323008	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1510957333869	Marionette	INFO	Listening on port 39171
+1510957334256	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+1510957446563	geckodriver	INFO	geckodriver 0.18.0
+1510957446570	geckodriver	INFO	Listening on 127.0.0.1:58493
+1510957447822	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1510957455578	Marionette	INFO	Listening on port 35127
+1510957455748	Marionette	WARN	TLS certificate errors will be ignored for this session
+1510957486190	geckodriver	INFO	geckodriver 0.18.0
+1510957486211	geckodriver	INFO	Listening on 127.0.0.1:54725
+1510957488324	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1510957496945	Marionette	INFO	Ceased listening
+1510957501794	Marionette	INFO	Listening on port 36547
+1510957502834	Marionette	WARN	TLS certificate errors will be ignored for this session
+1510957514296	Marionette	INFO	Ceased listening
+1510957523384	geckodriver	INFO	geckodriver 0.18.0
+1510957523459	geckodriver	INFO	Listening on 127.0.0.1:35591
+1510957525381	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1510957541235	Marionette	INFO	Listening on port 33713
+1510957542802	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+JavaScript error: chrome://selenium-ide/content/selenium-runner.js, line 390: TypeError: window is null
+JavaScript error: chrome://selenium-ide/content/selenium-runner.js, line 390: TypeError: window is null
+JavaScript error: chrome://selenium-ide/content/selenium-runner.js, line 390: TypeError: window is null
+JavaScript error: chrome://selenium-ide/content/selenium-runner.js, line 390: TypeError: window is null
+JavaScript error: chrome://selenium-ide/content/selenium-runner.js, line 390: TypeError: window is null
+JavaScript error: chrome://selenium-ide/content/selenium-runner.js, line 390: TypeError: window is null
+JavaScript error: http://localhost:8000/static/js/jquery-1.11.3.min.js, line 2: Error: Syntax error, unrecognized expression: :nth-of-type
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+*************************
+A coding exception was thrown and uncaught in a Task.
+
+Full message: TypeError: NetworkError when attempting to fetch resource.
+Full stack: 
+*************************
+console.error: 
+  Message: Error: SessionFile is closed
+  Stack:
+    write@resource://app/modules/sessionstore/SessionFile.jsm:315:29
+write@resource://app/modules/sessionstore/SessionFile.jsm:76:12
+_writeState@resource://app/modules/sessionstore/SessionSaver.jsm:265:12
+_saveState@resource://app/modules/sessionstore/SessionSaver.jsm:236:12
+_saveStateAsync@resource://app/modules/sessionstore/SessionSaver.jsm:249:5
+runDelayed/this._timeoutID<@resource://app/modules/sessionstore/SessionSaver.jsm:147:40
+setTimeout_timer@resource://gre/modules/Timer.jsm:30:5
+
+1510958052729	Marionette	INFO	Ceased listening
+*************************
+A coding exception was thrown and uncaught in a Task.
+
+Full message: TypeError: NetworkError when attempting to fetch resource.
+Full stack: 
+*************************
+1510958882645	geckodriver	INFO	geckodriver 0.18.0
+1510958882684	geckodriver	INFO	Listening on 127.0.0.1:56625
+1510958883881	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1510958892493	Marionette	INFO	Listening on port 38449
+1510958893024	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+1510959223167	geckodriver	INFO	geckodriver 0.18.0
+1510959223203	geckodriver	INFO	Listening on 127.0.0.1:55933
+1510959223669	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1510959231577	Marionette	INFO	Listening on port 38161
+1510959232053	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+1510959394562	geckodriver	INFO	geckodriver 0.18.0
+1510959394574	geckodriver	INFO	Listening on 127.0.0.1:47409
+1510959396240	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1510959408401	Marionette	INFO	Listening on port 39493
+1510959409260	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+*************************
+A coding exception was thrown and uncaught in a Task.
+
+Full message: TypeError: NetworkError when attempting to fetch resource.
+Full stack: 
+*************************
+1510959607734	Marionette	INFO	Ceased listening
+1510959626599	geckodriver	INFO	geckodriver 0.18.0
+1510959626658	geckodriver	INFO	Listening on 127.0.0.1:35459
+1510959628600	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1510959650341	Marionette	INFO	Ceased listening
+1510959650789	Marionette	INFO	Listening on port 38107
+1510959651748	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+1510959689912	Marionette	INFO	Ceased listening
+1510959770068	geckodriver	INFO	geckodriver 0.18.0
+1510959770089	geckodriver	INFO	Listening on 127.0.0.1:55865
+1510959772092	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1510959783431	Marionette	INFO	Listening on port 43357
+1510959784034	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+1510960269134	geckodriver	INFO	geckodriver 0.18.0
+1510960269169	geckodriver	INFO	Listening on 127.0.0.1:57479
+1510960270340	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1510960284727	Marionette	INFO	Listening on port 34815
+1510960285894	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+*************************
+A coding exception was thrown and uncaught in a Task.
+
+Full message: TypeError: NetworkError when attempting to fetch resource.
+Full stack: 
+*************************
+1510960663907	geckodriver	INFO	geckodriver 0.18.0
+1510960682718	geckodriver	INFO	Listening on 127.0.0.1:48165
+1510960694573	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+console.error: 
+  Message: Error: SessionFile is closed
+  Stack:
+    write@resource://app/modules/sessionstore/SessionFile.jsm:315:29
+write@resource://app/modules/sessionstore/SessionFile.jsm:76:12
+_writeState@resource://app/modules/sessionstore/SessionSaver.jsm:265:12
+_saveState@resource://app/modules/sessionstore/SessionSaver.jsm:236:12
+_saveStateAsync@resource://app/modules/sessionstore/SessionSaver.jsm:249:5
+runDelayed/this._timeoutID<@resource://app/modules/sessionstore/SessionSaver.jsm:147:40
+setTimeout_timer@resource://gre/modules/Timer.jsm:30:5
+
+console.error: 
+  Message: Error: SessionFile is closed
+  Stack:
+    write@resource://app/modules/sessionstore/SessionFile.jsm:315:29
+write@resource://app/modules/sessionstore/SessionFile.jsm:76:12
+_writeState@resource://app/modules/sessionstore/SessionSaver.jsm:265:12
+_saveState@resource://app/modules/sessionstore/SessionSaver.jsm:236:12
+_saveStateAsync@resource://app/modules/sessionstore/SessionSaver.jsm:249:5
+runDelayed/this._timeoutID<@resource://app/modules/sessionstore/SessionSaver.jsm:147:40
+setTimeout_timer@resource://gre/modules/Timer.jsm:30:5
+
+1510960751202	Marionette	INFO	Ceased listening
+1510960751356	Marionette	INFO	Ceased listening
+1510960772021	Marionette	INFO	Listening on port 38823
+1510961218885	geckodriver	INFO	geckodriver 0.18.0
+1510961218919	geckodriver	INFO	Listening on 127.0.0.1:58983
+1510961220164	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1510961228433	Marionette	INFO	Listening on port 43513
+1510961229227	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+1510961294916	Marionette	INFO	Ceased listening
+1510961298882	geckodriver	INFO	geckodriver 0.18.0
+1510961298891	geckodriver	INFO	Listening on 127.0.0.1:44803
+1510961300055	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1510961303978	Marionette	INFO	Listening on port 37395
+1510961304136	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+1510961331425	Marionette	INFO	Ceased listening
+1510961355354	geckodriver	INFO	geckodriver 0.18.0
+1510961355358	geckodriver	INFO	Listening on 127.0.0.1:32953
+1510961356543	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1510961360707	Marionette	INFO	Listening on port 41193
+1510961360853	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+1510961412818	geckodriver	INFO	geckodriver 0.18.0
+1510961412824	geckodriver	INFO	Listening on 127.0.0.1:51885
+1510961414041	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1510961418865	Marionette	INFO	Listening on port 46867
+1510961419047	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+1510961573515	Marionette	INFO	Ceased listening
+1510961576218	geckodriver	INFO	geckodriver 0.18.0
+1510961576239	geckodriver	INFO	Listening on 127.0.0.1:49169
+1510961578014	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1510961587596	Marionette	INFO	Listening on port 42751
+1510961588168	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+1510961694463	Marionette	INFO	New connections will no longer be accepted
+1510961701575	Marionette	INFO	Ceased listening
+1510962298652	geckodriver	INFO	geckodriver 0.18.0
+1510962298684	geckodriver	INFO	Listening on 127.0.0.1:36411
+1510962299827	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1510962306964	Marionette	INFO	Listening on port 42285
+1510962307027	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+1510962349321	Marionette	INFO	New connections will no longer be accepted
