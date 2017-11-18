@@ -85,6 +85,18 @@ def train_system(files, filesData, autovectors, images_per_subject):
 
 
 def recognize_subject(subject):
+    """
+        @summary: This function search the face of the new image.
+
+        Parameters
+        ----------
+        @param subject: the image of the person
+
+        Returns
+        ----------
+        @return: the name that correspond to the person detected
+        in the image.
+    """
     fs = FileSystemStorage(location=MEDIA_ROOT)
 
     fileName = fs.save(subject.name, subject)
@@ -103,6 +115,18 @@ def recognize_subject(subject):
 
 
 def signin(user):
+    """
+        @summary: This function helps to log in.
+
+        Parameters
+        ----------
+        @param user: the person who tries to log in.
+
+        Returns
+        ----------
+        @return: a boolean indicating if is correct 
+        or not.
+    """
     admin = {
         'email': 'admin@reconoceme.com',
         'password': '123Queso'
