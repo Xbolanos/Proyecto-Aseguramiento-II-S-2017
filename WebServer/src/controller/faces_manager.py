@@ -224,6 +224,18 @@ class FacesManager(ABC):
 
     @staticmethod
     def get_person(n):
+        """
+        @summary: This function transforms the columns into a projected space.
+
+        Parameters
+        ----------
+        @param n: the number that was returned of a algorithm to know where is 
+        the person situated in the centroids  
+
+        Returns
+        ----------
+        @return: a number that refers directly to the person
+        """
         if (n is not None):
                 if(isinstance(n, np.int64) or
                    isinstance(n, np.int64) or isinstance(n, int)):
@@ -237,6 +249,19 @@ class FacesManager(ABC):
 
     @staticmethod
     def change_images_per_person(n):
+        """
+        @summary: This function changes the number of images
+        per person.
+
+        Parameters
+        ----------
+        @param n: the number that is the new number of 
+        images per person. 
+        
+        Returns
+        ----------
+        @return: nothing. 
+        """
         n_train = np.matrix(n)
         np.savetxt(FacesManager.path_saved+'IMAGES_PER_SUBJECT.out', n_train)
 
