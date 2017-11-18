@@ -1,18 +1,3 @@
-var apikey = 'AhZpdzSRTdW9nhvd946LAz';
-// El api es para subir las imagenes a internet
-
-var client = filestack.init(apikey);
-
-var recognizeOptions = { //Cuando es 1 foto
-  uploadInBackground: false,
-  disableTransformer: true,
-  accept: ['image/*', '.pgm'],
-  imageMin: [92, 112],
-  imageMax: [92, 112],
-  imageDim: [92, 112],
-  fromSources: ['local_file_system','webcam', 'customsource']
-};
-
 /**
  * Makes a request to the application backend to add the new subject
  * to the system, this will show a waiting dialog while it waits for the
@@ -56,28 +41,6 @@ var sendRequest = (destiny, data, info) => {
       );
     })
   );
-}
-
-/**
- * Opens a new dialog to allow the client the upload of images. In this case
- * it is formated as requested for the system recognition and then allows
- * only one image.
- */
-var openPickerForRecognition = () => {
-  return client.pick(recognizeOptions).then(function(result){
-    var fileHandler;
-
-	  result.filesUploaded.forEach(function(file){
-      fileHandler = file.handle; //file.url tiene la dirección de las imagenes
-    });
-
-    var info = {
-      title: 'Identificando sujeto',
-      text: 'Por favor espere mientras se completa la identificación.'
-    }
-
-    sendRequest('http://localhost:8000/recongnize', fileHandler, info);
-  });
 }
 
 var isValid = (fileName) => {
@@ -178,6 +141,25 @@ $('#training').submit((e) => {
   });
 });
 
+$('#recognize').submit((e) => {
+  e.preventDefault();
+  var files = document.getElementById('recognizeFiles').files;
+  var form_data = new FormData();
+
+  if(files.lenght <= 0) {
+    swal('Seleccione un archivo', 'Debe seleccionar al menos un archivo para continuar.', 'error');
+  }
+
+  form_data.append('subject', files[0]);
+
+  var info = {
+    title: 'Reconociendo sujeto',
+    text: 'Por favor espere mientras se completa el reconocimiento.'
+  }
+
+  sendRequest('http://localhost:8000/recognize', form_data, info);
+});
+
 var logout = () => {
   $.ajax({ 
     url: 'http://localhost:8000/logout', 
@@ -201,8 +183,16 @@ var logout = () => {
 
 var countFiles = (e) => {
   e.preventDefault();
-  var files = document.getElementById('trainingFiles').files;
-  var labelFiles = document.getElementById('labelFiles');
+  var files;
+  var labelFiles;
+
+  if(e.currentTarget.id == 'trainingFiles') {
+    files = document.getElementById('trainingFiles').files;
+    labelFiles = document.getElementById('labelFilesT');
+  } else {
+    files = document.getElementById('recognizeFiles').files;
+    labelFiles = document.getElementById('labelFilesR');
+  }
 
   labelFiles.textContent = 'Subir archivos... ' + files.length; 
 }

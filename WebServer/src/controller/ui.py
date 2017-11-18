@@ -63,10 +63,10 @@ def recognize(request):
                              'title': 'Metodo invalido',
                              'message': 'No se permiten otros metodos además' +
                                         'de post.'})
-        
-    data = request.body.decode('UTF-8')  # Turns bytes body into a string.
-
-    response = facade.recognize_subject(data)
+    
+    files = request.FILES
+    response = facade.recognize_subject(files['subject'])
+    
     return JsonResponse(response)
 
 def signin(request):

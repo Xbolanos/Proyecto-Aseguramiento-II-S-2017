@@ -15,16 +15,16 @@ training.
 @version: version 1.0 beta
 '''
 
-from WebServer.settings import STATICFILES_DIRS
 from controller.images_manager import ImagesManager
 from controller.training_manager import Training
 from controller.recognizing_manager import Recognize
-from filestack import Filelink
 from django.core.files.storage import FileSystemStorage
 from WebServer.settings import MEDIA_ROOT
 
 
 im = ImagesManager()
+im.loadLists()
+
 
 def get_index_page():
     """
@@ -61,20 +61,20 @@ def train_system(files, filesData, autovectors, images_per_subject):
     basePath = fs.location
     paths = []
     subjects_names = []
-    
+
     for key in files.keys():
         file = files[key]
         fileData = filesData[key + 'data']
-        
+
         if fileData not in subjects_names:
             subjects_names.append(fileData)
-        
+
         fs.location = basePath + '/' + fileData
-        
+
         fileName = fs.save(file.name, file)
         fileUrl = fs.location + '/' + fileName
         paths.append(fileUrl)
-    
+
     im.add_images_paths(paths, subjects_names)
     im.load_images()
 
@@ -83,37 +83,35 @@ def train_system(files, filesData, autovectors, images_per_subject):
 
     return {'type': 'success',
             'title': '¡Registrado!',
-            'message': 'Se ha(n) registrado con exito al sistema.'
-    }
-    
-def recognize_subject(handler):
-    path = STATICFILES_DIRS[0]  # The static path for de subjects images.
+            'message': 'Se ha(n) registrado con exito al sistema.'}
 
-    # Creates a new object to connect to FileStack with the given API.
-    filelink = Filelink(handler, apikey='AhZpdzSRTdW9nhvd946LAz')
-    extension = filelink.get_metadata()['filename'][-4:]
-    fullpath = path + '/subjects/' + handler + extension
-    filelink.download(fullpath)
+
+def recognize_subject(subject):
+    fs = FileSystemStorage(location=MEDIA_ROOT)
     
+    fileName = fs.save(subject.name, subject)
+    fileUrl = fs.location + '/' + fileName
+    path = [fileUrl]
+
     tempIM = ImagesManager()
-    tempIM.add_images_paths([fullpath])
+    tempIM.add_images_paths(path)
     tempIM.load_images()
-    
+
     rm = Recognize()
     index = rm.process(tempIM, mode=1)
     result = im.get_subject_name(index - 1)
-    
+
     return {'type': 'success',
             'title': 'Se ha reconocido al sujeto',
-            'message': 'El rostro pertenece al sujeto: ' + str(result)
-    }
-    
+            'message': 'El rostro pertenece al sujeto: ' + str(result)}
+
+
 def signin(user):
     admin = {
         'email': 'admin@reconoceme.com',
         'password': '123Queso'
     }
-    
+
     if(user['email'] == admin['email']):
         if(user['password'] == user['password']):
             return True

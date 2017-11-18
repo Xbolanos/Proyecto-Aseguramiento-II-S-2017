@@ -90,7 +90,7 @@ http://www.tooplate.com/view/2088-big-city
                                             </div>
                                             <div class="tm-home-description-container tm-bg-dark-blue">
                                                 <div class="text-xs-left tm-textbox">                                            
-                                                    <p class="tm-text tm-home-description">Biometrics es una empresa encargada y experta en el desarrollo de software biométrico. Donde nuestra misión es proporcionar un software bajo los mejores estándares de calidad (IEEE e ISO) y ajustarlos a las necesidades especificas de nuestros clientes.</p>
+                                                    <p class="tm-text tm-home-description" align="justify">Biometrics es una empresa encargada y experta en el desarrollo de software biométrico. Donde nuestra misión es proporcionar un software bajo los mejores estándares de calidad (IEEE e ISO) y ajustarlos a las necesidades especificas de nuestros clientes.</p>
                                                 </div>
                                             </div>    
                                         </div>
@@ -117,13 +117,13 @@ http://www.tooplate.com/view/2088-big-city
                                                 <h2 class="tm-text-title tm-text-title-small">Entrenamiento Facial</h2>
                                             </div>
                                             <div class="tm-bg-dark-blue text-xs-left tm-textbox tm-textbox-padding tm-white-header-body tm-white-border tm-2-col-equal-height">
-                                                <p class="tm-text">Ingrese a esta sección si lo que busca es registrar nuevos sujetos en el sistema para su posterior reconocimiento.</p>
+                                                <p class="tm-text" align="justify">Ingrese a esta sección si lo que busca es registrar nuevos sujetos en el sistema para su posterior reconocimiento.</p>
                                                 <form id="training" method="post" enctype="multipart/form-data">
                                                     <div class="row">
-                                                        <label id="labelFiles" for="trainingFiles" class="load-images-button col-xs-6 inputfile">
+                                                        <label id="labelFilesT" for="trainingFiles" class="load-images-button col-xs-6 inputfile">
                                                             Subir archivos...
                                                         </label>
-                                                        <input type="file" name="file" id="trainingFiles" onchange="countFiles(event);" webkitdirectory mozdirectory msdirectory odirectory directory multiple>
+                                                        <input type="file" name="fileT" id="trainingFiles" onchange="countFiles(event);" webkitdirectory mozdirectory msdirectory odirectory directory multiple>
                                                         <div class="col-xs-2"></div>                               
                                                         <input type="submit" name="Registrar" class="load-images-button col-xs-4" value="Registrar">
                                                     </div>
@@ -136,8 +136,17 @@ http://www.tooplate.com/view/2088-big-city
                                                 <h2 class="tm-text-title tm-text-title-small">Reconocimiento Facial</h2>
                                             </div>
                                             <div class="tm-bg-dark-blue text-xs-left tm-textbox tm-textbox-padding tm-white-header-body tm-white-border tm-2-col-equal-height">
-                                                <p class="tm-text">¿Posee sujetos registrados en el sistema? ¡Presione en reconocer para comenzar el reconocimiento de algunos sujetos!</p> 
-											    <button class="load-images-button" onclick="openPickerForRecognition()">Reconocer</button>
+                                                <p class="tm-text" align="justify">¿Posee sujetos registrados en el sistema? ¡Presione en reconocer para comenzar el reconocimiento de algunos sujetos!</p> 
+                                                <form id="recognize" method="post" enctype="multipart/form-data">
+                                                    <div class="row">
+                                                        <label id="labelFilesR" for="recognizeFiles" class="load-images-button col-xs-6 inputfile">
+                                                            Subir archivos...
+                                                        </label>
+                                                        <input type="file" name="fileR" id="recognizeFiles" onchange="countFiles(event);" accept="image/*,.pgm">
+                                                        <div class="col-xs-2"></div>                               
+                                                        <input type="submit" name="Reconocer" class="load-images-button col-xs-4" value="Reconocer">
+                                                    </div>
+                                                </form>    
                                             </div>    
                                         </div>
                                     </div>

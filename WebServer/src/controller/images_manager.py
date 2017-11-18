@@ -7,6 +7,8 @@ Created on Aug 12, 2017
 import cv2 as cv
 import numpy as np
 from controller.ErrorHandler import ErrorHandler
+from WebServer.settings import STATICFILES_DIRS
+from numpy import dtype
 
 
 class ImagesManager(object):
@@ -18,6 +20,7 @@ class ImagesManager(object):
         self.images_paths = []
         self.subjects_names = []
         self.images_matrix = []
+        self.path_saved = STATICFILES_DIRS[0] + '/saved/'
 
     def add_images_paths(self, paths, subjects_names=None):
         """
@@ -33,10 +36,11 @@ class ImagesManager(object):
         """
         if(paths is not None):
             if(isinstance(paths, list)):
-                self.images_paths.extend(paths)
+                self.images_paths = np.append(self.images_paths, paths)
                 if(subjects_names is not None):
-                    self.subjects_names.extend(subjects_names)
-                self.orderLists()
+                    self.subjects_names = np.append(self.subjects_names, subjects_names)
+                    self.orderLists()
+                    self.saveLists()
                 print(self.images_paths)
                 print(self.subjects_names)
             else:
@@ -45,11 +49,23 @@ class ImagesManager(object):
             raise Exception("add images: paths type is null")
         
     def orderLists(self):
-        self.images_paths.sort()
-        self.subjects_names.sort()
+        np.sort(self.images_paths)
+        np.sort(self.subjects_names)
+        
+    def saveLists(self):
+        np.savetxt(self.path_saved + 'imagespaths.data', self.images_paths, delimiter=',', fmt="%s")
+        np.savetxt(self.path_saved + 'subjectsnames.data', self.subjects_names, delimiter=',', fmt="%s")
+        
+    def loadLists(self):
+        try:
+            self.images_paths = np.loadtxt(self.path_saved + 'imagespaths.data', delimiter=',', dtype='str')
+            self.subjects_names = np.loadtxt(self.path_saved + 'subjectsnames.data', delimiter=',', dtype='str')
+        except Exception:
+            pass
+        
         
     def get_subject_name(self, index):
-        return self.subjects_names[index]
+        return self.subjects_names.item(index)
 
     @staticmethod
     def read_image(path):

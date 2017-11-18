@@ -37,8 +37,8 @@ def train_system(files, filesData, autovectors, images_per_subject):
     """
     return system.train_system(files, filesData, autovectors, images_per_subject)
     
-def recognize_subject(handler):
-    return system.recognize_subject(handler)
+def recognize_subject(subject):
+    return system.recognize_subject(subject)
 
 def signin(user):
     return system.signin(user)

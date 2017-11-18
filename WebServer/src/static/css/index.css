@@ -28,3 +28,7 @@ input[type="file"] {
 .inputfile {
   cursor: pointer;
 }
+
+.center-class {
+  text-align: justify;
+}
