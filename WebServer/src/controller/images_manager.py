@@ -8,7 +8,6 @@ import cv2 as cv
 import numpy as np
 from controller.ErrorHandler import ErrorHandler
 from WebServer.settings import STATICFILES_DIRS
-from numpy import dtype
 
 
 class ImagesManager(object):
@@ -37,8 +36,10 @@ class ImagesManager(object):
         if(paths is not None):
             if(isinstance(paths, list)):
                 self.images_paths = np.append(self.images_paths, paths)
+
                 if(subjects_names is not None):
-                    self.subjects_names = np.append(self.subjects_names, subjects_names)
+                    self.subjects_names = np.append(self.subjects_names,
+                                                    subjects_names)
                     self.orderLists()
                     self.saveLists()
                 print(self.images_paths)

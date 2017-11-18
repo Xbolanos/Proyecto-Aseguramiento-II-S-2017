@@ -61,13 +61,11 @@ def train_system(files, filesData, autovectors, images_per_subject):
     basePath = fs.location
     paths = []
     subjects_names = []
-    for key in files.keys():
-        file = files[key]
-        fileData = filesData[key + 'data']
 
     for key in files.keys():
         file = files[key]
         fileData = filesData[key + 'data']
+
         if fileData not in subjects_names:
             subjects_names.append(fileData)
 
@@ -83,9 +81,7 @@ def train_system(files, filesData, autovectors, images_per_subject):
     training = Training()
     training.process(im, autovectors, images_per_subject)
 
-    return {'type': 'success',
-            'title': '¡Registrado!',
-            'message': 'Se ha(n) registrado con exito al sistema.'}
+    return True
 
 
 def recognize_subject(subject):
@@ -102,10 +98,8 @@ def recognize_subject(subject):
     rm = Recognize()
     index = rm.process(tempIM, mode=1)
     result = im.get_subject_name(index - 1)
-    
-    return {'type': 'success',
-            'title': 'Se ha reconocido al sujeto',
-            'message': 'El rostro pertenece al sujeto: ' + str(result)}
+
+    return str(result)
 
 
 def signin(user):

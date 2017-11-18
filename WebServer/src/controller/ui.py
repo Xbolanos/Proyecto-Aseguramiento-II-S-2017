@@ -46,15 +46,27 @@ def learn(request):
                              'title': 'Metodo invalido',
                              'message': 'No se permiten otros metodos además' +
                                         'de post.'})
-        
+
     files = request.FILES
     filesData = request.POST
     autovectors = int(filesData['autovectors'])
     images_per_subject = int(filesData['imagesPerSubject'])
-    
 
-    response = facade.train_system(files, filesData, autovectors, images_per_subject)
-    return JsonResponse(response)
+    response = facade.train_system(files,
+                                   filesData,
+                                   autovectors,
+                                   images_per_subject)
+
+    if(response):
+        return JsonResponse({'type': 'success',
+                             'title': '¡Registrado!',
+                             'message': 'Se ha(n) registrado con exito al' +
+                             'sistema.'})
+    else:
+        return JsonResponse({'type': 'error',
+                             'title': 'No registrado',
+                             'message': 'No se ha(n) podido registrar'})
+
 
 def recognize(request):
     if request.method != 'POST':
@@ -63,11 +75,15 @@ def recognize(request):
                              'title': 'Metodo invalido',
                              'message': 'No se permiten otros metodos además' +
                                         'de post.'})
-    
+
     files = request.FILES
     response = facade.recognize_subject(files['subject'])
-    
-    return JsonResponse(response)
+
+    return JsonResponse({'type': 'success',
+                         'title': 'Se ha reconocido al sujeto',
+                         'message': 'El rostro pertenece al sujeto: '
+                         + response})
+
 
 def signin(request):
     if request.method != 'POST':
@@ -76,16 +92,17 @@ def signin(request):
                              'title': 'Metodo invalido',
                              'message': 'No se permiten otros metodos además' +
                                         'de post.'})
-    
+
     user = {
         'email': request.POST['email'],
         'password': request.POST['password']
-    }   
-    
+    }
+
     if(facade.signin(user)):
         return render(request, 'index.html', {'userEmail': user['email']})
-    
+
     return render(request, 'index.html')
+
 
 def logout(request):
     if request.method != 'POST':
@@ -94,8 +111,7 @@ def logout(request):
                              'title': 'Metodo invalido',
                              'message': 'No se permiten otros metodos además' +
                                         'de post.'})
-        
+
     return JsonResponse({'type': 'success',
-            'title': 'Se ha cerrado sesión',
-            'message': ''})
-    
+                         'title': 'Se ha cerrado sesión',
+                         'message': ''})

@@ -11,13 +11,9 @@ def get_index_page():
     """
     @summary: asks the core system for the home page of the website.
 
-    Parameters
-    ----------
-    @param request: the http request from the client.
-
     Return
     ------
-    @return: the system's response to the request.
+    @return: the website's main page.
     """
     return system.get_index_page()
 
