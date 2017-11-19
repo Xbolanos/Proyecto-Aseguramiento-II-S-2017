@@ -39,23 +39,30 @@ class Training(FacesManager):
             if image_manager is not None:
                 if isinstance(image_manager, ImagesManager):
                     images_matrix = image_manager.images_matrix
-                    normalized = super(Training, Training).transpose(images_matrix)
-                    av_face = super(Training, Training).average_face(normalized)
+                    normalized = super(Training,
+                                       Training).transpose(images_matrix)
+                    av_face = super(Training,
+                                    Training).average_face(normalized)
                     print("a")
-                    np.savetxt(self.path_saved+'AverageFace.out', av_face, delimiter=',')
+                    np.savetxt(self.path_saved+'AverageFace.out',
+                               av_face, delimiter=',')
                     print("a")
-                    m_dif = super(Training, Training).matrix_of_differences(normalized, 
-                                                                            av_face)
+                    m_dif = super(Training,
+                                  Training).matrix_of_differences(normalized,
+                                                                  av_face)
                     print(m_dif)
-                    w = super(Training, Training).calculate_w(m_dif, eigenvectors)
+                    w = super(Training, Training).calculate_w(m_dif,
+                                                              eigenvectors)
                     print(w)
                     np.savetxt(self.path_saved+'W.out', w, delimiter=',')
-                    all_projected = super(Training, Training).project_images(m_dif, w)
+                    all_projected = super(Training,
+                                          Training).project_images(m_dif, w)
                     all_p = self.path_saved+'projectedFaces.out'
                     np.savetxt(all_p, all_projected, delimiter=',')
                     print(all_projected)
                     n_train = np.matrix(images_per_subject)
-                    np.savetxt(self.path_saved+'IMAGES_PER_SUBJECT.out', n_train)
+                    np.savetxt(self.path_saved+'IMAGES_PER_SUBJECT.out',
+                               n_train)
                 else:
                     raise Exception("tProcess: param type doesn't match")
             else:

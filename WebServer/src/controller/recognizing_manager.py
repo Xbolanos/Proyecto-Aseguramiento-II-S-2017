@@ -32,7 +32,8 @@ class Recognize(FacesManager):
         """
         try:
             if image_manager is not None and mode is not None:
-                if isinstance(image_manager, ImagesManager) and isinstance(mode, int):
+                if isinstance(image_manager, ImagesManager) \
+                        and isinstance(mode, int):
                     subject = image_manager.images_matrix[0]
                     av = self.path_saved+'AverageFace.out'
                     av_face = np.loadtxt(av, delimiter=',')[np.newaxis]
@@ -47,12 +48,11 @@ class Recognize(FacesManager):
                         image, w)
                     result = 0
                     if mode == 0:
-                        result = super(Recognize,
-                                       Recognize).classify_nearest_centroid(
-                                       processed, all_projected)
+                        result = super(Recognize, Recognize)\
+                                    .classify_nearest_centroid(
+                                    processed, all_projected)
                     elif mode == 1:
-                        result = super(Recognize,
-                                       Recognize).k_neighbors(
+                        result = super(Recognize, Recognize).k_neighbors(
                                        3, processed, all_projected)
                     print(result)
                     return result

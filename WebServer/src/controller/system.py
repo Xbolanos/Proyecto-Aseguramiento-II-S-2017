@@ -103,7 +103,10 @@ def recognize_subject(subject, mode):
         return 'error', 'No se ha proveido un sujeto.', '', ''
 
     if not isinstance(subject, UploadedFile):
-        return 'error', 'Parametro incorrecto', 'Verifique el parametro e' + 'intentelo de nuevo.', ''
+        return 'error', \
+               'Parametro incorrecto', \
+               'Verifique el parametro e intentelo de nuevo.', \
+               ''
 
     fs = FileSystemStorage(location=MEDIA_ROOT)
 
@@ -117,9 +120,12 @@ def recognize_subject(subject, mode):
 
     rm = Recognize()
     index = rm.process(tempIM, mode)
-    result = im.get_subject_name(index)
+    result = im.get_subject_name(index - 1)
 
-    return 'success', '¡Se ha reconocido!', 'El rostro pertenece al sujeto ', str(result)
+    return 'success', \
+           '¡Se ha reconocido!', \
+           'El rostro pertenece al sujeto ', \
+           str(result)
 
 
 def signin(user):

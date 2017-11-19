@@ -7,6 +7,7 @@ Created on Nov 3, 2017
 from abc import ABC, abstractmethod
 import numpy as np
 from WebServer.settings import STATICFILES_DIRS
+from django.conf.urls.static import static
 np.set_printoptions(threshold=np.nan)
 
 
@@ -22,11 +23,11 @@ class FacesManager(ABC):
     @var images: contains the processed images matrix.
     @var path_saved: contains the path of saved stuff
     """
-    
+
     path_saved = STATICFILES_DIRS[0] + '/saved/'
+
     def __init__(self):
         pass
-         
 
     @staticmethod
     def transpose(images):
@@ -110,7 +111,6 @@ class FacesManager(ABC):
         else:
             raise Exception("1+ param of matrix is null")
 
-
     @staticmethod
     def calculate_cov_matrix_ev(m_dif):
         """
@@ -157,7 +157,7 @@ class FacesManager(ABC):
         Reference: page 3 document: Eigen Faces.pdf Step 6.
         """
         if matrix is not None and n is not None:
-            if isinstance(matrix, np.ndarray) and isinstance(n, int): 
+            if isinstance(matrix, np.ndarray) and isinstance(n, int):
                 matrix_vectors = np.linalg.eigh(matrix)[1]
                 matrix_reduced = np.array(matrix_vectors)[:, 0:n]
                 return matrix_reduced
@@ -192,8 +192,6 @@ class FacesManager(ABC):
                 raise Exception("mDif or n in w doesn't match")
         else:
             raise Exception("mDif or n in w is null")
-    
-
 
     @staticmethod
     def project_images(m_dif, w):
@@ -219,31 +217,6 @@ class FacesManager(ABC):
                 raise Exception("some params of project images doesn't match")
         else:
             raise Exception("some params of project images are null")
-    
-
-    @staticmethod
-    def get_person(n):
-        """
-        @summary: This function transforms the columns into a projected space.
-
-        Parameters
-        ----------
-        @param n: the number that was returned of a algorithm to know where is 
-        the person situated in the centroids  
-
-        Returns
-        ----------
-        @return: a number that refers directly to the person
-        """
-        if n is not None:
-                if isinstance(n, np.int64) or isinstance(n, int):
-                    k = int(np.loadtxt(FacesManager.path_saved + 'IMAGES_PER_SUBJECT.out'))
-                    return int(n/k) + 1
-                else:
-                    raise Exception("n of get_person doesn't match")
-        else:
-            raise Exception("n of get_person is NULL")
-  
 
     @staticmethod
     def change_images_per_person(n):
@@ -253,16 +226,40 @@ class FacesManager(ABC):
 
         Parameters
         ----------
-        @param n: the number that is the new number of 
-        images per person. 
-        
+        @param n: the number that is the new number of
+        images per person.
+
         Returns
         ----------
-        @return: nothing. 
+        @return: nothing.
         """
         n_train = np.matrix(n)
         np.savetxt(FacesManager.path_saved+'IMAGES_PER_SUBJECT.out', n_train)
 
+    @staticmethod
+    def get_min(distance):
+        """
+        @summary: gets the minimun value of the array and sets the
+        selected one into a big value so it doesn't take it anymore
+
+        Parameters
+        ----------
+        @param distance: is the euclidean distance of each
+        eigenvectors
+        Returns
+        ----------
+        @return: return the index of the minimun and
+        the new distance.
+        """
+        if distance is not None:
+            if isinstance(distance, np.ndarray):
+                n = np.argmin(distance)
+                distance[n] = 50000000
+                return FacesManager.get_person(n), distance
+            else:
+                raise Exception("distance of get_min doesn't match")
+        else:
+            raise Exception("distance of get_min is null")
 
     @staticmethod
     def classify_nearest_centroid(new_image, projected_images):
@@ -295,32 +292,6 @@ class FacesManager(ABC):
         else:
             raise Exception("some params of centroid are null")
 
-        
-    @staticmethod
-    def get_min(distance):
-        """
-        @summary: gets the minimun value of the array and sets the
-        selected one into a big value so it doesn't take it anymore
-
-        Parameters
-        ----------
-        @param distance: is the euclidean distance of each
-        eigenvectors
-        Returns
-        ----------
-        @return: return the index of the minimun and
-        the new distance.
-        """
-        if distance is not None:
-            if isinstance(distance, np.ndarray):
-                n = np.argmin(distance)
-                distance[n] = 50000000
-                return FacesManager.get_person(n), distance
-            else:
-                raise Exception("distance of get_min doesn't match")
-        else:
-            raise Exception("distance of get_min is null")
-
     @staticmethod
     def k_neighbors(k, new_image, projected_images):
         """
@@ -328,7 +299,7 @@ class FacesManager(ABC):
 
         Parameters
         ----------
-        @param k: how many faces you want to get 
+        @param k: how many faces you want to get
         @param new_image: the image that you need the face of, it has
         come processed.
         @param projected_images: the images of training already projected
@@ -341,8 +312,12 @@ class FacesManager(ABC):
         Reference: uses the principles of page 6 document:
         Eigen Faces.pdf Step 3.
         """
-        if k is not None and new_image is not None and projected_images is not None:
-            if isinstance(k, int) and isinstance(new_image, np.ndarray) and isinstance(projected_images, np.ndarray):
+        if k is not None \
+            and new_image is not None \
+                and projected_images is not None:
+            if isinstance(k, int) \
+                and isinstance(new_image, np.ndarray) \
+                    and isinstance(projected_images, np.ndarray):
                 a = projected_images-new_image
                 distance_norm = np.linalg.norm(a, axis=0)
                 neighbors = []
@@ -362,7 +337,30 @@ class FacesManager(ABC):
                 raise Exception("some params of k-neighborhs don't match")
         else:
             raise Exception("some params of k neighbors are null")
-  
+
+    @staticmethod
+    def get_person(n):
+        """
+        @summary: This function transforms the columns into a projected space.
+
+        Parameters
+        ----------
+        @param n: the number that was returned of a algorithm to know where is
+        the person situated in the centroids
+
+        Returns
+        ----------
+        @return: a number that refers directly to the person
+        """
+        if n is not None:
+                if isinstance(n, np.int64) or isinstance(n, int):
+                    k = int(np.loadtxt(FacesManager.path_saved
+                                       + 'IMAGES_PER_SUBJECT.out'))
+                    return int(n/k) + 1
+                else:
+                    raise Exception("n of get_person doesn't match")
+        else:
+            raise Exception("n of get_person is NULL")
 
     @abstractmethod
     def process(self, image_manager):

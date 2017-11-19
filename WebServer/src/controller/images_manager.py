@@ -6,7 +6,6 @@ Created on Aug 12, 2017
 
 import cv2 as cv
 import numpy as np
-from controller.ErrorHandler import ErrorHandler
 from WebServer.settings import STATICFILES_DIRS
 
 
@@ -66,7 +65,7 @@ class ImagesManager(object):
 
     def saveLists(self):
         """
-        @sumary: Takes paths and the subjects and saves them in 
+        @sumary: Takes paths and the subjects and saves them in
         text files
 
         Parameters
@@ -77,8 +76,10 @@ class ImagesManager(object):
         -------
         @return: none
         """
-        np.savetxt(self.path_saved + 'imagespaths.data', self.images_paths, delimiter=',', fmt="%s")
-        np.savetxt(self.path_saved + 'subjectsnames.data', self.subjects_names, delimiter=',', fmt="%s")
+        np.savetxt(self.path_saved + 'imagespaths.data',
+                   self.images_paths, delimiter=',', fmt="%s")
+        np.savetxt(self.path_saved + 'subjectsnames.data',
+                   self.subjects_names, delimiter=',', fmt="%s")
 
     def loadLists(self):
         """
@@ -94,8 +95,14 @@ class ImagesManager(object):
         @return: none
         """
         try:
-            self.images_paths = np.loadtxt(self.path_saved + 'imagespaths.data', delimiter=',', dtype='str')
-            self.subjects_names = np.loadtxt(self.path_saved + 'subjectsnames.data', delimiter=',', dtype='str')
+            self.images_paths = np.loadtxt(self.path_saved
+                                           + 'imagespaths.data',
+                                           delimiter=',',
+                                           dtype='str')
+            self.subjects_names = np.loadtxt(self.path_saved
+                                             + 'subjectsnames.data',
+                                             delimiter=',',
+                                             dtype='str')
         except Exception:
             pass
 
@@ -103,7 +110,7 @@ class ImagesManager(object):
         """
         @sumary: this function with a index gets the name
         of the subject because its sorted in the list of
-        names  
+        names
 
         Parameters
         ----------
@@ -160,12 +167,13 @@ class ImagesManager(object):
 
     def add_to_images(self, vector):
         """
-        @sumary: This function adds the vector that receives to a "general" array that
-        will contain all the samples.
+        @sumary: This function adds the vector that receives to a "general"
+        array that will contain all the samples.
 
         Parameters
         ----------
-        @param: vector: the image like vector to be added to the matrix of images.
+        @param: vector: the image like vector to be added to the matrix of
+        images.
 
         Return
         ------
@@ -181,8 +189,8 @@ class ImagesManager(object):
 
     def load_images(self):
         """
-        @sumary: Loads all the images from the images_paths static attribute and add
-        them to the images_matrix attibute.
+        @sumary: Loads all the images from the images_paths static attribute
+        and add them to the images_matrix attibute.
 
         Parameters
         ----------
