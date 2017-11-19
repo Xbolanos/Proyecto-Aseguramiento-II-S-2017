@@ -63,11 +63,11 @@ class ImagesManager(object):
         """
         np.sort(self.images_paths)
         np.sort(self.subjects_names)
-        
+
     def saveLists(self):
         """
         @sumary: Takes paths and the subjects and saves them in 
-        text files 
+        text files
 
         Parameters
         ----------
@@ -79,11 +79,11 @@ class ImagesManager(object):
         """
         np.savetxt(self.path_saved + 'imagespaths.data', self.images_paths, delimiter=',', fmt="%s")
         np.savetxt(self.path_saved + 'subjectsnames.data', self.subjects_names, delimiter=',', fmt="%s")
-        
+
     def loadLists(self):
         """
         @sumary: Takes text files from paths and the subjects and
-        loads them to the system  
+        loads them to the system
 
         Parameters
         ----------
@@ -98,17 +98,16 @@ class ImagesManager(object):
             self.subjects_names = np.loadtxt(self.path_saved + 'subjectsnames.data', delimiter=',', dtype='str')
         except Exception:
             pass
-        
-        
+
     def get_subject_name(self, index):
         """
-        @sumary: this function with a index gets the name 
-        of the subject because its sorted in the list of 
+        @sumary: this function with a index gets the name
+        of the subject because its sorted in the list of
         names  
 
         Parameters
         ----------
-        @param: index: the position of the list 
+        @param: index: the position of the list
 
         Returns
         -------

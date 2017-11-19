@@ -118,7 +118,7 @@ def recognize_subject(subject, mode):
 
     rm = Recognize()
     index = rm.process(tempIM, mode)
-    result = im.get_subject_name(index - 1)
+    result = im.get_subject_name(index)
 
     return ('success', '¡Se ha reconocido!', 'El rostro pertenece al sujeto ',
             str(result))
