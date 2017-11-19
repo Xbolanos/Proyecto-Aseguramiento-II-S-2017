@@ -1351,3 +1351,18 @@ JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: Synt
 JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
 JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
 1511107335471	Marionette	INFO	New connections will no longer be accepted
+1511113259904	geckodriver	INFO	geckodriver 0.18.0
+1511113259966	geckodriver	INFO	Listening on 127.0.0.1:45217
+1511113261586	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1511113276454	Marionette	INFO	Listening on port 33007
+1511113276699	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+1511113288076	Marionette	INFO	New connections will no longer be accepted
+1511113314771	geckodriver	INFO	geckodriver 0.18.0
+1511113314776	geckodriver	INFO	Listening on 127.0.0.1:37835
+1511113315629	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1511113334342	Marionette	INFO	Listening on port 38733
+1511113334443	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+1511113359983	Marionette	INFO	New connections will no longer be accepted

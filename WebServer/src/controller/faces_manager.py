@@ -210,8 +210,8 @@ class FacesManager(ABC):
         @return: a matrix of the matrix of difference projected.
         Reference: page 5 document: Eigen Faces.pdf Step 2.
         """
-        if (m_dif is not None and w is not None):
-            if(isinstance(m_dif, np.ndarray) and isinstance(w, np.ndarray)):
+        if m_dif is not None and w is not None:
+            if isinstance(m_dif, np.ndarray) and isinstance(w, np.ndarray):
                 wt = np.transpose(np.matrix(w))
                 m_dif_projected = wt * np.matrix(m_dif)
                 return m_dif_projected

@@ -119,7 +119,7 @@ def signin(request):
         'password': request.POST['password']
     }
 
-    if(facade.signin(user)):
+    if facade.signin(user):
         return render(request, 'index.html', {'userEmail': user['email']})
 
     return render(request, 'index.html')

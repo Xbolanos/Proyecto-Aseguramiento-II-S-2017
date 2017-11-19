@@ -128,7 +128,7 @@ class Test(unittest.TestCase):
         """
         FacesManager.change_images_per_person(10)
         G = 0
-        while (G < 4):
+        while G < 4:
             result = FacesManager.k_neighbors(3,
                                               self.prueba_k[G],
                                               self.test_k)
@@ -201,7 +201,7 @@ class Test(unittest.TestCase):
         """
         G = 0 
         max = len(self.test_min)
-        while(G < max):
+        while G < max:
             result = FacesManager.get_min(self.test_min[G])[1]
             expected = self.expected_min[G]
             err = "Mismatch of get min"
@@ -261,7 +261,7 @@ class Test(unittest.TestCase):
         G = 0 
         FacesManager.change_images_per_person(8)
         max = len(self.test_person)
-        while(G < max): 
+        while G < max: 
             result = FacesManager.get_person(self.test_person[G])
             expected = self.prueba2[G]
             err = "Mismatch of get person"

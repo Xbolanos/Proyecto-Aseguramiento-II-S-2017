@@ -457,10 +457,10 @@ class metric:
         ----------
         @return: int
         """
-        if (index % 2 != 0):
+        if index % 2 != 0:
             index = index - 1
         return int(index / 2) + 1
-
+    @staticmethod
     def classifaction_report_csv(self, report):
         """
             @summary: This function reads the report and convert it into csv
