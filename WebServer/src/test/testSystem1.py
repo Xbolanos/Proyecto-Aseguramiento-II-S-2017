@@ -1,3 +1,9 @@
+'''
+Created on Nov 16, 2017
+
+@author: xbolanos
+@version: version 1.0 beta
+'''
 # -*- coding: utf-8 -*-
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -10,6 +16,12 @@ import unittest
 
 class TestSystem(unittest.TestCase):
     def setUp(self):
+        """
+        @summary: initialize variables for the test system.
+        Return
+        ------
+        @return: null
+        """
         self.driver = webdriver.Firefox()
         self.driver.implicitly_wait(30)
         self.base_url = "http://localhost:8000"
@@ -18,6 +30,13 @@ class TestSystem(unittest.TestCase):
         self.wait = WebDriverWait(self.driver, 5*60)
 
     def test_system(self):
+        """
+        @summary: call with selenium some actions in the system.
+
+        Return
+        ------
+        @return: null.
+        """
         driver = self.driver
         wait = self.wait
         driver.get(self.base_url + "/")
@@ -26,7 +45,7 @@ class TestSystem(unittest.TestCase):
         driver.find_element_by_id("email").send_keys("admin@reconoceme.com")
         driver.find_element_by_id("password").clear()
         driver.find_element_by_id("password").send_keys("123Queso")
-        driver.find_element_by_css_selector("input.load-images-button").click()
+        driver.find_element_by_id("password").submit()
         driver.find_element_by_link_text("ReconoceME").click()
         driver.find_element_by_id("trainingFiles").clear()
         driver.find_element_by_id("trainingFiles").send_keys(
@@ -73,6 +92,12 @@ class TestSystem(unittest.TestCase):
             "button.swal-button.swal-button--confirm").click()
 
     def is_element_present(self, how, what):
+        """
+        @summary: validate if an element in the system is present
+        Return
+        ------
+        @return: boolean
+        """
         try:
             self.driver.find_element(by=how, value=what)
         except NoSuchElementException:
@@ -80,6 +105,12 @@ class TestSystem(unittest.TestCase):
         return True
 
     def is_alert_present(self):
+        """
+        @summary: validate if appears an alert.
+        Return
+        ------
+        @return: boolean
+        """
         try:
             self.driver.switch_to_alert()
         except NoAlertPresentException:
@@ -87,6 +118,13 @@ class TestSystem(unittest.TestCase):
         return True
 
     def close_alert_and_get_its_text(self):
+        """
+        @summary: print why the system fail.
+
+        Return
+        ------
+        @return: null
+        """
         try:
             alert = self.driver.switch_to_alert()
             alert_text = alert.text
@@ -99,6 +137,13 @@ class TestSystem(unittest.TestCase):
             self.accept_next_alert = True
 
     def tearDown(self):
+        """
+        @summary: finish the test system
+
+        Return
+        ------
+        @return: null
+        """
         self.driver.quit()
         self.assertEqual([], self.verificationErrors)
 
