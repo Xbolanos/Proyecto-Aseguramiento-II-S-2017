@@ -134,7 +134,7 @@ def signin(user):
 
         Returns
         ----------
-        @return: a boolean indicating if is correct 
+        @return: a boolean indicating if is correct
         or not.
     """
     admin = {
@@ -143,12 +143,13 @@ def signin(user):
     }
 
     if(user['email'] == admin['email']):
-        if(user['password'] == user['password']):
+        if(user['password'] == admin['password']):
             return True
         else:
             False
     else:
         False
+
 
 def logout():
     return True

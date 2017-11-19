@@ -48,10 +48,10 @@ class ImagesManager(object):
                 raise Exception("add images: paths type doesn't match")
         else:
             raise Exception("add images: paths type is null")
-        
+
     def orderLists(self):
         """
-        @sumary: Takes paths and the subjects and sort them 
+        @sumary: Takes paths and the subjects and sort them
 
         Parameters
         ----------

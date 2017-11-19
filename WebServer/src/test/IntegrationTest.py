@@ -12,22 +12,31 @@ from random import randint
 class Test(unittest.TestCase):
     subjects_count = 5
 
-    def test_1_sign_in(self):
+    def test_1_sign_in_not_user(self):
         notUser = {
             'email': 'e@a.com',
             'password': '123'}
 
+        self.assertFalse(facade.signin(notUser))
+        print('Sing in con un usuario no registrado.')
+
+    def test_2_sign_in_wrong_password(self):
+        user = {
+            'email': 'admin@reconoceme.com',
+            'password': '123'}
+
+        self.assertFalse(facade.signin(user))
+        print('Sing in con un usuario registrado, pero contraseña incorrecta.')
+
+    def test_3_sign_in_user(self):
         user = {
             'email': 'admin@reconoceme.com',
             'password': '123Queso'}
 
-        notObject = None
-
-        self.assertFalse(facade.signin(notUser))
-        self.assertFalse(facade.signin(notObject))
         self.assertTrue(facade.signin(user))
+        print('Sing in con un usuario registrado legitimo.')
 
-    def test_2_training(self):
+    def test_4_training(self):
         autovectors = 100
         images_per_subject = 8
         files = {}
@@ -53,8 +62,9 @@ class Test(unittest.TestCase):
                                      images_per_subject)
 
         self.assertTrue(result)
+        print('Entrenamiento básico del sistema.')
 
-    def test_3_recognize_centroid(self):
+    def test_5_recognize_centroid(self):
         subject = randint(1, Test.subjects_count)
         image = randint(8, 10)
         file = open('Muestras/S' + str(subject) + '/' + str(image) + '.pgm',
@@ -64,27 +74,10 @@ class Test(unittest.TestCase):
                                         file.read(),
                                         'image/x-portable-graymap')
 
-        noneFile = None
-        wrongInstance = {}
-
         result1 = facade.recognize_subject(simpleFile, 0)
         expected1 = 'S' + str(subject)
 
-        result2 = facade.recognize_subject(noneFile, 0)
-        expected2 = 'error'
-
-        result3 = facade.recognize_subject(wrongInstance, 0)
-        expected3 = 'error'
-
-        self.assertEqual(expected1, result1[3])
-        print('Result1: ' + result1[1])
-        self.assertEqual(expected2, result2[0], result1[1])
-        print('Result2: ' + result2[1])
-        self.assertEqual(expected3, result3[0], result1[1])
-        print('Result3: ' + result3[1])
-
-    def test_4_recognize_k_neighbors(self):
-        subject = randint(1, self.subjects_count)
+        subject = randint(1, Test.subjects_count)
         image = randint(8, 10)
         file = open('Muestras/S' + str(subject) + '/' + str(image) + '.pgm',
                     'rb')
@@ -93,10 +86,45 @@ class Test(unittest.TestCase):
                                         file.read(),
                                         'image/x-portable-graymap')
 
-        result = facade.recognize_subject(simpleFile)
-        expected = 'S' + str(subject)
+        result2 = facade.recognize_subject(simpleFile, 0)
+        expected2 = 'S' + str(subject)
 
-        self.assertEqual(expected, result)
+        self.assertEqual(expected1, result1[3])
+        print('Result1: ' + result1[1])
+
+        self.assertEqual(expected2, result2[3])
+        print('Result2: ' + result2[1])
+
+    def test_6_recognize_k_neighbors(self):
+        subject = randint(1, Test.subjects_count)
+        image = randint(8, 10)
+        file = open('Muestras/S' + str(subject) + '/' + str(image) + '.pgm',
+                    'rb')
+
+        simpleFile = SimpleUploadedFile(str(image) + '.pgm',
+                                        file.read(),
+                                        'image/x-portable-graymap')
+
+        result1 = facade.recognize_subject(simpleFile, 1)
+        expected1 = 'S' + str(subject)
+
+        subject = randint(1, Test.subjects_count)
+        image = randint(8, 10)
+        file = open('Muestras/S' + str(subject) + '/' + str(image) + '.pgm',
+                    'rb')
+
+        simpleFile = SimpleUploadedFile(str(image) + '.pgm',
+                                        file.read(),
+                                        'image/x-portable-graymap')
+
+        result2 = facade.recognize_subject(simpleFile, 1)
+        expected2 = 'S' + str(subject)
+
+        self.assertEqual(expected1, result1[3])
+        print('Result1: ' + result1[1])
+
+        self.assertEqual(expected2, result2[3])
+        print('Result2: ' + result2[1])
 
 
 if __name__ == "__main__":
