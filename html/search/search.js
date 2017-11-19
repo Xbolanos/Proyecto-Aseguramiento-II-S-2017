@@ -58,7 +58,7 @@ function getYPos(item)
 */
 function SearchBox(name, resultsPath, inFrame, label)
 {
-  if (!name || !resultsPath) {  alert("Missing parameters to SearchBox."); }
+  if (!name || !resultsPath) { }
 
   // ---------- Instance variables
   this.name                  = name;
@@ -326,13 +326,13 @@ function SearchBox(name, resultsPath, inFrame, label)
        var hexCode=idx.toString(16);
        resultsPage = this.resultsPath + '/' + indexSectionNames[this.searchIndex] + '_' + hexCode + '.html';
        resultsPageWithSearch = resultsPage+'?'+escape(searchValue);
-       hasResultsPage = true;
+       
     }
     else // nothing available for this search term
     {
        resultsPage = this.resultsPath + '/nomatches.html';
        resultsPageWithSearch = resultsPage;
-       hasResultsPage = false;
+
     }
 
     window.frames.MSearchResults.location = resultsPageWithSearch;
