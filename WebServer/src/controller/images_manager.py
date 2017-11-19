@@ -33,11 +33,11 @@ class ImagesManager(object):
         -------
         Nothing is returned.
         """
-        if(paths is not None):
-            if(isinstance(paths, list)):
+        if paths is not None:
+            if isinstance(paths, list):
                 self.images_paths = np.append(self.images_paths, paths)
 
-                if(subjects_names is not None):
+                if subjects_names is not None:
                     self.subjects_names = np.append(self.subjects_names,
                                                     subjects_names)
                     self.orderLists()
@@ -128,8 +128,8 @@ class ImagesManager(object):
         ----------
         @return: The image as a matrix of values between 0 and 255.
         """
-        if(path is not None):
-            if(isinstance(path, str)):
+        if path is not None:
+            if isinstance(path, str):
                 return cv.imread(path, 0)
             else:
                 raise Exception("read images: path type doesn't match")
@@ -150,8 +150,8 @@ class ImagesManager(object):
         ----------
         @return: The matrix transformed as a vector.
         """
-        if(matrix is not None):
-            if(isinstance(matrix, list) or isinstance(matrix, np.ndarray)):
+        if matrix is not None:
+            if isinstance(matrix, list) or isinstance(matrix, np.ndarray):
                 return np.asarray(matrix).reshape(-1)
             else:
                 raise Exception("mtx2vct: matrix type doesn't match")
@@ -171,8 +171,8 @@ class ImagesManager(object):
         ------
         @return: Nothing is returned.
         """
-        if(vector is not None):
-            if(isinstance(vector, list) or isinstance(vector, np.ndarray)):
+        if vector is not None:
+            if isinstance(vector, list) or isinstance(vector, np.ndarray):
                 self.images_matrix.append(vector)
             else:
                 raise Exception("add2img: vector type doesn't match")

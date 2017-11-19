@@ -11,8 +11,9 @@ class ErrorHandler(object):
         '''
         Constructor de la excepcion
         '''
-    
+    @staticmethod
     def error(self, message):
+        
         """
         @summary: prints the error because this is the
         error handler
@@ -20,4 +21,5 @@ class ErrorHandler(object):
         @param: message: the message that throws 
         the exception 
         """
+        
         print(str(message))

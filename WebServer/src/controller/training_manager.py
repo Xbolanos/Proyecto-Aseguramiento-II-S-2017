@@ -36,8 +36,8 @@ class Training(FacesManager):
         @return: void.
         """
         try:
-            if (image_manager is not None):
-                if(isinstance(image_manager, ImagesManager)):
+            if image_manager is not None:
+                if isinstance(image_manager, ImagesManager):
                     images_matrix = image_manager.images_matrix
                     normalized = super(Training, Training).transpose(images_matrix)
                     av_face = super(Training, Training).average_face(normalized)

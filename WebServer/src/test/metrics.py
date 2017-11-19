@@ -8,7 +8,6 @@ import pandas as pd
 from controller.images_manager import ImagesManager
 from controller.recognizing_manager import Recognize
 from sklearn.metrics import confusion_matrix, classification_report
-from controller.ErrorHandler import ErrorHandler
 from controller.faces_manager import FacesManager
 
 

@@ -7,7 +7,6 @@ Created on Nov 3, 2017
 from abc import ABC, abstractmethod
 import numpy as np
 from WebServer.settings import STATICFILES_DIRS
-from controller.ErrorHandler import ErrorHandler
 np.set_printoptions(threshold=np.nan)
 
 
@@ -48,7 +47,7 @@ class FacesManager(ABC):
         """
         if images is not None:
             a = isinstance(images, list)
-            if (a or isinstance(images, np.ndarray)):
+            if a or isinstance(images, np.ndarray):
                 return np.array(images).transpose()
             else:
                 s = "images of transpose doesn't correspond in type: list"
@@ -74,7 +73,7 @@ class FacesManager(ABC):
         Reference: page 2 document: Eigen Faces.pdf Step 3.
         """
         if images is not None:
-            if (isinstance(images, list) or isinstance(images, np.ndarray)):
+            if isinstance(images, list) or isinstance(images, np.ndarray):
                 a = np.array(images)
                 b = np.mean(a, axis=1)[np.newaxis]
                 return b.T
@@ -102,9 +101,9 @@ class FacesManager(ABC):
 
         Reference: page 3 document: Eigen Faces.pdf Step 4.
         """
-        if ((images_n is not None and av_face is not None)):
+        if images_n is not None and av_face is not None:
             a = isinstance(av_face, np.ndarray)
-            if(isinstance(images_n, np.ndarray) and a):
+            if isinstance(images_n, np.ndarray) and a:
                 return images_n - av_face
             else:
                 raise Exception("1+ param of matrix is not np.array")
@@ -130,8 +129,8 @@ class FacesManager(ABC):
 
         Reference: page 2 document: Eigen Faces.pdf Step 5.
         """
-        if (m_dif is not None):
-            if(isinstance(m_dif, np.ndarray)):
+        if m_dif is not None:
+            if isinstance(m_dif, np.ndarray):
                 DT = np.matrix(np.transpose(m_dif))
                 D = np.matrix(m_dif)
                 return DT*D
@@ -157,8 +156,8 @@ class FacesManager(ABC):
 
         Reference: page 3 document: Eigen Faces.pdf Step 6.
         """
-        if (matrix is not None and n is not None):
-            if (isinstance(matrix, np.ndarray) and isinstance(n, int)): 
+        if matrix is not None and n is not None:
+            if isinstance(matrix, np.ndarray) and isinstance(n, int): 
                 matrix_vectors = np.linalg.eigh(matrix)[1]
                 matrix_reduced = np.array(matrix_vectors)[:, 0:n]
                 return matrix_reduced
@@ -183,8 +182,8 @@ class FacesManager(ABC):
         of covariance.
         Reference: page 5 document: Eigen Faces.pdf Step 2 (getting the w).
         """
-        if (m_dif is not None and n is not None):
-            if (isinstance(m_dif, np.ndarray) and isinstance(n, int)):
+        if m_dif is not None and n is not None:
+            if isinstance(m_dif, np.ndarray) and isinstance(n, int):
                 ev = FacesManager.calculate_cov_matrix_ev(m_dif)
                 eigen = FacesManager.eigen_vectors_of_matrix(ev, n)
                 w = np.dot(np.matrix(m_dif), eigen)
@@ -236,9 +235,8 @@ class FacesManager(ABC):
         ----------
         @return: a number that refers directly to the person
         """
-        if (n is not None):
-                if(isinstance(n, np.int64) or
-                   isinstance(n, np.int64) or isinstance(n, int)):
+        if n is not None:
+                if isinstance(n, np.int64) or isinstance(n, int):
                     k = int(np.loadtxt(FacesManager.path_saved + 'IMAGES_PER_SUBJECT.out'))
                     return int(n/k) + 1
                 else:
@@ -284,10 +282,10 @@ class FacesManager(ABC):
         in the image.
         Reference: page 6 document: Eigen Faces.pdf Step 3.
         """
-        if(new_image is not None and projected_images is not None):
+        if new_image is not None and projected_images is not None:
             a1 = isinstance(new_image, np.ndarray)
             a2 = isinstance(projected_images, np.ndarray)
-            if(a1 and a2):
+            if a1 and a2:
                 a = projected_images-new_image
                 distance_norm = np.linalg.norm(a, axis=0)
                 n = np.argmin(distance_norm)
@@ -313,8 +311,8 @@ class FacesManager(ABC):
         @return: return the index of the minimun and
         the new distance.
         """
-        if(distance is not None):
-            if(isinstance(distance, np.ndarray)):
+        if distance is not None:
+            if isinstance(distance, np.ndarray):
                 n = np.argmin(distance)
                 distance[n] = 50000000
                 return FacesManager.get_person(n), distance
@@ -343,10 +341,8 @@ class FacesManager(ABC):
         Reference: uses the principles of page 6 document:
         Eigen Faces.pdf Step 3.
         """
-        if(k is not None and new_image is not None
-           and projected_images is not None):
-            if(isinstance(k, int) and isinstance(new_image, np.ndarray)
-               and isinstance(projected_images, np.ndarray)):
+        if k is not None and new_image is not None and projected_images is not None:
+            if isinstance(k, int) and isinstance(new_image, np.ndarray) and isinstance(projected_images, np.ndarray):
                 a = projected_images-new_image
                 distance_norm = np.linalg.norm(a, axis=0)
                 neighbors = []

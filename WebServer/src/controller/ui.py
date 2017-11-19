@@ -57,7 +57,7 @@ def learn(request):
                                    autovectors,
                                    images_per_subject)
 
-    if(response):
+    if response:
         return JsonResponse({'type': 'success',
                              'title': '¡Registrado!',
                              'message': 'Se ha(n) registrado con exito al ' +
