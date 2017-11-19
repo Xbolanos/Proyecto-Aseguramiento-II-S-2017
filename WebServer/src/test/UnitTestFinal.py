@@ -49,6 +49,18 @@ class Test(unittest.TestCase):
     test_person = [4,15,23,28]
 
     def test_nearest_centroid(self):
+        """
+        @summary: This function is an unit test for nearest centroid of
+        the class faces manager
+
+        Parameters
+        ----------
+        @param self: part of OOP syntax
+
+        Returns
+        ----------
+        @return: void
+        """
         G = 0
         FacesManager.change_images_per_person(1)
         for i in self.prueba:
@@ -60,6 +72,18 @@ class Test(unittest.TestCase):
             G = G + 1
             
     def test_nearest_centroid_dif(self):
+        """
+        @summary: This function is an unit test for nearest centroid of
+        the class faces manager
+
+        Parameters
+        ----------
+        @param self: part of OOP syntax
+
+        Returns
+        ----------
+        @return: void
+        """
         exception = "some params of centroid don't match"
         with self.assertRaisesRegexp(Exception, exception):
             FacesManager.classify_nearest_centroid(self.prueba, "o")
@@ -69,6 +93,18 @@ class Test(unittest.TestCase):
         print("Nearest centroid dif unittest: raise specific exception")
 
     def test_nearest_centroid_null(self):
+        """
+        @summary: This function is an unit test for nearest centroid of
+        the class faces manager
+
+        Parameters
+        ----------
+        @param self: part of OOP syntax
+
+        Returns
+        ----------
+        @return: void
+        """
         exception = "some params of centroid are null"
         with self.assertRaisesRegexp(Exception, exception):
             FacesManager.classify_nearest_centroid(self.prueba, None)
@@ -78,6 +114,18 @@ class Test(unittest.TestCase):
         print("Nearest centroid null unittest: raise specific exception")
 
     def test_k_neighbors(self):
+        """
+        @summary: This function is an unit test for k neighbors of
+        the class faces manager
+
+        Parameters
+        ----------
+        @param self: part of OOP syntax
+
+        Returns
+        ----------
+        @return: void
+        """
         FacesManager.change_images_per_person(10)
         G = 0
         while (G < 4):
@@ -91,6 +139,18 @@ class Test(unittest.TestCase):
             G = G + 1
 
     def test_k_neighbors_dif(self):
+        """
+        @summary: This function is an unit test for k neighbors of
+        the class faces manager
+
+        Parameters
+        ----------
+        @param self: part of OOP syntax
+
+        Returns
+        ----------
+        @return: void
+        """
         exception = "some params of k-neighborhs don't match"
         with self.assertRaisesRegexp(Exception, exception):
             FacesManager.k_neighbors(3, self.prueba_k[0], "o")
@@ -103,6 +163,18 @@ class Test(unittest.TestCase):
         print("K neighbors dif unittest: raise specific exception")
 
     def test_k_neighbors_null(self):
+        """
+        @summary: This function is an unit test for k neighbors of
+        the class faces manager
+
+        Parameters
+        ----------
+        @param self: part of OOP syntax
+
+        Returns
+        ----------
+        @return: void
+        """
         exception = "some params of k neighbors are null"
         with self.assertRaisesRegexp(Exception, exception):
             FacesManager.k_neighbors(3, self.prueba_k[0], None)
@@ -115,6 +187,18 @@ class Test(unittest.TestCase):
         print("K neighbors null unittest: raise specific exception")
 
     def test_get_min(self):
+        """
+        @summary: This function is an unit test for get min of
+        the class faces manager
+
+        Parameters
+        ----------
+        @param self: part of OOP syntax
+
+        Returns
+        ----------
+        @return: void
+        """
         G = 0 
         max = len(self.test_min)
         while(G < max):
@@ -126,18 +210,54 @@ class Test(unittest.TestCase):
             G = G + 1
 
     def test_get_min_dif(self):
+        """
+        @summary: This function is an unit test for get min of
+        the class faces manager
+
+        Parameters
+        ----------
+        @param self: part of OOP syntax
+
+        Returns
+        ----------
+        @return: void
+        """
         exception = "distance of get_min doesn't match"
         with self.assertRaisesRegexp(Exception, exception):
             FacesManager.get_min("other")
         print("Get min dif unittest: raise specific exception")
 
     def test_get_min_null(self):
+        """
+        @summary: This function is an unit test for get min of
+        the class faces manager
+
+        Parameters
+        ----------
+        @param self: part of OOP syntax
+
+        Returns
+        ----------
+        @return: void
+        """
         exception = "distance of get_min is null"
         with self.assertRaisesRegexp(Exception, exception):
             FacesManager.get_min(None)
         print("Get min null unittest: raise specific exception")
 
     def test_get_person(self):
+        """
+        @summary: This function is an unit test for get person of
+        the class faces manager
+
+        Parameters
+        ----------
+        @param self: part of OOP syntax
+
+        Returns
+        ----------
+        @return: void
+        """
         G = 0 
         FacesManager.change_images_per_person(8)
         max = len(self.test_person)
@@ -150,12 +270,36 @@ class Test(unittest.TestCase):
             G = G + 1
 
     def test_get_person_dif(self):
+        """
+        @summary: This function is an unit test for get person of
+        the class faces manager
+
+        Parameters
+        ----------
+        @param self: part of OOP syntax
+
+        Returns
+        ----------
+        @return: void
+        """
         exception = "n of get_person doesn't match"
         with self.assertRaisesRegexp(Exception, exception):
             FacesManager.get_person("other")
         print("Get person dif unittest: raise specific exception")
 
     def test_get_person_null(self):
+        """
+        @summary: This function is an unit test for get person of
+        the class faces manager
+
+        Parameters
+        ----------
+        @param self: part of OOP syntax
+
+        Returns
+        ----------
+        @return: void
+        """
         exception = "distance of get_min is null"
         with self.assertRaisesRegexp(Exception, exception):
             FacesManager.get_min(None)

@@ -85,7 +85,20 @@ def train_system(files, filesData, autovectors, images_per_subject):
     return True
 
 
-def recognize_subject(subject, mode=1):
+def recognize_subject(subject, mode):
+    """
+        @summary: This function search the face of the new image.
+
+        Parameters
+        ----------
+        @param subject: the image of the person
+
+        Returns
+        ----------
+        @return: the name that correspond to the person detected
+        in the image.
+    """
+
     if subject is None:
         return ('error', 'No se ha proveido un sujeto.', '', '')
 
@@ -112,9 +125,18 @@ def recognize_subject(subject, mode=1):
 
 
 def signin(user):
-    if user is None:
-        return False
+    """
+        @summary: This function helps to log in.
 
+        Parameters
+        ----------
+        @param user: the person who tries to log in.
+
+        Returns
+        ----------
+        @return: a boolean indicating if is correct 
+        or not.
+    """
     admin = {
         'email': 'admin@reconoceme.com',
         'password': '123Queso'

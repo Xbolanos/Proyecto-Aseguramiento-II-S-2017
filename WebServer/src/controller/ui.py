@@ -69,6 +69,17 @@ def learn(request):
 
 
 def recognize(request):
+    """
+        @summary: related to the function that recognize.
+
+        Parameters
+        ----------
+        @param request: a method of web
+
+        Returns
+        ----------
+        @return: a Json answer if it fails, or the answer in terms of html
+    """
     if request.method != 'POST':
         # No other method are allowed for this function than post.
         return JsonResponse({'type': 'error',
@@ -85,6 +96,17 @@ def recognize(request):
 
 
 def signin(request):
+    """
+        @summary: related to the function helps to log in.
+
+        Parameters
+        ----------
+        @param request: a method of web
+
+        Returns
+        ----------
+        @return: a Json answer if it fails, or the answer in terms of html
+    """
     if request.method != 'POST':
         # No other method are allowed for this function than post.
         return JsonResponse({'type': 'error',
@@ -104,6 +126,17 @@ def signin(request):
 
 
 def logout(request):
+    """
+        @summary: related to the function helps to log in.
+
+        Parameters
+        ----------
+        @param request: a method of web
+
+        Returns
+        ----------
+        @return: a Json answer if it fails, or the answer in terms of json too.
+    """
     if request.method != 'POST':
         # No other method are allowed for this function than post.
         return JsonResponse({'type': 'error',

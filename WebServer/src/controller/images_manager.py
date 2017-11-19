@@ -23,11 +23,11 @@ class ImagesManager(object):
 
     def add_images_paths(self, paths, subjects_names=None):
         """
-        Adds a lists of paths to the already known paths of the class.
+        @sumary: Adds a lists of paths to the already known paths of the class.
 
         Parameters
         ----------
-        paths: the list of paths to be added.
+        @param: paths: the list of paths to be added.
 
         Returns
         -------
@@ -50,14 +50,49 @@ class ImagesManager(object):
             raise Exception("add images: paths type is null")
         
     def orderLists(self):
+        """
+        @sumary: Takes paths and the subjects and sort them 
+
+        Parameters
+        ----------
+        @param: none
+
+        Returns
+        -------
+        @return: none
+        """
         np.sort(self.images_paths)
         np.sort(self.subjects_names)
         
     def saveLists(self):
+        """
+        @sumary: Takes paths and the subjects and saves them in 
+        text files 
+
+        Parameters
+        ----------
+        @param: none
+
+        Returns
+        -------
+        @return: none
+        """
         np.savetxt(self.path_saved + 'imagespaths.data', self.images_paths, delimiter=',', fmt="%s")
         np.savetxt(self.path_saved + 'subjectsnames.data', self.subjects_names, delimiter=',', fmt="%s")
         
     def loadLists(self):
+        """
+        @sumary: Takes text files from paths and the subjects and
+        loads them to the system  
+
+        Parameters
+        ----------
+        @param: none
+
+        Returns
+        -------
+        @return: none
+        """
         try:
             self.images_paths = np.loadtxt(self.path_saved + 'imagespaths.data', delimiter=',', dtype='str')
             self.subjects_names = np.loadtxt(self.path_saved + 'subjectsnames.data', delimiter=',', dtype='str')
@@ -66,20 +101,33 @@ class ImagesManager(object):
         
         
     def get_subject_name(self, index):
+        """
+        @sumary: this function with a index gets the name 
+        of the subject because its sorted in the list of 
+        names  
+
+        Parameters
+        ----------
+        @param: index: the position of the list 
+
+        Returns
+        -------
+        @return: returns the subject name
+        """
         return self.subjects_names.item(index)
 
     @staticmethod
     def read_image(path):
         """
-        This function reads an image in gray scale.
+        @summary: This function reads an image in gray scale.
 
         Parameters
         ----------
-        path: is the address of the file that will be read.
+        @param:  path: is the address of the file that will be read.
 
         Returns
         ----------
-        The image as a matrix of values between 0 and 255.
+        @return: The image as a matrix of values between 0 and 255.
         """
         if(path is not None):
             if(isinstance(path, str)):
@@ -92,16 +140,16 @@ class ImagesManager(object):
     @staticmethod
     def matrix_to_vector(matrix):
         """
-        This function transforms a image matrix that to a vector
+        @summary: This function transforms a image matrix that to a vector
         image; every row goes consecutive in the vector, in the same order.
 
         Parameters
         ----------
-        matrix: is the matrix of a given image.
+        @param: matrix: is the matrix of a given image.
 
         Returns
         ----------
-        The matrix transformed as a vector.
+        @return: The matrix transformed as a vector.
         """
         if(matrix is not None):
             if(isinstance(matrix, list) or isinstance(matrix, np.ndarray)):
@@ -113,16 +161,16 @@ class ImagesManager(object):
 
     def add_to_images(self, vector):
         """
-        This function adds the vector that receives to a "general" array that
+        @sumary: This function adds the vector that receives to a "general" array that
         will contain all the samples.
 
         Parameters
         ----------
-        vector: the image like vector to be added to the matrix of images.
+        @param: vector: the image like vector to be added to the matrix of images.
 
         Return
         ------
-        Nothing is returned.
+        @return: Nothing is returned.
         """
         if(vector is not None):
             if(isinstance(vector, list) or isinstance(vector, np.ndarray)):
@@ -134,16 +182,16 @@ class ImagesManager(object):
 
     def load_images(self):
         """
-        Loads all the images from the images_paths static attribute and add
+        @sumary: Loads all the images from the images_paths static attribute and add
         them to the images_matrix attibute.
 
         Parameters
         ----------
-        There are no parameters
+        @param: There are no parameters
 
         Returns
         -------
-        Nothing is returned.
+        @return: Nothing is returned.
         """
         del self.images_matrix[:]
 
