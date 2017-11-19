@@ -31,10 +31,19 @@ def train_system(files, filesData, autovectors, images_per_subject):
     ------
     @return: the system's response to the request.
     """
-    return system.train_system(files, filesData, autovectors, images_per_subject)
-    
-def recognize_subject(subject):
-    return system.recognize_subject(subject)
+    return system.train_system(files,
+                               filesData,
+                               autovectors,
+                               images_per_subject)
+
+
+def recognize_subject(subject, mode=1):
+    return system.recognize_subject(subject, mode)
+
 
 def signin(user):
     return system.signin(user)
+
+
+def logout():
+    return system.logout()

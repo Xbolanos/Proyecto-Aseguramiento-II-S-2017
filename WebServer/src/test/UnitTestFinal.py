@@ -77,7 +77,6 @@ class Test(unittest.TestCase):
             FacesManager.classify_nearest_centroid(None, self.test_4_centroid)
         print("Nearest centroid null unittest: raise specific exception")
 
-
     def test_k_neighbors(self):
         FacesManager.change_images_per_person(10)
         G = 0
@@ -118,7 +117,7 @@ class Test(unittest.TestCase):
     def test_get_min(self):
         G = 0 
         max = len(self.test_min)
-        while(G < max): 
+        while(G < max):
             result = FacesManager.get_min(self.test_min[G])[1]
             expected = self.expected_min[G]
             err = "Mismatch of get min"

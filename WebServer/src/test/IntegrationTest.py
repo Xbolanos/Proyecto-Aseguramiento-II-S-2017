@@ -10,6 +10,8 @@ from random import randint
 
 
 class Test(unittest.TestCase):
+    subjects_count = 5
+
     def test_1_sign_in(self):
         notUser = {
             'email': 'e@a.com',
@@ -19,7 +21,10 @@ class Test(unittest.TestCase):
             'email': 'admin@reconoceme.com',
             'password': '123Queso'}
 
+        notObject = None
+
         self.assertFalse(facade.signin(notUser))
+        self.assertFalse(facade.signin(notObject))
         self.assertTrue(facade.signin(user))
 
     def test_2_training(self):
@@ -29,7 +34,7 @@ class Test(unittest.TestCase):
         filesData = {}
         filesCount = 1
 
-        for i in range(1, 6):
+        for i in range(1, Test.subjects_count + 1):
             for j in range(1, images_per_subject + 1):
                 file = open('Muestras/S' + str(i) + '/' + str(j) + '.pgm',
                             'rb')
@@ -49,9 +54,38 @@ class Test(unittest.TestCase):
 
         self.assertTrue(result)
 
-    def test_3_recognize(self):
-        subject = randint(1, 5)
-        image = randint(1, 10)
+    def test_3_recognize_centroid(self):
+        subject = randint(1, Test.subjects_count)
+        image = randint(8, 10)
+        file = open('Muestras/S' + str(subject) + '/' + str(image) + '.pgm',
+                    'rb')
+
+        simpleFile = SimpleUploadedFile(str(image) + '.pgm',
+                                        file.read(),
+                                        'image/x-portable-graymap')
+
+        noneFile = None
+        wrongInstance = {}
+
+        result1 = facade.recognize_subject(simpleFile, 0)
+        expected1 = 'S' + str(subject)
+
+        result2 = facade.recognize_subject(noneFile, 0)
+        expected2 = 'error'
+
+        result3 = facade.recognize_subject(wrongInstance, 0)
+        expected3 = 'error'
+
+        self.assertEqual(expected1, result1[3])
+        print('Result1: ' + result1[1])
+        self.assertEqual(expected2, result2[0], result1[1])
+        print('Result2: ' + result2[1])
+        self.assertEqual(expected3, result3[0], result1[1])
+        print('Result3: ' + result3[1])
+
+    def test_4_recognize_k_neighbors(self):
+        subject = randint(1, self.subjects_count)
+        image = randint(8, 10)
         file = open('Muestras/S' + str(subject) + '/' + str(image) + '.pgm',
                     'rb')
 

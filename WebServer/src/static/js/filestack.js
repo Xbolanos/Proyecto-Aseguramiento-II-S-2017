@@ -170,9 +170,17 @@ var logout = () => {
     dataType: 'json'
   })
   .done((result) => {
-    window.location.replace('http://localhost:8000');
+    if(result.success) {
+      window.location.replace('http://localhost:8000');
+    } else {
+      swal( 
+        'Ha ocurrido un error', 
+        'No se ha podido cerrar sesión, intentelo de nuevo.', 
+        'error' 
+      );
+    }
   })
-  .fail((result) => {
+  .fail(() => {
     swal( 
       'Ha ocurrido un error', 
       'Verifique su conexión a internet o contactese con su proveedor', 

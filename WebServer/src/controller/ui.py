@@ -60,7 +60,7 @@ def learn(request):
     if(response):
         return JsonResponse({'type': 'success',
                              'title': '¡Registrado!',
-                             'message': 'Se ha(n) registrado con exito al' +
+                             'message': 'Se ha(n) registrado con exito al ' +
                              'sistema.'})
     else:
         return JsonResponse({'type': 'error',
@@ -79,10 +79,9 @@ def recognize(request):
     files = request.FILES
     response = facade.recognize_subject(files['subject'])
 
-    return JsonResponse({'type': 'success',
-                         'title': 'Se ha reconocido al sujeto',
-                         'message': 'El rostro pertenece al sujeto: '
-                         + response})
+    return JsonResponse({'type': response[0],
+                         'title': response[1],
+                         'message': response[2] + response[3]})
 
 
 def signin(request):
@@ -112,6 +111,5 @@ def logout(request):
                              'message': 'No se permiten otros metodos además' +
                                         'de post.'})
 
-    return JsonResponse({'type': 'success',
-                         'title': 'Se ha cerrado sesión',
-                         'message': ''})
+    result = facade.logout()
+    return JsonResponse({'success': result})

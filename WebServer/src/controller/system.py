@@ -20,6 +20,7 @@ from controller.training_manager import Training
 from controller.recognizing_manager import Recognize
 from django.core.files.storage import FileSystemStorage
 from WebServer.settings import MEDIA_ROOT
+from django.core.files.uploadedfile import UploadedFile
 
 
 im = ImagesManager()
@@ -84,7 +85,14 @@ def train_system(files, filesData, autovectors, images_per_subject):
     return True
 
 
-def recognize_subject(subject):
+def recognize_subject(subject, mode=1):
+    if subject is None:
+        return ('error', 'No se ha proveido un sujeto.', '', '')
+
+    if not isinstance(subject, UploadedFile):
+        return ('error', 'Parametro incorrecto', 'Verifique el parametro e' +
+                'intentelo de nuevo.', '')
+
     fs = FileSystemStorage(location=MEDIA_ROOT)
 
     fileName = fs.save(subject.name, subject)
@@ -96,13 +104,17 @@ def recognize_subject(subject):
     tempIM.load_images()
 
     rm = Recognize()
-    index = rm.process(tempIM, mode=1)
+    index = rm.process(tempIM, mode)
     result = im.get_subject_name(index - 1)
 
-    return str(result)
+    return ('success', '¡Se ha reconocido!', 'El rostro pertenece al sujeto ',
+            str(result))
 
 
 def signin(user):
+    if user is None:
+        return False
+
     admin = {
         'email': 'admin@reconoceme.com',
         'password': '123Queso'
@@ -115,3 +127,6 @@ def signin(user):
             False
     else:
         False
+
+def logout():
+    return True
