@@ -13,6 +13,8 @@ from controller.faces_manager import FacesManager
 
 class metric:
     recognize = Recognize()
+    im = ImagesManager()
+
     path_list = [
             "Muestras/s1/1.pgm",
             "Muestras/s1/2.pgm",
@@ -445,8 +447,9 @@ class metric:
             else:
                 i = i + 8
         return new_list
+
     @classmethod
-    def answer(self, index):
+    def answer(self, path):
         """
         @summary: This function reads the report and convert it into csv
         file
@@ -457,11 +460,11 @@ class metric:
         ----------
         @return: int
         """
-        if index % 2 != 0:
-            index = index - 1
-        return int(index / 2) + 1
+        splited = path.split('/')
+        return splited[1]
+
     @staticmethod
-    def classifaction_report_csv(self, report):
+    def classifaction_report_csv(report):
         """
             @summary: This function reads the report and convert it into csv
             file
@@ -499,21 +502,23 @@ class metric:
         @return: void
         """
         FacesManager.change_images_per_person(8)
+        self.im.loadLists()
         matrix_true = []
         matrix_pred = []
         samples = self.get_samples()
         for x in range(len(samples)):
             path = samples[x]
-            type_face = self.answer(x)
+            type_face = self.answer(path)
             image_manager = ImagesManager()
             image_manager.images_paths = [path]
             image_manager.load_images()
-            matrix_true.append(self.recognize.process(image_manager, 1))
+            index = self.recognize.process(image_manager, 1)
+            matrix_true.append(self.im.get_subject_name(index - 1))
             matrix_pred.append(type_face)
         conf_mat = confusion_matrix(matrix_true, matrix_pred)
         class_report = classification_report(matrix_true, matrix_pred)
         print(class_report)
-        self.classifaction_report_csv(class_report)
+        metric.classifaction_report_csv(class_report)
         tp_fp_fn_tn = []
         for i in range(len(conf_mat)):
             TP = conf_mat[i, i]
@@ -527,4 +532,3 @@ class metric:
 
 m = metric()
 m.create_report_csv()
-
