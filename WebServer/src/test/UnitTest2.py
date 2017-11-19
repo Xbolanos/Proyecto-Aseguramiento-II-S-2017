@@ -86,8 +86,8 @@ class Test(unittest.TestCase):
     def test_mat_of_difference(self):
         G = 0
         imagesm = ImagesManager()
-        sizeSamples = len(self.samplesTranposed)
-        while(G < sizeSamples):
+        size_samples = len(self.samplesTranposed)
+        while G < size_samples:
             av_face = self.expected_av_faces[G][np.newaxis]
             matrix = self.samplesTranposed[G]
             result = imagesm.matrix_of_differences(matrix, av_face.T)
@@ -98,7 +98,7 @@ class Test(unittest.TestCase):
             print("Matrix of dif. unittest:" + str(G))
             G = G + 1
 
-    def test_Ev(self):
+    def test_ev(self):
         G = 0
         imagesm = ImagesManager()
         for matrix in self.expected_mat_dif:

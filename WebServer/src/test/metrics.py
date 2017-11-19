@@ -426,7 +426,7 @@ class metric:
             "Muestras/s41/10.pgm",
         ]
 
-    def getSamples(self):
+    def get_samples(self):
         """
         @summary: This function gets some samples and put into list
         Parameters
@@ -435,17 +435,17 @@ class metric:
         ----------
         @return: list
         """
-        newList = []
+        new_list = []
         n = len(self.path_list)
         i = 0
-        while (i < n):
-            if(i % 10 >= 8):
-                newList.append(self.path_list[i])
+        while i < n:
+            if i % 10 >= 8:
+                new_list.append(self.path_list[i])
                 i = i + 1
             else:
                 i = i + 8
-        return newList
-
+        return new_list
+    @classmethod
     def answer(self, index):
         """
         @summary: This function reads the report and convert it into csv
@@ -501,7 +501,7 @@ class metric:
         FacesManager.change_images_per_person(8)
         matrix_true = []
         matrix_pred = []
-        samples = self.getSamples()
+        samples = self.get_samples()
         for x in range(len(samples)):
             path = samples[x]
             type_face = self.answer(x)
