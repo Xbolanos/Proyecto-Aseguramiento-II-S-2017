@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['_5f_5finit_5f_5f',['__init__',['../classmodel_1_1person_1_1_person.html#a27c336ca52b0b285dc3573ba5a0d0713',1,'model::person::Person']]]
+  ['_5f_5finit_5f_5f',['__init__',['../classcontroller_1_1_error_handler_1_1_error_handler.html#a88e8f2b06063a097f8f67d4ab7ca9f88',1,'controller::ErrorHandler::ErrorHandler']]]
 ];

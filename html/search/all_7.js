@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['person',['Person',['../classmodel_1_1person_1_1_person.html',1,'model::person']]],
-  ['project_5fimages',['project_images',['../classcontroller_1_1images__manager_1_1_images_manager.html#a798afc751452407d12b397770f2fef95',1,'controller::images_manager::ImagesManager']]]
+  ['k_5fneighbors',['k_neighbors',['../classcontroller_1_1faces__manager_1_1_faces_manager.html#a83941d2fe8630b73530a7811b1bfab86',1,'controller::faces_manager::FacesManager']]]
 ];

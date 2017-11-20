@@ -72,45 +72,136 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a9d5c0d3f727adaf25daa149567745094"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecontroller_1_1facade.html#a9d5c0d3f727adaf25daa149567745094">show_index_page</a> (request)</td></tr>
-<tr class="separator:a9d5c0d3f727adaf25daa149567745094"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1f8eb36f8f571949e1c6d1ec80568847"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecontroller_1_1facade.html#a1f8eb36f8f571949e1c6d1ec80568847">train_system</a> (request)</td></tr>
-<tr class="separator:a1f8eb36f8f571949e1c6d1ec80568847"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a777bf49005d40fb30be4d104dfee44ad"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecontroller_1_1facade.html#a777bf49005d40fb30be4d104dfee44ad">get_index_page</a> ()</td></tr>
+<tr class="separator:a777bf49005d40fb30be4d104dfee44ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf3fb5d30d65a1395a142b83d9a16e72"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecontroller_1_1facade.html#adf3fb5d30d65a1395a142b83d9a16e72">train_system</a> (files, filesData, autovectors, images_per_subject)</td></tr>
+<tr class="separator:adf3fb5d30d65a1395a142b83d9a16e72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a528b285483fd652913df56981c4559a5"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecontroller_1_1facade.html#a528b285483fd652913df56981c4559a5">recognize_subject</a> (subject, mode=1)</td></tr>
+<tr class="separator:a528b285483fd652913df56981c4559a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08203c12b74f21e871de1eca5c281bc2"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecontroller_1_1facade.html#a08203c12b74f21e871de1eca5c281bc2">signin</a> (user)</td></tr>
+<tr class="separator:a08203c12b74f21e871de1eca5c281bc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab90e3b060de3fa07ab2ddf3546e1d0cf"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecontroller_1_1facade.html#ab90e3b060de3fa07ab2ddf3546e1d0cf">logout</a> ()</td></tr>
+<tr class="separator:ab90e3b060de3fa07ab2ddf3546e1d0cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><pre class="fragment">Created on Oct 10, 2017
 
 @author: epikhdez
+@version: version 1.0 beta
 </pre> </div><h2 class="groupheader">Function Documentation</h2>
-<a id="a9d5c0d3f727adaf25daa149567745094"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9d5c0d3f727adaf25daa149567745094">&#9670;&nbsp;</a></span>show_index_page()</h2>
+<a id="a777bf49005d40fb30be4d104dfee44ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a777bf49005d40fb30be4d104dfee44ad">&#9670;&nbsp;</a></span>get_index_page()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">def controller.facade.show_index_page </td>
+          <td class="memname">def controller.facade.get_index_page </td>
           <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>request</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 <pre class="fragment">@summary: asks the core system for the home page of the website.
 
-Parameters
-----------
-@param request: the http request from the client.
-
 Return
 ------
-@return: the system's response to the request.
+@return: the website's main page.
 </pre> 
 </div>
 </div>
-<a id="a1f8eb36f8f571949e1c6d1ec80568847"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1f8eb36f8f571949e1c6d1ec80568847">&#9670;&nbsp;</a></span>train_system()</h2>
+<a id="ab90e3b060de3fa07ab2ddf3546e1d0cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab90e3b060de3fa07ab2ddf3546e1d0cf">&#9670;&nbsp;</a></span>logout()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def controller.facade.logout </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">@summary: attempts to logout the session of the user.
+
+Return
+------
+@return: true if the logout was successful, false otherwise.
+</pre> 
+</div>
+</div>
+<a id="a528b285483fd652913df56981c4559a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a528b285483fd652913df56981c4559a5">&#9670;&nbsp;</a></span>recognize_subject()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def controller.facade.recognize_subject </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>subject</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>mode</em> = <code>1</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">@summary: pass the subject to recognize and the requested method to it
+into the system.
+
+Parameters
+----------
+@param subject: the subject file to be identified
+@param mode: the method you want to use (0 - centroid, 1 - k neighbors)
+
+Return
+------
+@return: a list with the name of the identified subject and messages for
+the user.
+</pre> 
+</div>
+</div>
+<a id="a08203c12b74f21e871de1eca5c281bc2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08203c12b74f21e871de1eca5c281bc2">&#9670;&nbsp;</a></span>signin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def controller.facade.signin </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>user</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">@summary: attempts to login a user with the given credentials.
+
+Parameters
+----------
+@param user: the user's credential packed in an object
+
+Return
+------
+@return: true if the login is accepted, false otherwise.
+</pre> 
+</div>
+</div>
+<a id="adf3fb5d30d65a1395a142b83d9a16e72"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf3fb5d30d65a1395a142b83d9a16e72">&#9670;&nbsp;</a></span>train_system()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -119,8 +210,30 @@ Return
           <td class="memname">def controller.facade.train_system </td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>request</em></td><td>)</td>
+          <td class="paramname"><em>files</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>filesData</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>autovectors</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>images_per_subject</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -129,7 +242,10 @@ and process them.
 
 Parameters
 ----------
-@param request: the http request from the client.
+@param files: a dictionary of the files to be added into the system.
+@param filesData: a dictionary with the files data, ej: subjects names.
+@param autovectors: the number of autovectores to be used in the training.
+@param images_per_subject: the number os given images per subject.
 
 Return
 ------

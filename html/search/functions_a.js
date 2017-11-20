@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['save_5fimage',['save_image',['../namespacecontroller_1_1system.html#a35925b850af5ff5ef00d9f5b6234183b',1,'controller::system']]],
-  ['show_5findex_5fpage',['show_index_page',['../namespacecontroller_1_1facade.html#a9d5c0d3f727adaf25daa149567745094',1,'controller.facade.show_index_page()'],['../namespacecontroller_1_1system.html#a9f9e500512a0e3eba52af3f297432b61',1,'controller.system.show_index_page()'],['../namespacecontroller_1_1ui.html#a3881b5a4868b1b6872e1aa21a905e413',1,'controller.ui.show_index_page()']]]
+  ['process',['process',['../classcontroller_1_1faces__manager_1_1_faces_manager.html#a4f6533226ef444535c43428a0465211c',1,'controller.faces_manager.FacesManager.process()'],['../classcontroller_1_1recognizing__manager_1_1_recognize.html#a09dcc0e994bf27b1b75b9293117d656f',1,'controller.recognizing_manager.Recognize.process()'],['../classcontroller_1_1training__manager_1_1_training.html#abc55a5d44092e6c22c64dc8abd9ce720',1,'controller.training_manager.Training.process()']]],
+  ['project_5fimages',['project_images',['../classcontroller_1_1faces__manager_1_1_faces_manager.html#a3c93fb4e15c163521c08fc6738db0619',1,'controller::faces_manager::FacesManager']]]
 ];

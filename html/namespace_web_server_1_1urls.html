@@ -90,6 +90,7 @@ Class-based views
 Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
+    @version: version 1.0 beta
 </pre> </div><h2 class="groupheader">Variable Documentation</h2>
 <a id="a3f2fff80b9c48de5f66c7cc8d1ab2d36"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3f2fff80b9c48de5f66c7cc8d1ab2d36">&#9670;&nbsp;</a></span>urlpatterns</h2>
@@ -102,7 +103,7 @@ Including another URLconf
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;=  [</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;    url(<span class="stringliteral">r&#39;^$&#39;</span>, ui.show_index_page),</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;    url(<span class="stringliteral">r&#39;^index$&#39;</span>, ui.show_index_page),</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;    url(<span class="stringliteral">r&#39;^learn$&#39;</span>, ui.learn)</div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;]</div></div><!-- fragment -->
+<b>Initial value:</b><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;=  [</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;    url(<span class="stringliteral">r&#39;^$&#39;</span>, ui.show_index_page),</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;    url(<span class="stringliteral">r&#39;^index$&#39;</span>, ui.show_index_page),</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;    url(<span class="stringliteral">r&#39;^learn$&#39;</span>, ui.learn),</div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;    url(<span class="stringliteral">r&#39;^recognize$&#39;</span>, ui.recognize),</div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    url(<span class="stringliteral">r&#39;^signin$&#39;</span>, ui.signin),</div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    url(<span class="stringliteral">r&#39;^logout$&#39;</span>, ui.logout)</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;]</div></div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->

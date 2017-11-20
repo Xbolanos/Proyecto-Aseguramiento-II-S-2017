@@ -1,0 +1,20 @@
+var searchData=
+[
+  ['teardown',['tearDown',['../classtest_1_1test_system1_1_1_test_system.html#a97be2758b5a470c51446522314fe10d9',1,'test.testSystem1.TestSystem.tearDown()'],['../classtest_1_1test_system2_1_1_test_system2.html#aac21dd6ac8782d8d40f5b3a5bc41eac3',1,'test.testSystem2.TestSystem2.tearDown()']]],
+  ['test_5fget_5fmin',['test_get_min',['../classtest_1_1_unit_test_final_1_1_test.html#a1148cd3065232c9991b8e3c80bb08555',1,'test::UnitTestFinal::Test']]],
+  ['test_5fget_5fmin_5fdif',['test_get_min_dif',['../classtest_1_1_unit_test_final_1_1_test.html#a2ea36928bdcdc81ec54afa1b72ce4481',1,'test::UnitTestFinal::Test']]],
+  ['test_5fget_5fmin_5fnull',['test_get_min_null',['../classtest_1_1_unit_test_final_1_1_test.html#a790568c35fd05dd26a1a8bed9dc236ff',1,'test::UnitTestFinal::Test']]],
+  ['test_5fget_5fperson',['test_get_person',['../classtest_1_1_unit_test_final_1_1_test.html#ae257a758c3a3bdb7d83a8d7dc60b6795',1,'test::UnitTestFinal::Test']]],
+  ['test_5fget_5fperson_5fdif',['test_get_person_dif',['../classtest_1_1_unit_test_final_1_1_test.html#ac3723fa6f6229537039ad6d3e1a339dd',1,'test::UnitTestFinal::Test']]],
+  ['test_5fget_5fperson_5fnull',['test_get_person_null',['../classtest_1_1_unit_test_final_1_1_test.html#a9a55cd4b7d0334a3600280ad36c43c25',1,'test::UnitTestFinal::Test']]],
+  ['test_5fk_5fneighbors',['test_k_neighbors',['../classtest_1_1_unit_test_final_1_1_test.html#a180681681be3b0465c64eae8a626c977',1,'test::UnitTestFinal::Test']]],
+  ['test_5fk_5fneighbors_5fdif',['test_k_neighbors_dif',['../classtest_1_1_unit_test_final_1_1_test.html#af8f98003b6fdf78fca88da0641a5b79d',1,'test::UnitTestFinal::Test']]],
+  ['test_5fk_5fneighbors_5fnull',['test_k_neighbors_null',['../classtest_1_1_unit_test_final_1_1_test.html#aab74ad5e32a05ca503ba95005f3ce79e',1,'test::UnitTestFinal::Test']]],
+  ['test_5fnearest_5fcentroid',['test_nearest_centroid',['../classtest_1_1_unit_test_final_1_1_test.html#a554d2d6ebdda7ee6bcbbfb5781099371',1,'test::UnitTestFinal::Test']]],
+  ['test_5fnearest_5fcentroid_5fdif',['test_nearest_centroid_dif',['../classtest_1_1_unit_test_final_1_1_test.html#a98cf4a8b515fd20d870a8d99e9f8cd5a',1,'test::UnitTestFinal::Test']]],
+  ['test_5fnearest_5fcentroid_5fnull',['test_nearest_centroid_null',['../classtest_1_1_unit_test_final_1_1_test.html#aeceb385fbfd7ef0be4b9229a65f1f028',1,'test::UnitTestFinal::Test']]],
+  ['test_5fsystem',['test_system',['../classtest_1_1test_system1_1_1_test_system.html#ac0bb5c84f5330bcf00d0c0c0482321d3',1,'test::testSystem1::TestSystem']]],
+  ['test_5fsystem2',['test_system2',['../classtest_1_1test_system2_1_1_test_system2.html#ad53f9acf95956322a6f02a2c589d4fd2',1,'test::testSystem2::TestSystem2']]],
+  ['train_5fsystem',['train_system',['../namespacecontroller_1_1facade.html#adf3fb5d30d65a1395a142b83d9a16e72',1,'controller.facade.train_system()'],['../namespacecontroller_1_1system.html#a89257839d663a2d110e01a2ab24c74c7',1,'controller.system.train_system()']]],
+  ['transpose',['transpose',['../classcontroller_1_1faces__manager_1_1_faces_manager.html#ae93795517e72b661e1854025714ce636',1,'controller::faces_manager::FacesManager']]]
+];

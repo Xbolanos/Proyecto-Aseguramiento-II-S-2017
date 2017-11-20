@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['manage',['manage',['../namespacemanage.html',1,'']]],
-  ['matrix_5f2_5fvector',['matrix_2_vector',['../classcontroller_1_1images__manager_1_1_images_manager.html#a5ea45ea87ba5a7b5f451d298c31c4a7b',1,'controller::images_manager::ImagesManager']]],
-  ['matrix_5fof_5fdifferences',['matrix_of_differences',['../classcontroller_1_1images__manager_1_1_images_manager.html#a701186945182fc01b365a210ea939ef1',1,'controller::images_manager::ImagesManager']]],
-  ['person',['person',['../namespacemodel_1_1person.html',1,'model']]]
+  ['imagesmanager',['ImagesManager',['../classcontroller_1_1images__manager_1_1_images_manager.html',1,'controller::images_manager']]],
+  ['is_5falert_5fpresent',['is_alert_present',['../classtest_1_1test_system1_1_1_test_system.html#a6bd7946a97877aeaa3e0f8a323e2618f',1,'test.testSystem1.TestSystem.is_alert_present()'],['../classtest_1_1test_system2_1_1_test_system2.html#af8d41a8e45deb4ebb8e64991e61a21ec',1,'test.testSystem2.TestSystem2.is_alert_present()']]],
+  ['is_5felement_5fpresent',['is_element_present',['../classtest_1_1test_system1_1_1_test_system.html#a85418c8199abe162a5de3e58eafff75b',1,'test.testSystem1.TestSystem.is_element_present()'],['../classtest_1_1test_system2_1_1_test_system2.html#ac1c34fba542ec675c87a52bf101b48be',1,'test.testSystem2.TestSystem2.is_element_present()']]]
 ];
