@@ -1366,3 +1366,185 @@ JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: Synt
 JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
 JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
 1511113359983	Marionette	INFO	New connections will no longer be accepted
+1511134441425	geckodriver	INFO	geckodriver 0.19.1
+1511134441511	geckodriver	INFO	Listening on 127.0.0.1:51134
+1511134441991	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-profile" "/var/folders/ts/mybw99yd0b79ltw45chn19f80000gn/T/rust_mozprofile.Og5VokL0N3My"
+1511134444489	Marionette	INFO	Listening on port 51138
+1511134444600	Marionette	WARN	TLS certificate errors will be ignored for this session
+1511134444801	Marionette	DEBUG	loaded listener.js
+1511134444859	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+2017-11-19 17:34:04.889 plugin-container[9691:391036] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x943b, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+1511134446010	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1511134446012	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1511134446012	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+1511134446077	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "about:neterror?e=connectionFailure&u=http%3A//localhost%3A8000/&c=UTF-8&f=regular&d=Firefox%20can%E2%80%99t%20establish%20a%20connection%20to%20the%20server%20at%20localhost%3A8000."
+1511134446086	Marionette	INFO	New connections will no longer be accepted
+1511134472622	geckodriver	INFO	geckodriver 0.19.1
+1511134472699	geckodriver	INFO	Listening on 127.0.0.1:51163
+1511134472806	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-profile" "/var/folders/ts/mybw99yd0b79ltw45chn19f80000gn/T/rust_mozprofile.XPYuTxUlrqgs"
+1511134474956	Marionette	INFO	Listening on port 51167
+1511134475255	Marionette	WARN	TLS certificate errors will be ignored for this session
+1511134475337	Marionette	DEBUG	loaded listener.js
+2017-11-19 23:34:35.399 plugin-container[9715:392177] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x913b, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+1511134475431	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1511134475460	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1511134475461	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+1511134476062	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:8000/"
+1511134476314	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:8000/"
+1511134477536	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1511134478250	Marionette	INFO	New connections will no longer be accepted
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+1511134600397	geckodriver	INFO	geckodriver 0.19.1
+1511134600487	geckodriver	INFO	Listening on 127.0.0.1:51260
+1511134600640	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-profile" "/var/folders/ts/mybw99yd0b79ltw45chn19f80000gn/T/rust_mozprofile.PRxDWNGWBdy3"
+1511134602832	Marionette	INFO	Listening on port 51264
+1511134603080	Marionette	WARN	TLS certificate errors will be ignored for this session
+1511134603162	Marionette	DEBUG	loaded listener.js
+1511134603200	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+2017-11-19 17:36:43.236 plugin-container[9871:397127] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x9337, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+1511134603258	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1511134603258	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+1511134603864	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:8000/"
+1511134604051	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:8000/"
+1511134604682	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1511134605171	Marionette	INFO	New connections will no longer be accepted
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+1511134775604	geckodriver	INFO	geckodriver 0.19.1
+1511134775681	geckodriver	INFO	Listening on 127.0.0.1:51329
+1511134775776	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-profile" "/var/folders/ts/mybw99yd0b79ltw45chn19f80000gn/T/rust_mozprofile.q52Do7g6GDZR"
+1511134777737	Marionette	INFO	Listening on port 51333
+2017-11-19 17:39:38.075 plugin-container[9907:402852] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x933b, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+1511134778218	Marionette	WARN	TLS certificate errors will be ignored for this session
+1511134778259	Marionette	DEBUG	loaded listener.js
+1511134778285	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1511134778302	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1511134778302	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+1511134778847	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:8000/"
+1511134779073	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:8000/"
+1511134779663	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+1511134780466	Marionette	INFO	New connections will no longer be accepted
+1511134934635	geckodriver	INFO	geckodriver 0.19.1
+1511134934711	geckodriver	INFO	Listening on 127.0.0.1:51401
+1511134934810	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-profile" "/var/folders/ts/mybw99yd0b79ltw45chn19f80000gn/T/rust_mozprofile.DBXuTzRbTX0G"
+1511134936675	Marionette	INFO	Listening on port 51405
+2017-11-19 23:42:16.992 plugin-container[9948:404996] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x913b, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+1511134937251	Marionette	WARN	TLS certificate errors will be ignored for this session
+1511134937291	Marionette	DEBUG	loaded listener.js
+1511134937322	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1511134937345	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1511134937345	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+1511134937816	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:8000/"
+1511134938079	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:8000/"
+1511134938864	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+1511134940484	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1511135222083	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1511135222109	Marionette	INFO	New connections will no longer be accepted
+1511135267594	geckodriver	INFO	geckodriver 0.19.1
+1511135267664	geckodriver	INFO	Listening on 127.0.0.1:51561
+1511135267784	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-profile" "/var/folders/ts/mybw99yd0b79ltw45chn19f80000gn/T/rust_mozprofile.l0wpwPXKzkop"
+1511135269733	Marionette	INFO	Listening on port 51565
+2017-11-19 17:47:50.057 plugin-container[10010:413057] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x933b, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+1511135270226	Marionette	WARN	TLS certificate errors will be ignored for this session
+1511135270265	Marionette	DEBUG	loaded listener.js
+1511135270293	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1511135271418	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1511135271420	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1511135271420	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+1511135271487	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "about:neterror?e=connectionFailure&u=http%3A//localhost%3A8000/&c=UTF-8&f=regular&d=Firefox%20can%E2%80%99t%20establish%20a%20connection%20to%20the%20server%20at%20localhost%3A8000."
+1511135271519	Marionette	INFO	New connections will no longer be accepted
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+1511135284506	geckodriver	INFO	geckodriver 0.19.1
+1511135284578	geckodriver	INFO	Listening on 127.0.0.1:51586
+1511135284691	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-profile" "/var/folders/ts/mybw99yd0b79ltw45chn19f80000gn/T/rust_mozprofile.tMgr7xLfdrFL"
+1511135287081	Marionette	INFO	Listening on port 51590
+1511135287155	Marionette	WARN	TLS certificate errors will be ignored for this session
+1511135287458	Marionette	DEBUG	loaded listener.js
+1511135287522	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+2017-11-19 17:48:07.561 plugin-container[10027:413768] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x913b, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+1511135287588	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1511135287589	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+1511135288256	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:8000/"
+1511135288369	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:8000/"
+1511135289023	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+1511135289791	Marionette	INFO	New connections will no longer be accepted
+1511135316977	geckodriver	INFO	geckodriver 0.19.1
+1511135317049	geckodriver	INFO	Listening on 127.0.0.1:51647
+1511135317160	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-profile" "/var/folders/ts/mybw99yd0b79ltw45chn19f80000gn/T/rust_mozprofile.lcjEmANE2RjZ"
+1511135319055	Marionette	INFO	Listening on port 51651
+2017-11-19 17:48:39.430 plugin-container[10039:414648] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x923b, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+1511135319679	Marionette	WARN	TLS certificate errors will be ignored for this session
+1511135319737	Marionette	DEBUG	loaded listener.js
+1511135319790	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1511135319819	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1511135319820	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+1511135320372	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:8000/"
+1511135320623	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:8000/"
+1511135321201	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+1511135322009	Marionette	INFO	New connections will no longer be accepted
+1511135336692	geckodriver	INFO	geckodriver 0.19.1
+1511135336765	geckodriver	INFO	Listening on 127.0.0.1:51709
+1511135336877	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-profile" "/var/folders/ts/mybw99yd0b79ltw45chn19f80000gn/T/rust_mozprofile.qLSOjcGmPhiD"
+1511135338791	Marionette	INFO	Listening on port 51713
+2017-11-19 17:48:59.119 plugin-container[10048:415388] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x913b, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+1511135339318	Marionette	WARN	TLS certificate errors will be ignored for this session
+1511135339355	Marionette	DEBUG	loaded listener.js
+1511135339381	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1511135339399	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1511135339400	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+1511135339918	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:8000/"
+1511135340157	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:8000/"
+1511135340685	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+1511135341252	Marionette	INFO	New connections will no longer be accepted
+1511136932040	geckodriver	INFO	geckodriver 0.19.1
+1511136932117	geckodriver	INFO	Listening on 127.0.0.1:52111
+1511136932249	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-profile" "/var/folders/ts/mybw99yd0b79ltw45chn19f80000gn/T/rust_mozprofile.qrL1HSkAgAZh"
+1511136934856	Marionette	INFO	Listening on port 52115
+2017-11-19 18:15:35.284 plugin-container[10310:438400] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x923b, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+1511136935918	Marionette	WARN	TLS certificate errors will be ignored for this session
+1511136935974	Marionette	DEBUG	loaded listener.js
+1511136936008	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1511136937135	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1511136937137	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1511136937137	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+1511136937258	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "about:neterror?e=connectionFailure&u=http%3A//localhost%3A8000/&c=UTF-8&f=regular&d=Firefox%20can%E2%80%99t%20establish%20a%20connection%20to%20the%20server%20at%20localhost%3A8000."
+1511136937287	Marionette	INFO	New connections will no longer be accepted
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+1511136948105	geckodriver	INFO	geckodriver 0.19.1
+1511136948204	geckodriver	INFO	Listening on 127.0.0.1:52139
+1511136948301	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-profile" "/var/folders/ts/mybw99yd0b79ltw45chn19f80000gn/T/rust_mozprofile.LkqwB1QIivMS"
+1511136950819	Marionette	INFO	Listening on port 52143
+1511136950899	Marionette	WARN	TLS certificate errors will be ignored for this session
+1511136951233	Marionette	DEBUG	loaded listener.js
+1511136951324	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+2017-11-19 18:15:51.409 plugin-container[10325:439082] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x913b, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+1511136951570	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1511136951571	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+JavaScript error: http://localhost:8000/static/js/bootstrap.min.js, line 6: SyntaxError: missing } after property list
+1511136952337	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:8000/"
+1511136952799	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:8000/"
+1511136953748	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1511136967488	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1511136967502	Marionette	INFO	New connections will no longer be accepted

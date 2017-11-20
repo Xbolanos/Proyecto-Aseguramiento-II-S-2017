@@ -19,7 +19,8 @@ class TestSystem2(unittest.TestCase):
         ------
         @return: null
         """
-        self.driver = webdriver.Firefox()
+        self.driver = webdriver.Firefox(executable_path=
+                                        '/usr/local/bin/geckodriver')
         self.driver.implicitly_wait(30)
         self.base_url = "http://localhost:8000"
         self.verificationErrors = []
@@ -38,8 +39,8 @@ class TestSystem2(unittest.TestCase):
         driver.find_element_by_link_text("ReconoceME").click()
         driver.find_element_by_id("recognizeFiles").clear()
         driver.find_element_by_id("recognizeFiles").send_keys(
-            "/home/ximena/Documents/Repos/Proyecto-Aseguramiento-II-S-2017/"
-            "WebServer/src/test/Muestras/s1/9.pgm")
+            "/Users/erickhdez/Documents/Repositories/Proyecto-Aseguramiento" +
+            "-II-S-2017/WebServer/src/test/Muestras/s1/9.pgm")
         driver.find_element_by_id("recognizeFiles").submit()
         driver.find_element_by_css_selector(
             "button.swal-button.swal-button--confirm").click()
